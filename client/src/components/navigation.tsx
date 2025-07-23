@@ -2,13 +2,20 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { Laptop, Sun, Moon, Menu, X } from "lucide-react";
+import labtekLogo from "@assets/Labtek-logo_1753288270340.png";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    if (theme === "system") {
+      setTheme("dark");
+    } else if (theme === "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -25,13 +32,12 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-labtek-blue rounded-lg flex items-center justify-center">
-                <Laptop className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold text-labtek-dark-blue dark:text-labtek-blue">
-                Labtek
-              </span>
+            <div className="w-36 h-12 rounded-lg overflow-hidden">
+              <img 
+                src={labtekLogo} 
+                alt="Labtek Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
 
@@ -68,6 +74,12 @@ export default function Navigation() {
               >
                 Contact
               </button>
+              <button
+                onClick={() => scrollToSection("temoignages")}
+                className="text-foreground/80 hover:text-labtek-blue transition-colors duration-200"
+              >
+                Témoignages
+              </button>
             </div>
           </div>
 
@@ -81,8 +93,10 @@ export default function Navigation() {
             >
               {theme === "dark" ? (
                 <Sun className="h-5 w-5" />
-              ) : (
+              ) : theme === "light" ? (
                 <Moon className="h-5 w-5" />
+              ) : (
+                <Laptop className="h-5 w-5" />
               )}
             </Button>
 
@@ -136,6 +150,12 @@ export default function Navigation() {
               className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
             >
               Contact
+            </button>
+            <button
+              onClick={() => scrollToSection("temoignages")}
+              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
+            >
+              Témoignages
             </button>
           </div>
         </div>

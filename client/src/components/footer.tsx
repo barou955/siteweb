@@ -1,4 +1,5 @@
 import { Laptop, MapPin, Clock, Globe, Mail } from "lucide-react";
+import labtekLogo from "@assets/Labtek-logo_1753288270340.png";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -14,11 +15,14 @@ export default function Footer() {
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Logo et description */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-labtek-blue rounded-lg flex items-center justify-center">
-                <Laptop className="w-6 h-6 text-white" />
+            <div className="flex items-center mb-6">
+              <div className="w-36 h-12 rounded-lg overflow-hidden">
+                <img 
+                  src={labtekLogo} 
+                  alt="Labtek Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
-              <span className="text-2xl font-bold text-white">Labtek</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
               Solutions informatiques professionnelles pour particuliers et PME

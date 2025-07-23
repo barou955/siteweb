@@ -78,13 +78,37 @@ export default function ServicesSection() {
             return (
               <Card
                 key={index}
-                className="hover:shadow-xl transition-shadow duration-300 border-border"
+                className="group hover:shadow-xl transition-all duration-300 border-border hover:scale-105 hover:-translate-y-2 cursor-pointer"
               >
                 <CardContent className="p-8">
-                  <div
-                    className={`w-16 h-16 ${service.color}/10 rounded-lg flex items-center justify-center mb-6`}
-                  >
-                    <Icon className={`w-8 h-8 ${service.color.replace('bg-', 'text-')}`} />
+                  <div className="w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300" 
+                       style={{
+                         backgroundColor: (() => {
+                           const colorMap: Record<string, string> = {
+                             'bg-labtek-blue': '#4F6FEF20',
+                             'bg-labtek-violet': '#A855F720', 
+                             'bg-blue-500': '#3B82F620',
+                             'bg-green-500': '#10B98120',
+                             'bg-orange-500': '#F59E0B20',
+                             'bg-purple-500': '#8B5CF620'
+                           };
+                           return colorMap[service.color] || '#4F6FEF20';
+                         })()
+                       }}>
+                    <Icon className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" 
+                          style={{
+                            color: (() => {
+                              const colorMap: Record<string, string> = {
+                                'bg-labtek-blue': '#4F6FEF',
+                                'bg-labtek-violet': '#A855F7',
+                                'bg-blue-500': '#3B82F6', 
+                                'bg-green-500': '#10B981',
+                                'bg-orange-500': '#F59E0B',
+                                'bg-purple-500': '#8B5CF6'
+                              };
+                              return colorMap[service.color] || '#4F6FEF';
+                            })()
+                          }} />
                   </div>
                   <h3 className="text-2xl font-semibold text-foreground mb-4">
                     {service.title}
