@@ -21,8 +21,8 @@ export default function AboutSection() {
             </h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-muted-foreground mb-6">
-                Ingénieur réseaux et systèmes avec plus de 10 ans d'expérience,
-                j'ai créé <strong>Labtek</strong> pour apporter des solutions
+                Ingénieur réseaux et systèmes avec plus de 5 ans d'expérience,
+                j'ai créé LABTEK pour apporter des solutions
                 informatiques simples et efficaces aux particuliers et PME
                 d'Essonne et d'Île-de-France.
               </p>
