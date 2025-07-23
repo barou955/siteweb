@@ -39,7 +39,7 @@ export default function Navigation() {
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="flex flex-col -ml-4">
+            <div className="flex flex-col -ml-8">
               <h1 className="text-xl font-bold text-labtek-blue">LABTEK</h1>
               <p className="text-xs text-muted-foreground">Services Informatiques</p>
             </div>
