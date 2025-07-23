@@ -8,7 +8,7 @@ export default function AboutSection() {
           {/* Professional image placeholder */}
           <div className="relative">
             <img
-              src="https://unsplash.com/fr/photos/garcon-devant-lecran-de-lordinateur-vJP-wZ6hGBgixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+              src="https://www.pagepersonnel.fr/sites/pagepersonnel.fr/files/styles/advice_node_desktop/public/legacy/shutterstock_669226093_970x480.jpg.webp?itok=TDMbBnA4ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
               alt="Ingénieur informatique professionnel"
               className="rounded-2xl shadow-lg w-full h-auto"
             />
