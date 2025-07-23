@@ -31,16 +31,15 @@ export default function HeroSection() {
             <Button
               onClick={() => scrollToSection("contact")}
               size="lg"
-              className="bg-white text-labtek-blue font-semibold hover:bg-gray-50 transition-all duration-200 transform hover:scale-105"
+              className="bg-white text-labtek-blue font-semibold hover:bg-blue-50 hover:text-labtek-dark-blue transition-all duration-200 transform hover:scale-105"
             >
               Demander un devis
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button
               onClick={() => scrollToSection("services")}
-              variant="outline"
               size="lg"
-              className="border-2 border-white text-white font-semibold hover:bg-white hover:text-labtek-blue transition-all duration-200"
+              className="bg-labtek-blue/20 border-2 border-white text-white font-semibold hover:bg-white hover:text-labtek-blue transition-all duration-200 transform hover:scale-105"
             >
               Découvrir nos services
             </Button>

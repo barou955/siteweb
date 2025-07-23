@@ -110,12 +110,12 @@ export default function ContactSection() {
                     <CheckCircle className="w-6 h-6 text-green-500" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">Expertise</h4>
+                    <h4 className="font-semibold text-foreground mb-1">Devis Gratuit</h4>
                     <p className="text-muted-foreground">
-                      Ingénieur réseaux et systèmes
+                      Évaluation complète sans frais
                     </p>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Plus de 10 ans d'expérience
+                      Réponse sous 24h garantie
                     </p>
                   </div>
                 </div>
@@ -125,12 +125,12 @@ export default function ContactSection() {
                     <AlertCircle className="w-6 h-6 text-orange-500" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">Engagement</h4>
+                    <h4 className="font-semibold text-foreground mb-1">Garantie Satisfaction</h4>
                     <p className="text-muted-foreground">
-                      Devis gratuit et sans engagement
+                      Service après-vente inclus
                     </p>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Réponse sous 24h garantie
+                      Retour gratuit si problème
                     </p>
                   </div>
                 </div>

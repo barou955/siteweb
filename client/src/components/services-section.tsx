@@ -12,50 +12,50 @@ import {
 const services = [
   {
     icon: Laptop,
-    title: "Installation de Systèmes",
+    title: "Installation d'Équipements",
     description:
-      "Configuration et installation de vos équipements : ordinateurs, imprimantes, bornes Wi-Fi, caméras de sécurité, écrans connectés et plus encore.",
-    features: ["Configuration complète", "Tests de fonctionnement", "Formation utilisateur"],
+      "Nous installons et configurons tous vos appareils informatiques : ordinateurs, imprimantes, Wi-Fi, caméras. Tout fonctionne dès le premier jour !",
+    features: ["Installation rapide", "Tout configuré", "Vous apprenez à utiliser"],
     color: "bg-labtek-blue",
   },
   {
     icon: Shield,
-    title: "Infrastructure & Sécurité",
+    title: "Sécurité & Sauvegarde",
     description:
-      "Mise en place et sécurisation de votre infrastructure réseau : routeurs, câblage, VPN, sauvegardes, pare-feux et serveurs.",
-    features: ["Sécurité renforcée", "Réseau performant", "Sauvegarde automatique"],
+      "Nous protégeons vos données importantes avec des sauvegardes automatiques et sécurisons votre réseau contre les pirates informatiques.",
+    features: ["Données protégées", "Internet sécurisé", "Sauvegarde automatique"],
     color: "bg-labtek-violet",
   },
   {
     icon: Download,
-    title: "Déploiement de Logiciels",
+    title: "Installation de Programmes",
     description:
-      "Installation et configuration de vos outils de travail : Microsoft 365, Google Workspace, logiciels CRM et applications métier.",
-    features: ["Configuration optimisée", "Migration de données", "Formation équipes"],
+      "Nous installons tous vos logiciels de travail : Office, messagerie, outils spécialisés. Nous transférons aussi vos anciennes données.",
+    features: ["Programmes installés", "Données récupérées", "Formation incluse"],
     color: "bg-blue-500",
   },
   {
     icon: Mail,
-    title: "Emails & Hébergement Pro",
+    title: "Email Professionnel",
     description:
-      "Solutions professionnelles complètes : adresses emails personnalisées, noms de domaine, messagerie sécurisée et hébergement web.",
-    features: ["Emails professionnels", "Sécurité renforcée", "Support 24/7"],
+      "Créez votre image professionnelle avec des adresses email à votre nom (@votreentreprise.fr) et un site web pour présenter votre activité.",
+    features: ["Email à votre nom", "Site web inclus", "Support continu"],
     color: "bg-green-500",
   },
   {
     icon: Settings,
-    title: "Maintenance & Support",
+    title: "Dépannage & Assistance",
     description:
-      "Assistance rapide sur site ou à distance, audits sécurité, conseils personnalisés et maintenance préventive de vos systèmes.",
-    features: ["Intervention rapide", "Support à distance", "Conseils d'expert"],
+      "Problème informatique ? Nous intervenons rapidement sur place ou à distance pour réparer et vous conseiller. Disponibles 7j/7 pour les urgences.",
+    features: ["Réparation rapide", "Aide à distance", "Urgences 7j/7"],
     color: "bg-orange-500",
   },
   {
     icon: Globe,
-    title: "Sites Web Vitrine",
+    title: "Sites Web Simples",
     description:
-      "Création de sites web professionnels et responsives pour présenter votre activité et attirer de nouveaux clients.",
-    features: ["Design moderne", "Mobile-friendly", "SEO optimisé"],
+      "Créez votre présence en ligne avec un site web professionnel qui présente votre entreprise et attire de nouveaux clients sur Google.",
+    features: ["Design professionnel", "Visible sur Google", "Facile à utiliser"],
     color: "bg-purple-500",
   },
 ];

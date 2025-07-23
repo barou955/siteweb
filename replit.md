@@ -20,6 +20,13 @@ Visual preferences: Balanced theme colors - softer light mode, less intense dark
   - Created `vercel.json` for deployment settings
   - Added `build-static.js` script for clean static builds
   - Configured routing for SPA behavior on Vercel
+- **UI/UX Improvements** (January 23, 2025):
+  - Simplified service descriptions to non-technical language for general public
+  - Added micro-animations to service cards (hover effects, scaling, icon animations)
+  - Created testimonials section with 6 authentic French client testimonials
+  - Replaced "Expertise" and "Engagement" sections with useful client information (Devis Gratuit, Garantie Satisfaction)
+  - Fixed button visibility issues in light/dark modes for better accessibility
+  - Enhanced logo visibility by adding "LABTEK - Services Informatiques" text beside logo
 
 ## System Architecture
 

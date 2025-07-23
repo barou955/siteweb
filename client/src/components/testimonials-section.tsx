@@ -134,7 +134,7 @@ export default function TestimonialsSection() {
                   element.scrollIntoView({ behavior: "smooth" });
                 }
               }}
-              className="bg-labtek-blue hover:bg-labtek-dark-blue text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105"
+              className="bg-white text-labtek-blue border-2 border-labtek-blue hover:bg-labtek-blue hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105"
             >
               Demander un devis gratuit
             </button>
