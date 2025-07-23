@@ -2,11 +2,24 @@
 
 ## Overview
 
-This is a modern React-based business website for Labtek, an IT services company serving individuals and SMEs in Essonne and Île-de-France, France. The application uses a full-stack TypeScript architecture with a React frontend and Express.js backend, styled with Tailwind CSS and shadcn/ui components.
+This is a modern React-based business website for Labtek, an IT services company serving individuals and SMEs in Essonne and Île-de-France, France. The application uses a full-stack TypeScript architecture with a React frontend and Express.js backend, styled with Tailwind CSS and shadcn/ui components. The site is designed for static deployment on Vercel.
 
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Visual preferences: Balanced theme colors - softer light mode, less intense dark mode.
+
+## Recent Changes
+
+### January 2025
+- **Color Theme Adjustments**: Updated light and dark mode colors for better visual comfort
+  - Light mode: Changed from pure white to soft gray background (97% instead of 100%)
+  - Dark mode: Replaced harsh black with blue-gray tones for less eye strain
+  - Improved contrast ratios while maintaining readability
+- **Vercel Deployment Configuration**: Added proper static site configuration
+  - Created `vercel.json` for deployment settings
+  - Added `build-static.js` script for clean static builds
+  - Configured routing for SPA behavior on Vercel
 
 ## System Architecture
 
