@@ -12,7 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { MapPin, Clock, CheckCircle, AlertCircle } from "lucide-react";
+import { MapPin, Clock, Phone, Mail } from "lucide-react";
 
 export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -107,30 +107,30 @@ export default function ContactSection() {
 
                 <div className="flex items-start">
                   <div className="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <CheckCircle className="w-6 h-6 text-green-500" />
+                    <Phone className="w-6 h-6 text-green-500" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">Devis Gratuit</h4>
+                    <h4 className="font-semibold text-foreground mb-1">Téléphone</h4>
                     <p className="text-muted-foreground">
-                      Évaluation complète sans frais
+                      01 69 XX XX XX
                     </p>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Réponse sous 24h garantie
+                      Disponible aux heures d'ouverture
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
                   <div className="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <AlertCircle className="w-6 h-6 text-orange-500" />
+                    <Mail className="w-6 h-6 text-orange-500" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">Garantie Satisfaction</h4>
+                    <h4 className="font-semibold text-foreground mb-1">Email</h4>
                     <p className="text-muted-foreground">
-                      Service après-vente inclus
+                      contact@labtek.fr
                     </p>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Retour gratuit si problème
+                      Réponse sous 24h garantie
                     </p>
                   </div>
                 </div>
