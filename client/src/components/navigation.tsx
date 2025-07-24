@@ -31,17 +31,19 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-           <div className="flex-shrink-0 flex items-center">
+          <div className="flex-shrink-0 flex items-center">
             <div className="w-40 h-14 rounded-lg overflow-hidden mr-3">
-              <img 
-                src={labtekLogo} 
-                alt="Labtek Logo" 
+              <img
+                src={labtekLogo}
+                alt="Labtek Logo"
                 className="w-full h-full object-contain"
               />
             </div>
             <div className="flex flex-col -ml-14">
               <h1 className="text-xl font-bold text-labtek-blue">LABTEK</h1>
-              <p className="text-xs text-muted-foreground">Services Informatiques</p>
+              <p className="text-xs text-muted-foreground">
+                Services Informatiques
+              </p>
             </div>
           </div>
 
@@ -73,16 +75,16 @@ export default function Navigation() {
                 Maintenance
               </button>
               <button
-                onClick={() => scrollToSection("contact")}
-                className="text-foreground/80 hover:text-labtek-blue transition-colors duration-200"
-              >
-                Contact
-              </button>
-              <button
                 onClick={() => scrollToSection("temoignages")}
                 className="text-foreground/80 hover:text-labtek-blue transition-colors duration-200"
               >
                 Témoignages
+              </button>
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="text-foreground/80 hover:text-labtek-blue transition-colors duration-200"
+              >
+                Contact
               </button>
             </div>
           </div>
