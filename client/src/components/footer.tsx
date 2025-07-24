@@ -15,14 +15,12 @@ export default function Footer() {
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Logo et description */}
           <div className="lg:col-span-2">
-            <div className="flex items-center mb-6">
-              <div className="w-36 h-12 rounded-lg overflow-hidden">
-                <img 
-                  src={labtekLogo} 
-                  alt="Labtek Logo" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
+            <div className="w-64 h-20 rounded-lg overflow-hidden mb-6 -ml-20">
+              <img
+                src={labtekLogo}
+                alt="Labtek Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
               Solutions informatiques professionnelles pour particuliers et PME
