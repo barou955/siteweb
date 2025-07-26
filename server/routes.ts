@@ -1,6 +1,5 @@
+
 import type { Express } from "express";
-import { createServer, type Server } from "http";
-import { storage } from "./storage";
 import PDFDocument from "pdfkit";
 import fs from "fs";
 import path from "path";
@@ -9,7 +8,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-export async function registerRoutes(app: Express): Promise<Server> {
+export function registerRoutes(app: Express): void {
   // Generate PDF quote only - no email sending
   app.post("/api/generate-quote-pdf", async (req, res) => {
     console.log('PDF generation route called');
@@ -246,10 +245,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Test route to verify API is working
   app.get("/api/test", (req, res) => {
-    res.json({ message: "API is working" });
+    res.json({ message: "API is working", timestamp: new Date().toISOString() });
   });
-
-  const httpServer = createServer(app);
-
-  return httpServer;
 }
