@@ -99,10 +99,8 @@ export default function Navigation() {
             >
               {theme === "dark" ? (
                 <Sun className="h-5 w-5" />
-              ) : theme === "light" ? (
-                <Moon className="h-5 w-5" />
               ) : (
-                <Laptop className="h-5 w-5" />
+                <Moon className="h-5 w-5" />
               )}
             </Button>
 
