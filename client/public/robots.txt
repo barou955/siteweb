@@ -2,4 +2,31 @@
 User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://labtek.fr/sitemap.xml
+
+# Optimisations pour les moteurs de recherche
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Empêcher l'indexation des fichiers de développement
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /*.config.*
+Disallow: /dist/
+
+# Autoriser l'accès aux assets importants
+Allow: /logo-*.png
+Allow: /favicon.png
+Allow: /site.webmanifest
+
+# Informations additionnelles
+# Site web: https://labtek.fr
+# Contact: contact@labtek.fr
+# Services: Informatique, Réseaux, Sécurité, Sites Web - Essonne & Île-de-France
