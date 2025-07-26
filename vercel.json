@@ -11,6 +11,12 @@
       }
     },
     {
+      "src": "/(favicon\\.png|logo-.*\\.png|site\\.webmanifest)",
+      "headers": {
+        "cache-control": "max-age=86400"
+      }
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
