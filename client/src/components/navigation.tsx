@@ -10,7 +10,9 @@ export default function Navigation() {
 
   const toggleTheme = () => {
     if (theme === "system") {
-      setTheme("dark");
+      // Détecter le thème système actuel et basculer vers l'opposé
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      setTheme(systemTheme === "dark" ? "light" : "dark");
     } else if (theme === "dark") {
       setTheme("light");
     } else {
