@@ -355,11 +355,7 @@ export default function QuoteCalculator() {
       clientInfo,
       services: selectedServices.map(service => ({
         ...service,
-        total: calculateServiceTotal(service),
-        basePrice: service.basePrice || 0,
-        quantity: service.quantity || 1,
-        selectedOptions: service.selectedOptions || [],
-        options: service.options || []
+        total: calculateServiceTotal(service)
       })),
       maintenance: selectedMaintenance,
       subtotal: servicesSubtotal,
@@ -373,39 +369,30 @@ export default function QuoteCalculator() {
     };
 
     try {
-      // Use Vercel API route for production deployment
-      const apiUrl = '/api/generate-quote-pdf';
-      
+      // Use relative URL that works on both Replit and Vercel
+      const apiUrl = window.location.hostname.includes('vercel.app') 
+        ? `${window.location.origin}/api/generate-quote-pdf`
+        : '/api/generate-quote-pdf';
+        
       const response = await fetch(apiUrl, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(quoteData)
       });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+      if (response.ok) {
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `devis-${clientInfo.company || clientInfo.name || 'client'}-${Date.now()}.pdf`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
       }
-
-      // Get the PDF blob
-      const blob = await response.blob();
-      
-      // Create download link
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.style.display = 'none';
-      a.href = url;
-      a.download = `devis-${quoteData.quoteNumber}.pdf`;
-      document.body.appendChild(a);
-      a.click();
-      window.URL.revokeObjectURL(url);
-      document.body.removeChild(a);
-      
-      alert('PDF généré avec succès !');
     } catch (error) {
-      console.error('Erreur lors de la génération du PDF:', error);
-      alert('Erreur lors de la génération du PDF. Veuillez réessayer.');
+      console.error('Erreur génération PDF:', error);
     }
   };
 
