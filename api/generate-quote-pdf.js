@@ -1,4 +1,3 @@
-
 const PDFDocument = require('pdfkit');
 const nodemailer = require('nodemailer');
 
@@ -43,7 +42,7 @@ export default async function handler(req, res) {
           <h2>Nouveau devis généré</h2>
           <p><strong>Numéro de devis:</strong> ${quoteNumber}</p>
           <p><strong>Date:</strong> ${date}</p>
-          
+
           <h3>Informations client:</h3>
           <ul>
             <li><strong>Nom:</strong> ${clientInfo.name}</li>
@@ -53,7 +52,7 @@ export default async function handler(req, res) {
             <li><strong>Nombre d'employés:</strong> ${clientInfo.employees}</li>
             <li><strong>Délai:</strong> ${clientInfo.urgency}</li>
           </ul>
-          
+
           <h3>Services demandés:</h3>
           <ul>
             ${services
@@ -64,13 +63,13 @@ export default async function handler(req, res) {
               )
               .join("")}
           </ul>
-          
+
           <h3>Contrat de maintenance:</h3>
           <p>${maintenance ? `${maintenance.name} - ${maintenance.price}€/mois` : "Aucun"}</p>
-          
+
           <h3>Total du devis:</h3>
           <p><strong>${total.toFixed(2)}€ HT (${(total * 1.2).toFixed(2)}€ TTC)</strong></p>
-          
+
           ${additionalNotes ? `<h3>Notes supplémentaires:</h3><p>${additionalNotes}</p>` : ""}
         `,
       };
