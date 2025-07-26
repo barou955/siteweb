@@ -34,17 +34,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
-      // Configuration SMTP pour Outlook/Hotmail
+      // Configuration SMTP pour Outlook avec mot de passe d'application
       const transporter = nodemailer.createTransport({
-        host: "smtp-mail.outlook.com",
-        port: 587,
-        secure: false, // true pour 465, false pour les autres ports
+        service: 'hotmail',
         auth: {
           user: "contact@labtek.fr",
-          pass: "V)137679247759oc*",
+          pass: "pcmqmbrzwgttmgzc",
         },
         tls: {
-          ciphers: 'SSLv3',
           rejectUnauthorized: false,
         },
       });
@@ -131,17 +128,14 @@ Ce message a été envoyé depuis le formulaire de contact du site web LABTEK.
 
       // Send email notification
       try {
-        // Configuration SMTP pour Outlook/Hotmail
+        // Configuration SMTP pour Outlook avec mot de passe d'application
         const transporter = nodemailer.createTransport({
-          host: "smtp-mail.outlook.com",
-          port: 587,
-          secure: false, // true pour 465, false pour les autres ports
+          service: 'hotmail',
           auth: {
             user: "contact@labtek.fr",
-            pass: "V)137679247759oc*",
+            pass: "pcmqmbrzwgttmgzc",
           },
           tls: {
-            ciphers: 'SSLv3',
             rejectUnauthorized: false,
           },
         });
