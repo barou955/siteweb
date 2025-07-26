@@ -373,7 +373,7 @@ export default function QuoteCalculator() {
       const apiUrl = window.location.hostname.includes('vercel.app') 
         ? `${window.location.origin}/api/generate-quote-pdf`
         : '/api/generate-quote-pdf';
-        
+
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
