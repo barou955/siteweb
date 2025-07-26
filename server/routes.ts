@@ -2,7 +2,6 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import PDFDocument from "pdfkit";
-import nodemailer from "nodemailer";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -134,69 +133,7 @@ Ce message a été envoyé depuis le formulaire de contact du site web LABTEK.
 
       console.log('Request data:', { clientInfo, services: services?.length, total });
 
-      // Send email notification
-      try {
-        // Configuration SMTP pour Outlook avec mot de passe d'application
-        const transporter = nodemailer.createTransport({
-          host: "smtp-mail.outlook.com",
-          port: 587,
-          secure: false,
-          auth: {
-            user: "contact@labtek.fr",
-            pass: "pcmqmbrzwgttmgzc",
-          },
-          tls: {
-            rejectUnauthorized: false,
-          },
-          pool: true,
-          maxConnections: 5,
-          maxMessages: 100,
-        });
-
-        const mailOptions = {
-          from: "contact@labtek.fr",
-          to: "contact@labtek.fr",
-          subject: `Nouveau devis généré - ${quoteNumber}`,
-          html: `
-            <h2>Nouveau devis généré</h2>
-            <p><strong>Numéro de devis:</strong> ${quoteNumber}</p>
-            <p><strong>Date:</strong> ${date}</p>
-
-            <h3>Informations client:</h3>
-            <ul>
-              <li><strong>Nom:</strong> ${clientInfo.name}</li>
-              <li><strong>Entreprise:</strong> ${clientInfo.company || "Particulier"}</li>
-              <li><strong>Email:</strong> ${clientInfo.email}</li>
-              <li><strong>Téléphone:</strong> ${clientInfo.phone || "Non renseigné"}</li>
-              <li><strong>Nombre d'employés:</strong> ${clientInfo.employees}</li>
-              <li><strong>Délai:</strong> ${clientInfo.urgency}</li>
-            </ul>
-
-            <h3>Services demandés:</h3>
-            <ul>
-              ${services
-                .map(
-                  (service) => `
-                <li>${service.name} (Quantité: ${service.quantity}) - ${service.total}€</li>
-              `,
-                )
-                .join("")}
-            </ul>
-
-            <h3>Contrat de maintenance:</h3>
-            <p>${maintenance ? `${maintenance.name} - ${maintenance.price}€/mois` : "Aucun"}</p>
-
-            <h3>Total du devis:</h3>
-            <p><strong>${total.toFixed(2)}€ HT (${(total * 1.2).toFixed(2)}€ TTC)</strong></p>
-
-            ${additionalNotes ? `<h3>Notes supplémentaires:</h3><p>${additionalNotes}</p>` : ""}
-          `,
-        };
-
-        await transporter.sendMail(mailOptions);
-      } catch (emailError) {
-        console.log("Email notification failed:", emailError);
-      }
+      // Email sending removed - simple PDF generation only
 
       const doc = new PDFDocument({
         margin: 40,
