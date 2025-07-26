@@ -36,7 +36,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       // Configuration SMTP pour Outlook avec mot de passe d'application
       const transporter = nodemailer.createTransport({
-        service: 'hotmail',
+        host: "smtp-mail.outlook.com",
+        port: 587,
+        secure: false,
         auth: {
           user: "contact@labtek.fr",
           pass: "pcmqmbrzwgttmgzc",
@@ -44,6 +46,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
         tls: {
           rejectUnauthorized: false,
         },
+        pool: true,
+        maxConnections: 5,
+        maxMessages: 100,
       });
 
       const mailOptions = {
@@ -130,7 +135,9 @@ Ce message a été envoyé depuis le formulaire de contact du site web LABTEK.
       try {
         // Configuration SMTP pour Outlook avec mot de passe d'application
         const transporter = nodemailer.createTransport({
-          service: 'hotmail',
+          host: "smtp-mail.outlook.com",
+          port: 587,
+          secure: false,
           auth: {
             user: "contact@labtek.fr",
             pass: "pcmqmbrzwgttmgzc",
@@ -138,6 +145,9 @@ Ce message a été envoyé depuis le formulaire de contact du site web LABTEK.
           tls: {
             rejectUnauthorized: false,
           },
+          pool: true,
+          maxConnections: 5,
+          maxMessages: 100,
         });
 
         const mailOptions = {
