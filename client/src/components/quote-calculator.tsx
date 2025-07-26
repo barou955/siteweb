@@ -355,7 +355,11 @@ export default function QuoteCalculator() {
       clientInfo,
       services: selectedServices.map(service => ({
         ...service,
-        total: calculateServiceTotal(service)
+        total: calculateServiceTotal(service),
+        basePrice: service.basePrice || 0,
+        quantity: service.quantity || 1,
+        selectedOptions: service.selectedOptions || [],
+        options: service.options || []
       })),
       maintenance: selectedMaintenance,
       subtotal: servicesSubtotal,
