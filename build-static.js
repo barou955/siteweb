@@ -20,10 +20,18 @@ try {
   }
 
   // 3. Copier les fichiers SEO
-  console.log('📄 Copie des fichiers SEO...');
-  const seoFiles = ['robots.txt', 'sitemap.xml', 'googled6d2f7191889bcdf.html'];
+  console.log('📄 Copie des fichiers SEO et icônes...');
+  const staticFiles = [
+    'robots.txt', 
+    'sitemap.xml', 
+    'googled6d2f7191889bcdf.html',
+    'favicon.png',
+    'logo-192.png',
+    'logo-512.png',
+    'site.webmanifest'
+  ];
 
-  seoFiles.forEach(file => {
+  staticFiles.forEach(file => {
     const sourcePath = join(__dirname, 'client/public', file);
     const destPath = join(distDir, file);
 
