@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Generate PDF quote only - no email sending
-  app.post("/api/generate-quote-pdf", (req, res) => {
+  app.post("/api/generate-quote-pdf", async (req, res) => {
     console.log('PDF generation route called');
 
     try {
@@ -238,10 +238,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
       if (!res.headersSent) {
         res.status(500).json({ 
           error: 'Erreur lors de la génération du PDF', 
-          details: error.message 
+          details: error instanceof Error ? error.message : 'Erreur inconnue'
         });
       }
     }
+  });
+
+  // Test route to verify API is working
+  app.get("/api/test", (req, res) => {
+    res.json({ message: "API is working" });
   });
 
   const httpServer = createServer(app);
