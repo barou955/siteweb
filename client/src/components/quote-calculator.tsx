@@ -369,7 +369,12 @@ export default function QuoteCalculator() {
     };
 
     try {
-      const response = await fetch('/api/generate-quote-pdf', {
+      // Use relative URL that works on both Replit and Vercel
+      const apiUrl = window.location.hostname.includes('vercel.app') 
+        ? `${window.location.origin}/api/generate-quote-pdf`
+        : '/api/generate-quote-pdf';
+        
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(quoteData)

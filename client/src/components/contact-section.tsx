@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -44,16 +44,30 @@ export default function ContactSection() {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
+    console.log('Submitting form directly to Formspree:', formData);
+
     try {
-      const response = await fetch('https://formspree.io/f/mnnqkqpv', {
+      const response = await fetch('https://formspree.io/f/xblkdyqn', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || '',
+          subject: formData.subject,
+          message: formData.message,
+          services: formData.services || '',
+          _subject: `Contact depuis le site web - ${formData.subject}`,
+        })
       });
 
+      console.log('Formspree response status:', response.status);
+
       if (response.ok) {
+        const responseData = await response.json();
+        console.log('Formspree success:', responseData);
         setSubmitStatus('success');
         setFormData({
           name: '',
@@ -64,9 +78,18 @@ export default function ContactSection() {
           services: ''
         });
       } else {
+        const errorData = await response.json().catch(() => null);
+        console.error('Formspree submission failed:', {
+          status: response.status,
+          statusText: response.statusText,
+          error: errorData
+        });
+        
+        // Si Formspree échoue, afficher un message d'erreur spécifique
         setSubmitStatus('error');
       }
     } catch (error) {
+      console.error('Error submitting form:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -175,6 +198,7 @@ export default function ContactSection() {
                     </Label>
                     <Input
                       id="name"
+                      name="name"
                       value={formData.name}
                       onChange={(e) => handleInputChange('name', e.target.value)}
                       required
@@ -187,6 +211,7 @@ export default function ContactSection() {
                     </Label>
                     <Input
                       id="email"
+                      name="email"
                       type="email"
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
@@ -207,6 +232,7 @@ export default function ContactSection() {
                     <Label htmlFor="phone">Téléphone</Label>
                     <Input
                       id="phone"
+                      name="phone"
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
                       className="mt-1"
@@ -242,6 +268,7 @@ export default function ContactSection() {
                   </Label>
                   <Input
                     id="subject"
+                    name="subject"
                     value={formData.subject}
                     onChange={(e) => handleInputChange('subject', e.target.value)}
                     required
@@ -255,6 +282,7 @@ export default function ContactSection() {
                   </Label>
                   <Textarea
                     id="message"
+                    name="message"
                     rows={5}
                     value={formData.message}
                     onChange={(e) => handleInputChange('message', e.target.value)}
