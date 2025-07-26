@@ -17,6 +17,103 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // use storage to perform CRUD operations on the storage interface
   // e.g. storage.insertUser(user) or storage.getUserByUsername(username)
 
+  // Send contact form email
+  app.post("/api/send-contact-email", async (req, res) => {
+    try {
+      const { name, email, phone, subject, message, services, to } = req.body;
+
+      console.log('Received contact form submission:', {
+        name, email, phone, subject, services, to
+      });
+
+      // Validation des champs requis
+      if (!name || !email || !subject || !message) {
+        return res.status(400).json({ 
+          error: 'Champs requis manquants',
+          details: 'Nom, email, sujet et message sont obligatoires'
+        });
+      }
+
+      // Configuration SMTP pour Outlook/Hotmail
+      const transporter = nodemailer.createTransport({
+        host: "smtp-mail.outlook.com",
+        port: 587,
+        secure: false, // true pour 465, false pour les autres ports
+        auth: {
+          user: "contact@labtek.fr",
+          pass: "V)137679247759oc*",
+        },
+        tls: {
+          ciphers: 'SSLv3',
+          rejectUnauthorized: false,
+        },
+      });
+
+      const mailOptions = {
+        from: `"${name}" <${email}>`,
+        to: to || "contact@labtek.fr",
+        replyTo: email,
+        subject: `Contact depuis le site web - ${subject}`,
+        html: `
+          <h2>Nouveau message depuis le site web</h2>
+          <p><strong>Nom:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          ${phone ? `<p><strong>Téléphone:</strong> ${phone}</p>` : ''}
+          ${services ? `<p><strong>Services demandés:</strong> ${services}</p>` : ''}
+          <p><strong>Sujet:</strong> ${subject}</p>
+
+          <h3>Message:</h3>
+          <div style="background-color: #f5f5f5; padding: 15px; border-left: 4px solid #4F6FEF; margin: 10px 0;">
+            <p>${message.replace(/\n/g, '<br>')}</p>
+          </div>
+
+          <hr>
+          <p style="font-size: 12px; color: #666;">
+            Ce message a été envoyé depuis le formulaire de contact du site web LABTEK.<br>
+            Vous pouvez répondre directement à cet email pour contacter ${name}.
+          </p>
+        `,
+        text: `
+Nouveau message depuis le site web
+
+Nom: ${name}
+Email: ${email}
+${phone ? `Téléphone: ${phone}` : ''}
+${services ? `Services demandés: ${services}` : ''}
+Sujet: ${subject}
+
+Message:
+${message}
+
+---
+Ce message a été envoyé depuis le formulaire de contact du site web LABTEK.
+        `
+      };
+
+      console.log('Attempting to send email with options:', {
+        from: mailOptions.from,
+        to: mailOptions.to,
+        subject: mailOptions.subject
+      });
+
+      await transporter.sendMail(mailOptions);
+
+      console.log('Email sent successfully to:', to || "contact@labtek.fr");
+
+      res.status(200).json({ 
+        success: true, 
+        message: 'Message envoyé avec succès vers ' + (to || "contact@labtek.fr")
+      });
+
+    } catch (error) {
+      console.error('Error sending contact email:', error);
+      res.status(500).json({ 
+        error: 'Erreur lors de l\'envoi du message',
+        details: error.message
+      });
+    }
+  });
+
   // Generate PDF quote
   app.post("/api/generate-quote-pdf", async (req, res) => {
     try {
@@ -34,17 +131,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       // Send email notification
       try {
-        // Configuration SMTP générique (compatible avec la plupart des fournisseurs)
+        // Configuration SMTP pour Outlook/Hotmail
         const transporter = nodemailer.createTransport({
-          host: process.env.SMTP_HOST || "smtp.gmail.com",
-          port: parseInt(process.env.SMTP_PORT || "587"),
+          host: "smtp-mail.outlook.com",
+          port: 587,
           secure: false, // true pour 465, false pour les autres ports
           auth: {
-            user: process.env.SMTP_USER || "contact@labtek.fr",
-            pass: process.env.SMTP_PASSWORD || process.env.EMAIL_PASSWORD,
+            user: "contact@labtek.fr",
+            pass: "V)137679247759oc*",
           },
           tls: {
-            rejectUnauthorized: false, // Accepter les certificats auto-signés
+            ciphers: 'SSLv3',
+            rejectUnauthorized: false,
           },
         });
 
@@ -56,7 +154,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             <h2>Nouveau devis généré</h2>
             <p><strong>Numéro de devis:</strong> ${quoteNumber}</p>
             <p><strong>Date:</strong> ${date}</p>
-            
+
             <h3>Informations client:</h3>
             <ul>
               <li><strong>Nom:</strong> ${clientInfo.name}</li>
@@ -66,7 +164,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
               <li><strong>Nombre d'employés:</strong> ${clientInfo.employees}</li>
               <li><strong>Délai:</strong> ${clientInfo.urgency}</li>
             </ul>
-            
+
             <h3>Services demandés:</h3>
             <ul>
               ${services
@@ -77,13 +175,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
                 )
                 .join("")}
             </ul>
-            
+
             <h3>Contrat de maintenance:</h3>
             <p>${maintenance ? `${maintenance.name} - ${maintenance.price}€/mois` : "Aucun"}</p>
-            
+
             <h3>Total du devis:</h3>
             <p><strong>${total.toFixed(2)}€ HT (${(total * 1.2).toFixed(2)}€ TTC)</strong></p>
-            
+
             ${additionalNotes ? `<h3>Notes supplémentaires:</h3><p>${additionalNotes}</p>` : ""}
           `,
         };
