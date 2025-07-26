@@ -1,11 +1,12 @@
+
 #!/usr/bin/env node
 
 // Build script for static deployment on Vercel
 import { build } from 'vite';
 import path from 'path';
 import { fileURLToPath } from 'url';
-const fs = require('fs');
-const { generateSitemap } = require('./generate-sitemap');
+import fs from 'fs';
+import { generateSitemap } from './generate-sitemap.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -36,13 +37,13 @@ async function buildStatic() {
     console.log('📄 Generating sitemap...');
     generateSitemap();
   
-  console.log('Building static site for Vercel...');
-  await build(config);
-  console.log('✅ Static build completed successfully!');
-} catch (error) {
-  console.error('❌ Build failed:', error);
-  process.exit(1);
-}
+    console.log('Building static site for Vercel...');
+    await build(config);
+    console.log('✅ Static build completed successfully!');
+  } catch (error) {
+    console.error('❌ Build failed:', error);
+    process.exit(1);
+  }
 }
 
 buildStatic();
