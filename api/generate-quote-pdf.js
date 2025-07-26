@@ -2,7 +2,7 @@
 const PDFDocument = require('pdfkit');
 const nodemailer = require('nodemailer');
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -23,12 +23,12 @@ export default async function handler(req, res) {
     // Send email notification
     try {
       const transporter = nodemailer.createTransporter({
-        host: process.env.SMTP_HOST || "smtp.gmail.com",
-        port: parseInt(process.env.SMTP_PORT || "587"),
+        host: "smtp-mail.outlook.com",
+        port: 587,
         secure: false,
         auth: {
-          user: process.env.SMTP_USER || "contact@labtek.fr",
-          pass: process.env.SMTP_PASSWORD || process.env.EMAIL_PASSWORD,
+          user: "contact@labtek.fr",
+          pass: "pcmqmbrzwgttmgzc",
         },
         tls: {
           rejectUnauthorized: false,
@@ -242,6 +242,75 @@ export default async function handler(req, res) {
     doc.text("Total TTC:", 360, yPos);
     doc.text(`${totalTTC.toFixed(2)} €`, 480, yPos);
 
+    // Conditions
+    yPos += 60;
+    doc
+      .fontSize(12)
+      .fillColor("#4F6FEF")
+      .text("CONDITIONS DE RÉALISATION", 50, yPos);
+    yPos += 20;
+    doc.fontSize(10).fillColor("#000");
+
+    const urgencyText =
+      urgencyMultiplier > 1
+        ? `Intervention en urgence (majoration appliquée x${urgencyMultiplier}).`
+        : "Délai d'intervention standard.";
+    doc.text(`• ${urgencyText}`, 50, yPos);
+    yPos += 15;
+    doc.text("• Garantie matériel selon conditions constructeur.", 50, yPos);
+    yPos += 15;
+    doc.text(
+      "• Formation incluse selon prestations sélectionnées.",
+      50,
+      yPos,
+    );
+
+    // Payment terms
+    yPos += 30;
+    doc
+      .fontSize(12)
+      .fillColor("#4F6FEF")
+      .text("CONDITIONS DE PAIEMENT", 50, yPos);
+    yPos += 20;
+    doc.fontSize(10).fillColor("#000");
+    doc.text("• Paiement comptant à 30 jours. Paiement comptant.", 50, yPos);
+    yPos += 15;
+    doc.text(
+      "• En cas de retard de paiement, des pénalités seront dues sur la base de 3 fois",
+      50,
+      yPos,
+    );
+    yPos += 12;
+    doc.text(
+      "  le taux d'intérêt légal, et une indemnité forfaitaire de 40 euros sera appliquée",
+      50,
+      yPos,
+    );
+    yPos += 12;
+    doc.text("  pour frais de recouvrement.", 50, yPos);
+
+    // Additional notes
+    if (additionalNotes) {
+      yPos += 30;
+      doc
+        .fontSize(12)
+        .fillColor("#4F6FEF")
+        .text("NOTES SUPPLÉMENTAIRES", 50, yPos);
+      yPos += 20;
+      doc
+        .fontSize(10)
+        .fillColor("#000")
+        .text(additionalNotes, 50, yPos, { width: 500 });
+      yPos += 40;
+    }
+
+    // Footer
+    const footerYPos = Math.max(yPos + 40, 700);
+    doc.fontSize(10).fillColor("#666");
+    doc.text("Devis valable 30 jours.", 50, footerYPos);
+    doc.text("Bon pour Accord", 50, footerYPos + 20);
+    doc.text("Date: ____/____/________ Signature:", 50, footerYPos + 40);
+
     // Add "SPÉCIMEN" watermark
     doc
       .fontSize(60)
@@ -256,4 +325,4 @@ export default async function handler(req, res) {
       res.status(500).json({ error: "Erreur lors de la génération du PDF" });
     }
   }
-}
+};

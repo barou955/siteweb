@@ -119,6 +119,7 @@ Ce message a été envoyé depuis le formulaire de contact du site web LABTEK.
   // Generate PDF quote
   app.post("/api/generate-quote-pdf", async (req, res) => {
     try {
+      console.log('PDF generation endpoint called');
       const {
         clientInfo,
         services,
@@ -130,6 +131,8 @@ Ce message a été envoyé depuis le formulaire de contact du site web LABTEK.
         quoteNumber,
         urgencyMultiplier,
       } = req.body;
+
+      console.log('Request data:', { clientInfo, services: services?.length, total });
 
       // Send email notification
       try {
