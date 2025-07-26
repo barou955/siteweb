@@ -1,10 +1,9 @@
-
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
-function generateSitemap() {
+export function generateSitemap() {
   const currentDate = new Date().toISOString().split('T')[0];
   
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -61,8 +60,6 @@ function generateSitemap() {
   console.log('✅ Sitemap généré avec succès dans client/public/sitemap.xml');
 }
 
-if (require.main === module) {
+if (process.argv[1] === new URL(import.meta.url).pathname) {
   generateSitemap();
 }
-
-module.exports = { generateSitemap };
