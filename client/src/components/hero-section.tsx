@@ -29,15 +29,25 @@ export default function HeroSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => scrollToSection("devis")}
+              variant="outline"
               size="lg"
               className="bg-white text-labtek-blue dark:text-black font-semibold hover:bg-blue-50 hover:text-labtek-dark-blue dark:hover:text-black transition-all duration-200 transform hover:scale-105"
             >
-              Demander un devis
-              <ArrowRight className="ml-2 w-5 h-5 dark:text-black" />
+              Calculer mon devis
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+            <Button
+              onClick={() => scrollToSection("contact")}
+              variant="outline"
+              size="lg"
+              className="bg-white text-labtek-blue dark:text-black font-semibold hover:bg-blue-50 hover:text-labtek-dark-blue dark:hover:text-black transition-all duration-200 transform hover:scale-105"
+            >
+              Nous contacter
             </Button>
             <Button
               onClick={() => scrollToSection("services")}
+              variant="outline"
               size="lg"
               className="bg-white text-labtek-blue dark:text-black font-semibold hover:bg-blue-50 hover:text-labtek-dark-blue dark:hover:text-black transition-all duration-200 transform hover:scale-105"
             >

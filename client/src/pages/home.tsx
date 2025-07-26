@@ -8,6 +8,7 @@ import AboutSection from "@/components/about-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 import MaintenanceSection from "@/components/maintenance-section";
+import QuoteCalculator from "@/components/quote-calculator";
 import SeoMeta from "@/components/seo-meta";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <ProcessSection />
       <MaintenanceSection />
       <TestimonialsSection />
+      <QuoteCalculator />
       <ContactSection />
       <AboutSection />
       <Footer />
