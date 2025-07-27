@@ -17,49 +17,49 @@ const services = [
     icon: Laptop,
     title: "Installation d'Équipements",
     description:
-      "Nous installons et configurons tous vos appareils informatiques : ordinateurs, imprimantes, Wi-Fi, caméras. Tout fonctionne dès le premier jour !",
-    features: ["Installation rapide", "Tout configuré", "Vous apprenez à utiliser"],
+      "Nous installons et configurons tous vos appareils informatiques. Que vous ayez besoin d'un ordinateur pour la bureautique, d'une imprimante familiale ou d'un réseau Wi-Fi performant, nous choisissons et installons le matériel adapté à votre usage et votre budget.",
+    features: ["Conseil sur le matériel adapté", "Installation et configuration complète", "Formation à l'utilisation"],
     color: "bg-labtek-blue",
   },
   {
-    icon: Shield,
-    title: "Sécurité & Sauvegarde",
+    icon: Globe,
+    title: "Sites Web Simples",
     description:
-      "Nous protégeons vos données importantes avec des sauvegardes automatiques et sécurisons votre réseau contre les pirates informatiques.",
-    features: ["Données protégées", "Internet sécurisé", "Sauvegarde automatique"],
-    color: "bg-labtek-violet",
+      "Créez votre présence en ligne avec un site web professionnel adapté à votre activité. Site vitrine pour présenter vos services, portfolio pour vos créations, ou page de contact pour être trouvé facilement par vos clients.",
+    features: ["Design professionnel et moderne", "Visible sur Google", "Facile à mettre à jour"],
+    color: "bg-purple-500",
   },
   {
     icon: Download,
     title: "Installation de Programmes",
     description:
-      "Nous installons tous vos logiciels de travail : Office, messagerie, outils spécialisés. Nous transférons aussi vos anciennes données.",
-    features: ["Programmes installés", "Données récupérées", "Formation incluse"],
+      "Nous installons et configurons tous vos logiciels de travail selon vos besoins : suite bureautique pour les documents, logiciel de comptabilité, messagerie, retouche photo, ou outils spécialisés à votre métier.",
+    features: ["Logiciels adaptés à votre activité", "Récupération de vos anciennes données", "Formation à l'utilisation"],
     color: "bg-blue-500",
   },
   {
     icon: Mail,
     title: "Email Professionnel",
     description:
-      "Créez votre image professionnelle avec des adresses email à votre nom (@votreentreprise.fr) et un site web pour présenter votre activité.",
-    features: ["Email à votre nom", "Site web inclus", "Support continu"],
+      "Créez votre image professionnelle avec des adresses email personnalisées (@votre-entreprise.fr). Nous configurons votre messagerie sur tous vos appareils et vous accompagnons dans la gestion de vos contacts professionnels.",
+    features: ["Adresse email à votre nom", "Configuration sur tous vos appareils", "Sauvegarde automatique"],
     color: "bg-green-500",
+  },
+  {
+    icon: Shield,
+    title: "Sécurité & Sauvegarde",
+    description:
+      "Nous protégeons vos données importantes contre les virus, les pannes et les pirates. Sauvegarde automatique de vos photos, documents et emails, plus sécurisation de votre réseau internet pour naviguer en toute sécurité.",
+    features: ["Protection antivirus efficace", "Sauvegarde automatique de vos données", "Navigation internet sécurisée"],
+    color: "bg-labtek-violet",
   },
   {
     icon: Settings,
     title: "Dépannage & Assistance",
     description:
-      "Problème informatique ? Nous intervenons rapidement sur place ou à distance pour réparer et vous conseiller. Disponibles 7j/7 pour les urgences.",
-    features: ["Réparation rapide", "Aide à distance", "Urgences 7j/7"],
+      "Ordinateur lent, problème d'imprimante, internet qui ne marche plus ? Nous intervenons rapidement pour diagnostiquer et résoudre tous vos problèmes informatiques. Support disponible 7j/7 pour les urgences.",
+    features: ["Diagnostic et réparation rapide", "Assistance à distance", "Support urgence 7j/7"],
     color: "bg-orange-500",
-  },
-  {
-    icon: Globe,
-    title: "Sites Web Simples",
-    description:
-      "Créez votre présence en ligne avec un site web professionnel qui présente votre entreprise et attire de nouveaux clients sur Google.",
-    features: ["Design professionnel", "Visible sur Google", "Facile à utiliser"],
-    color: "bg-purple-500",
   },
 ];
 
@@ -81,9 +81,9 @@ export default function ServicesSection() {
             return (
               <Card
                 key={index}
-                className="group hover:shadow-xl transition-all duration-300 border-border hover:scale-105 hover:-translate-y-2"
+                className="group hover:shadow-xl transition-all duration-300 border-border hover:scale-105 hover:-translate-y-2 flex flex-col"
               >
-                <CardContent className="p-8">
+                <CardContent className="p-8 flex flex-col flex-1">
                   <div className="w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300" 
                        style={{
                          backgroundColor: (() => {
@@ -128,15 +128,17 @@ export default function ServicesSection() {
                     ))}
                   </ul>
                   
-                  <ServiceDetailModal service={service}>
-                    <Button 
-                      variant="outline" 
-                      className="w-full group-hover:bg-labtek-blue group-hover:text-white transition-colors duration-300"
-                    >
-                      Voir les détails
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
-                  </ServiceDetailModal>
+                  <div className="mt-auto">
+                    <ServiceDetailModal service={service}>
+                      <Button 
+                        variant="outline" 
+                        className="w-full group-hover:bg-labtek-blue group-hover:text-white transition-colors duration-300"
+                      >
+                        Voir les détails
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </ServiceDetailModal>
+                  </div>
                 </CardContent>
               </Card>
             );
