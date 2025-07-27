@@ -1,4 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import ServiceDetailModal from "./service-detail-modal";
 import {
   Laptop,
   Shield,
@@ -7,6 +9,7 @@ import {
   Settings,
   Globe,
   Check,
+  ArrowRight,
 } from "lucide-react";
 
 const services = [
@@ -78,7 +81,7 @@ export default function ServicesSection() {
             return (
               <Card
                 key={index}
-                className="group hover:shadow-xl transition-all duration-300 border-border hover:scale-105 hover:-translate-y-2 cursor-pointer"
+                className="group hover:shadow-xl transition-all duration-300 border-border hover:scale-105 hover:-translate-y-2"
               >
                 <CardContent className="p-8">
                   <div className="w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300" 
@@ -116,7 +119,7 @@ export default function ServicesSection() {
                   <p className="text-muted-foreground mb-6">
                     {service.description}
                   </p>
-                  <ul className="text-sm text-muted-foreground space-y-2">
+                  <ul className="text-sm text-muted-foreground space-y-2 mb-6">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center">
                         <Check className="w-4 h-4 text-green-500 mr-2" />
@@ -124,6 +127,16 @@ export default function ServicesSection() {
                       </li>
                     ))}
                   </ul>
+                  
+                  <ServiceDetailModal service={service}>
+                    <Button 
+                      variant="outline" 
+                      className="w-full group-hover:bg-labtek-blue group-hover:text-white transition-colors duration-300"
+                    >
+                      Voir les détails
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </ServiceDetailModal>
                 </CardContent>
               </Card>
             );
