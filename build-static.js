@@ -1,7 +1,4 @@
 
-#!/usr/bin/env node
-
-// Build script for static deployment on Vercel
 import { build } from 'vite';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -10,7 +7,6 @@ import { generateSitemap } from './generate-sitemap.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// Vite config for static build
 const config = {
   plugins: [
     await import('@vitejs/plugin-react').then(m => m.default())
@@ -33,7 +29,6 @@ async function buildStatic() {
   console.log('🚀 Building static site...');
 
   try {
-    // Générer le sitemap avant le build
     console.log('📄 Generating sitemap...');
     generateSitemap();
   
