@@ -340,29 +340,44 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
           </div>
 
           {/* Contrats de maintenance pour tous les services */}
-          <div className="relative bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50 dark:from-yellow-950/20 dark:via-orange-950/20 dark:to-red-950/20 rounded-xl p-8 border-2 border-orange-200 dark:border-orange-800 shadow-lg">
+          <div className="relative bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50 dark:from-yellow-950/20 dark:via-orange-950/20 dark:to-red-950/20 rounded-xl p-4 sm:p-6 lg:p-8 border-2 border-orange-200 dark:border-orange-800 shadow-lg">
             {/* Badge promotionnel */}
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md animate-pulse">
-                {(() => {
-                  const badges = {
-                    "Installation d'Équipements": "🔧 MAINTENEZ VOS ÉQUIPEMENTS !",
-                    "Sites Web Simples": "🌐 PROTÉGEZ VOTRE SITE !",
-                    "Installation de Programmes": "💾 GARDEZ VOS LOGICIELS À JOUR !",
-                    "Email Professionnel": "✉️ SÉCURISEZ VOS EMAILS !",
-                    "Sécurité & Sauvegarde": "🛡️ RENFORCEZ VOTRE SÉCURITÉ !",
-                    "Dépannage & Assistance": "🔧 ÉVITEZ LES PANNES !"
-                  };
-                  return badges[service.title as keyof typeof badges] || "🔧 MAINTENEZ VOTRE SYSTÈME !";
-                })()}
+            <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2 w-full max-w-xs sm:max-w-none sm:w-auto">
+              <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 sm:px-6 py-1 sm:py-2 rounded-full font-bold text-xs sm:text-sm shadow-md animate-pulse text-center">
+                <span className="block sm:hidden">
+                  {(() => {
+                    const shortBadges = {
+                      "Installation d'Équipements": "🔧 MAINTENANCE ÉQUIPEMENTS",
+                      "Sites Web Simples": "🌐 PROTECTION SITE",
+                      "Installation de Programmes": "💾 LOGICIELS À JOUR",
+                      "Email Professionnel": "✉️ EMAIL SÉCURISÉ",
+                      "Sécurité & Sauvegarde": "🛡️ SÉCURITÉ +",
+                      "Dépannage & Assistance": "🔧 ÉVITEZ LES PANNES"
+                    };
+                    return shortBadges[service.title as keyof typeof shortBadges] || "🔧 MAINTENANCE";
+                  })()}
+                </span>
+                <span className="hidden sm:block">
+                  {(() => {
+                    const badges = {
+                      "Installation d'Équipements": "🔧 MAINTENEZ VOS ÉQUIPEMENTS !",
+                      "Sites Web Simples": "🌐 PROTÉGEZ VOTRE SITE !",
+                      "Installation de Programmes": "💾 GARDEZ VOS LOGICIELS À JOUR !",
+                      "Email Professionnel": "✉️ SÉCURISEZ VOS EMAILS !",
+                      "Sécurité & Sauvegarde": "🛡️ RENFORCEZ VOTRE SÉCURITÉ !",
+                      "Dépannage & Assistance": "🔧 ÉVITEZ LES PANNES !"
+                    };
+                    return badges[service.title as keyof typeof badges] || "🔧 MAINTENEZ VOTRE SYSTÈME !";
+                  })()}
+                </span>
               </div>
             </div>
 
-            <div className="text-center mb-6 mt-4">
-              <h3 className="text-2xl font-bold mb-3 text-orange-800 dark:text-orange-200">
+            <div className="text-center mb-4 sm:mb-6 mt-4 sm:mt-4">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 text-orange-800 dark:text-orange-200">
                 🛡️ Contrats de Maintenance Préventive
               </h3>
-              <p className="text-lg text-orange-700 dark:text-orange-300 font-medium">
+              <p className="text-sm sm:text-base lg:text-lg text-orange-700 dark:text-orange-300 font-medium px-2">
                 {(() => {
                   const descriptions = {
                     "Installation d'Équipements": "Préservez la durée de vie de vos équipements",
@@ -375,7 +390,7 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
                   return descriptions[service.title as keyof typeof descriptions] || "Optimisez les performances de votre système";
                 })()}
               </p>
-              <p className="text-muted-foreground mt-2">
+              <p className="text-xs sm:text-sm text-muted-foreground mt-2 px-2">
                 {(() => {
                   const benefits = {
                     "Installation d'Équipements": "Surveillance proactive de vos équipements pour éviter les pannes matérielles",
@@ -390,55 +405,55 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
               </p>
             </div>
 
-              <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8">
                 <Card className="border-2 border-gray-300 hover:border-orange-300 transition-all duration-300 hover:shadow-md">
-                  <CardContent className="p-6 text-center">
-                    <div className="text-2xl mb-3">💼</div>
-                    <h4 className="font-bold text-lg mb-2 text-gray-800 dark:text-gray-200">Essentiel</h4>
-                    <p className="text-sm text-orange-600 dark:text-orange-400 font-medium mb-3">Particuliers & TPE</p>
-                    <ul className="text-sm space-y-2 text-left">
-                      <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Support à distance</li>
-                      <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Interventions sur demande</li>
+                  <CardContent className="p-3 sm:p-4 lg:p-6 text-center">
+                    <div className="text-xl sm:text-2xl mb-2 sm:mb-3">💼</div>
+                    <h4 className="font-bold text-sm sm:text-base lg:text-lg mb-1 sm:mb-2 text-gray-800 dark:text-gray-200">Essentiel</h4>
+                    <p className="text-xs sm:text-sm text-orange-600 dark:text-orange-400 font-medium mb-2 sm:mb-3">Particuliers & TPE</p>
+                    <ul className="text-xs sm:text-sm space-y-1 sm:space-y-2 text-left">
+                      <li className="flex items-center"><span className="text-green-500 mr-1 sm:mr-2 text-sm">✓</span><span className="flex-1">Support à distance</span></li>
+                      <li className="flex items-center"><span className="text-green-500 mr-1 sm:mr-2 text-sm">✓</span><span className="flex-1">Interventions sur demande</span></li>
                     </ul>
                   </CardContent>
                 </Card>
 
-                <Card className="border-4 border-orange-400 bg-gradient-to-br from-orange-100 to-yellow-100 dark:from-orange-900/30 dark:to-yellow-900/30 transform scale-105 shadow-xl">
-                  <CardContent className="p-6 text-center relative">
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                      <div className="bg-orange-500 text-white px-4 py-1 rounded-full text-xs font-bold">
+                <Card className="border-4 border-orange-400 bg-gradient-to-br from-orange-100 to-yellow-100 dark:from-orange-900/30 dark:to-yellow-900/30 shadow-xl sm:transform sm:scale-105">
+                  <CardContent className="p-3 sm:p-4 lg:p-6 text-center relative">
+                    <div className="absolute -top-2 sm:-top-3 left-1/2 transform -translate-x-1/2">
+                      <div className="bg-orange-500 text-white px-2 sm:px-4 py-1 rounded-full text-xs font-bold">
                         ⭐ POPULAIRE
                       </div>
                     </div>
-                    <div className="text-2xl mb-3">🚀</div>
-                    <h4 className="font-bold text-lg mb-2 text-orange-800 dark:text-orange-200">Professionnel</h4>
-                    <p className="text-sm text-orange-600 dark:text-orange-400 font-medium mb-3">PME en croissance</p>
-                    <ul className="text-sm space-y-2 text-left">
-                      <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Maintenance préventive</li>
-                      <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Support étendu 8h-20h</li>
-                      <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Intervention prioritaire</li>
+                    <div className="text-xl sm:text-2xl mb-2 sm:mb-3 mt-2 sm:mt-0">🚀</div>
+                    <h4 className="font-bold text-sm sm:text-base lg:text-lg mb-1 sm:mb-2 text-orange-800 dark:text-orange-200">Professionnel</h4>
+                    <p className="text-xs sm:text-sm text-orange-600 dark:text-orange-400 font-medium mb-2 sm:mb-3">PME en croissance</p>
+                    <ul className="text-xs sm:text-sm space-y-1 sm:space-y-2 text-left">
+                      <li className="flex items-center"><span className="text-green-500 mr-1 sm:mr-2 text-sm">✓</span><span className="flex-1">Maintenance préventive</span></li>
+                      <li className="flex items-center"><span className="text-green-500 mr-1 sm:mr-2 text-sm">✓</span><span className="flex-1">Support étendu 8h-20h</span></li>
+                      <li className="flex items-center"><span className="text-green-500 mr-1 sm:mr-2 text-sm">✓</span><span className="flex-1">Intervention prioritaire</span></li>
                     </ul>
                   </CardContent>
                 </Card>
 
-                <Card className="border-2 border-gray-300 hover:border-orange-300 transition-all duration-300 hover:shadow-md">
-                  <CardContent className="p-6 text-center">
-                    <div className="text-2xl mb-3">🏢</div>
-                    <h4 className="font-bold text-lg mb-2 text-gray-800 dark:text-gray-200">Entreprise</h4>
-                    <p className="text-sm text-orange-600 dark:text-orange-400 font-medium mb-3">Grandes structures</p>
-                    <ul className="text-sm space-y-2 text-left">
-                      <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Support 24/7</li>
-                      <li className="flex items-center"><span className="text-green-500 mr-2">✓</span>Ingénieur dédié</li>
+                <Card className="border-2 border-gray-300 hover:border-orange-300 transition-all duration-300 hover:shadow-md sm:col-span-2 lg:col-span-1">
+                  <CardContent className="p-3 sm:p-4 lg:p-6 text-center">
+                    <div className="text-xl sm:text-2xl mb-2 sm:mb-3">🏢</div>
+                    <h4 className="font-bold text-sm sm:text-base lg:text-lg mb-1 sm:mb-2 text-gray-800 dark:text-gray-200">Entreprise</h4>
+                    <p className="text-xs sm:text-sm text-orange-600 dark:text-orange-400 font-medium mb-2 sm:mb-3">Grandes structures</p>
+                    <ul className="text-xs sm:text-sm space-y-1 sm:space-y-2 text-left">
+                      <li className="flex items-center"><span className="text-green-500 mr-1 sm:mr-2 text-sm">✓</span><span className="flex-1">Support 24/7</span></li>
+                      <li className="flex items-center"><span className="text-green-500 mr-1 sm:mr-2 text-sm">✓</span><span className="flex-1">Ingénieur dédié</span></li>
                     </ul>
                   </CardContent>
                 </Card>
               </div>
 
-              <div className="text-center bg-white dark:bg-gray-800 rounded-lg p-6 border-2 border-orange-200 dark:border-orange-700">
-                <h4 className="text-lg font-bold mb-3 text-orange-800 dark:text-orange-200">
+              <div className="text-center bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 border-2 border-orange-200 dark:border-orange-700">
+                <h4 className="text-sm sm:text-base lg:text-lg font-bold mb-3 text-orange-800 dark:text-orange-200 px-2">
                   💡 Pourquoi associer un contrat de maintenance à ce service ?
                 </h4>
-                <div className="grid md:grid-cols-2 gap-4 mb-6 text-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 mb-4 sm:mb-6 text-xs sm:text-sm">
                   {(() => {
                     const benefits = {
                       "Installation d'Équipements": [
@@ -482,9 +497,9 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
                     const serviceBenefits = benefits[service.title as keyof typeof benefits] || benefits["Dépannage & Assistance"];
 
                     return serviceBenefits.map((benefit, index) => (
-                      <div key={index} className="flex items-center">
-                        <span className="text-green-500 text-lg mr-2">{benefit.icon}</span>
-                        <span>{benefit.text}</span>
+                      <div key={index} className="flex items-center justify-center sm:justify-start">
+                        <span className="text-green-500 text-sm sm:text-lg mr-1 sm:mr-2 flex-shrink-0">{benefit.icon}</span>
+                        <span className="flex-1 text-left">{benefit.text}</span>
                       </div>
                     ));
                   })()}
@@ -500,11 +515,12 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
                       }
                     }, 300);
                   }}
-                  className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300"
+                  className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-2 sm:py-3 px-4 sm:px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 text-xs sm:text-sm lg:text-base"
                   size="lg"
                 >
-                  🔍 Découvrir tous les contrats de maintenance
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  <span className="block sm:hidden">🔍 Voir les contrats</span>
+                  <span className="hidden sm:block">🔍 Découvrir tous les contrats de maintenance</span>
+                  <ArrowRight className="ml-1 sm:ml-2 w-3 h-3 sm:w-5 sm:h-5" />
                 </Button>
               </div>
             </div>
