@@ -198,11 +198,11 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="max-w-4xl max-h-[80vh] p-0">
-        <div className="p-6 border-b">
+      <DialogContent className="max-w-4xl max-h-[90vh] p-0 overflow-hidden">
+        <div className="p-4 sm:p-6 border-b flex-shrink-0">
           <DialogHeader>
-            <DialogTitle className="flex items-center gap-3 text-2xl">
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center" 
+            <DialogTitle className="flex items-center gap-3 text-xl sm:text-2xl">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center" 
                    style={{
                      backgroundColor: (() => {
                        const colorMap: Record<string, string> = {
@@ -216,7 +216,7 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
                        return colorMap[service.color] || '#4F6FEF20';
                      })()
                    }}>
-                <service.icon className="w-6 h-6" 
+                <service.icon className="w-5 h-5 sm:w-6 sm:h-6" 
                       style={{
                         color: (() => {
                           const colorMap: Record<string, string> = {
@@ -231,7 +231,7 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
                         })()
                       }} />
               </div>
-              {service.title}
+              <span className="line-clamp-2">{service.title}</span>
             </DialogTitle>
             <DialogDescription className="sr-only">
               Détails complets du service {service.title} avec équipements, options et tarification
@@ -239,34 +239,34 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
           </DialogHeader>
         </div>
 
-        <ScrollArea className="max-h-[calc(80vh-120px)]">
-          <div className="p-6 space-y-6">
+        <ScrollArea className="flex-1 max-h-[calc(90vh-140px)]">
+          <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
             {/* Description */}
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
               {service.description}
             </p>
 
           {/* Informations pratiques */}
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
             <Card>
-              <CardContent className="p-4 text-center">
-                <Clock className="w-6 h-6 mx-auto mb-2 text-labtek-blue" />
-                <p className="font-semibold">Durée</p>
-                <p className="text-sm text-muted-foreground">{details.duration}</p>
+              <CardContent className="p-3 sm:p-4 text-center">
+                <Clock className="w-5 h-5 sm:w-6 sm:h-6 mx-auto mb-2 text-labtek-blue" />
+                <p className="font-semibold text-sm sm:text-base">Durée</p>
+                <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2">{details.duration}</p>
               </CardContent>
             </Card>
             <Card>
-              <CardContent className="p-4 text-center">
-                <Euro className="w-6 h-6 mx-auto mb-2 text-green-600" />
-                <p className="font-semibold">Tarification</p>
-                <p className="text-sm text-muted-foreground">{details.price}</p>
+              <CardContent className="p-3 sm:p-4 text-center">
+                <Euro className="w-5 h-5 sm:w-6 sm:h-6 mx-auto mb-2 text-green-600" />
+                <p className="font-semibold text-sm sm:text-base">Tarification</p>
+                <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2">{details.price}</p>
               </CardContent>
             </Card>
             <Card>
-              <CardContent className="p-4 text-center">
-                <Users className="w-6 h-6 mx-auto mb-2 text-purple-600" />
-                <p className="font-semibold">Clientèle cible</p>
-                <p className="text-sm text-muted-foreground">{details.target}</p>
+              <CardContent className="p-3 sm:p-4 text-center">
+                <Users className="w-5 h-5 sm:w-6 sm:h-6 mx-auto mb-2 text-purple-600" />
+                <p className="font-semibold text-sm sm:text-base">Clientèle cible</p>
+                <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2">{details.target}</p>
               </CardContent>
             </Card>
           </div>
@@ -283,15 +283,15 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
                 return (
                   <div key={index} className="group">
                     <Card className="border border-gray-200 hover:border-labtek-blue/40 hover:shadow-md transition-all duration-200">
-                      <CardContent className="p-5">
-                        <div className="flex items-start gap-4">
-                          <div className="w-8 h-8 bg-gradient-to-br from-labtek-blue to-labtek-violet rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                            <Check className="w-4 h-4 text-white" />
+                      <CardContent className="p-3 sm:p-5">
+                        <div className="flex items-start gap-3 sm:gap-4">
+                          <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-labtek-blue to-labtek-violet rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                            <Check className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                           </div>
-                          <div className="flex-1">
-                            <h4 className="font-semibold text-foreground mb-2 text-base">{title}</h4>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="font-semibold text-foreground mb-1 sm:mb-2 text-sm sm:text-base line-clamp-2">{title}</h4>
                             {description && (
-                              <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
+                              <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed line-clamp-3">{description}</p>
                             )}
                           </div>
                         </div>
@@ -309,16 +309,16 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
               <div className="w-2 h-6 bg-labtek-violet rounded-full"></div>
               Services inclus dans la prestation
             </h3>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
               {details.options.map((option, index) => (
                 <Card key={index} className="group border border-gray-200 hover:border-labtek-violet/40 hover:shadow-md transition-all duration-200">
-                  <CardContent className="p-5">
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 bg-gradient-to-br from-labtek-violet to-labtek-blue rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                        <Check className="w-4 h-4 text-white" />
+                  <CardContent className="p-3 sm:p-5">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-labtek-violet to-labtek-blue rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                        <Check className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                       </div>
-                      <div className="flex-1">
-                        <p className="font-medium text-foreground text-sm leading-relaxed">{option}</p>
+                      <div className="flex-1 min-w-0">
+                        <p className="font-medium text-foreground text-xs sm:text-sm leading-relaxed">{option}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -329,10 +329,10 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
 
           {/* Avantages */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Pourquoi choisir ce service ?</h3>
-            <div className="grid md:grid-cols-2 gap-3">
+            <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Pourquoi choisir ce service ?</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
               {service.features.map((feature, index) => (
-                <Badge key={index} variant="secondary" className="text-sm py-2 px-3 bg-labtek-blue/10 text-labtek-blue border-labtek-blue/20">
+                <Badge key={index} variant="secondary" className="text-xs sm:text-sm py-1.5 sm:py-2 px-2 sm:px-3 bg-labtek-blue/10 text-labtek-blue border-labtek-blue/20 justify-start">
                   {feature}
                 </Badge>
               ))}
@@ -340,7 +340,7 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
           </div>
 
           {/* Contrats de maintenance pour tous les services */}
-          <div className="relative bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50 dark:from-yellow-950/20 dark:via-orange-950/20 dark:to-red-950/20 rounded-xl p-4 sm:p-6 lg:p-8 border-2 border-orange-200 dark:border-orange-800 shadow-lg">
+          <div className="relative bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50 dark:from-yellow-950/20 dark:via-orange-950/20 dark:to-red-950/20 rounded-xl p-3 sm:p-6 lg:p-8 border-2 border-orange-200 dark:border-orange-800 shadow-lg">
             {/* Badge promotionnel */}
             <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2 w-full max-w-xs sm:max-w-none sm:w-auto">
               <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 sm:px-6 py-1 sm:py-2 rounded-full font-bold text-xs sm:text-sm shadow-md animate-pulse text-center">
@@ -405,9 +405,9 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
               </p>
             </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 lg:gap-6 mb-4 sm:mb-8">
                 <Card className="border-2 border-gray-300 hover:border-orange-300 transition-all duration-300 hover:shadow-md">
-                  <CardContent className="p-3 sm:p-4 lg:p-6 text-center">
+                  <CardContent className="p-2 sm:p-4 lg:p-6 text-center">
                     <div className="text-xl sm:text-2xl mb-2 sm:mb-3">💼</div>
                     <h4 className="font-bold text-sm sm:text-base lg:text-lg mb-1 sm:mb-2 text-gray-800 dark:text-gray-200">Essentiel</h4>
                     <p className="text-xs sm:text-sm text-orange-600 dark:text-orange-400 font-medium mb-2 sm:mb-3">Particuliers & TPE</p>
@@ -419,7 +419,7 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
                 </Card>
 
                 <Card className="border-4 border-orange-400 bg-gradient-to-br from-orange-100 to-yellow-100 dark:from-orange-900/30 dark:to-yellow-900/30 shadow-xl sm:transform sm:scale-105">
-                  <CardContent className="p-3 sm:p-4 lg:p-6 text-center relative">
+                  <CardContent className="p-2 sm:p-4 lg:p-6 text-center relative">
                     <div className="absolute -top-2 sm:-top-3 left-1/2 transform -translate-x-1/2">
                       <div className="bg-orange-500 text-white px-2 sm:px-4 py-1 rounded-full text-xs font-bold">
                         ⭐ POPULAIRE
@@ -437,7 +437,7 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
                 </Card>
 
                 <Card className="border-2 border-gray-300 hover:border-orange-300 transition-all duration-300 hover:shadow-md sm:col-span-2 lg:col-span-1">
-                  <CardContent className="p-3 sm:p-4 lg:p-6 text-center">
+                  <CardContent className="p-2 sm:p-4 lg:p-6 text-center">
                     <div className="text-xl sm:text-2xl mb-2 sm:mb-3">🏢</div>
                     <h4 className="font-bold text-sm sm:text-base lg:text-lg mb-1 sm:mb-2 text-gray-800 dark:text-gray-200">Entreprise</h4>
                     <p className="text-xs sm:text-sm text-orange-600 dark:text-orange-400 font-medium mb-2 sm:mb-3">Grandes structures</p>
@@ -526,14 +526,14 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
             </div>
 
           {/* Call to action */}
-          <div className="bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 rounded-lg p-6 text-center border border-labtek-blue/20">
-            <h3 className="text-lg font-semibold mb-2">Intéressé par ce service ?</h3>
-            <p className="text-muted-foreground mb-4">
+          <div className="bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 rounded-lg p-4 sm:p-6 text-center border border-labtek-blue/20">
+            <h3 className="text-base sm:text-lg font-semibold mb-2">Intéressé par ce service ?</h3>
+            <p className="text-muted-foreground mb-3 sm:mb-4 text-sm sm:text-base">
               Obtenez un devis personnalisé gratuit en moins de 24h
             </p>
-            <Button onClick={scrollToContact} size="lg" className="bg-labtek-blue hover:bg-labtek-blue/90">
-              Demander un devis gratuit
-              <ArrowRight className="ml-2 w-4 h-4" />
+            <Button onClick={scrollToContact} size="lg" className="bg-labtek-blue hover:bg-labtek-blue/90 w-full sm:w-auto">
+              <span className="text-sm sm:text-base">Demander un devis gratuit</span>
+              <ArrowRight className="ml-2 w-3 h-3 sm:w-4 sm:h-4" />
             </Button>
           </div>
           </div>
