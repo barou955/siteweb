@@ -475,109 +475,148 @@ export default function QuoteCalculator() {
       const pageHeight = pdf.internal.pageSize.height;
       const margin = 20;
       const currentDate = new Date().toLocaleDateString('fr-FR');
-      const quoteNumber = `L-${Date.now().toString().slice(-8)}`;
+      const quoteNumber = `I-${new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: '2-digit' }).replace(/\//g, '-')}-${Date.now().toString().slice(-3)}-${customerInfo.name.toUpperCase().replace(/\s+/g, '')}`;
       
-      // === EN-TÊTE AVEC LOGO ET DESIGN PROFESSIONNEL ===
-      // Fond bleu pour l'en-tête
-      pdf.setFillColor(59, 71, 150); // Bleu professionnel
-      pdf.rect(0, 0, pageWidth, 50, 'F');
-      
-      // Logo Labtek - rectangle bleu foncé avec texte blanc
-      pdf.setFillColor(35, 45, 120);
-      pdf.rect(margin, 15, 40, 20, 'F');
-      pdf.setTextColor(255, 255, 255);
-      pdf.setFontSize(14);
+      // === EN-TÊTE AVEC LOGO ===
+      // Logo LABTEK - simple texte stylisé
+      pdf.setTextColor(33, 37, 41);
       pdf.setFont('helvetica', 'bold');
-      pdf.text('Labtek', margin + 5, 28);
+      pdf.setFontSize(24);
+      pdf.text('LABTEK', margin, 25);
+      pdf.setFontSize(12);
+      pdf.setFont('helvetica', 'normal');
+      pdf.text('INFORMATIQUE', margin, 35);
       
-      // Titre DEVIS en gros
+      // Titre DEVIS aligné à droite
+      pdf.setFont('helvetica', 'bold');
       pdf.setFontSize(28);
-      pdf.setFont('helvetica', 'bold');
-      pdf.text('DEVIS MAINTENANCE', pageWidth - 85, 35);
-
-      let yPos = 70;
-
-      // === INFORMATIONS ENTREPRISE ET CLIENT EN COLONNES ===
-      pdf.setTextColor(0, 0, 0);
+      pdf.text('DEVIS', pageWidth - 50, 30);
       
-      // Colonne gauche - Entreprise
-      pdf.setFontSize(11);
+      // Ligne de séparation
+      pdf.setDrawColor(33, 37, 41);
+      pdf.setLineWidth(1);
+      pdf.line(margin, 45, pageWidth - margin, 45);
+      
+      let yPos = 60;
+
+      // === INFORMATIONS ENTREPRISE ET CLIENT EN DEUX COLONNES ===
+      // Colonne gauche - Prestataire
       pdf.setFont('helvetica', 'bold');
+      pdf.setFontSize(14);
+      pdf.text('Prestataire :', margin, yPos);
+      yPos += 10;
+      
+      pdf.setFont('helvetica', 'bold');
+      pdf.setFontSize(11);
       pdf.text('BAROUJAN BASKARAN', margin, yPos);
       yPos += 6;
-      pdf.text('LABTEK INFORMATIQUE', margin, yPos);
-      yPos += 6;
-      pdf.setFont('helvetica', 'normal');
-      pdf.text('2B route de Saint-Germain', margin, yPos);
-      yPos += 5;
-      pdf.text('91250 SAINT-GERMAIN-LÈS-CORBEIL', margin, yPos);
-      yPos += 5;
-      pdf.text('FRANCE', margin, yPos);
-      yPos += 5;
-      pdf.text('Port. : +33 6 76 45 42 67', margin, yPos);
-      yPos += 5;
-      pdf.text('contact@labtek.fr', margin, yPos);
-
-      // Colonne droite - Client
-      yPos = 70;
-      const clientX = pageWidth / 2 + 10;
-      if (customerInfo.name) {
-        pdf.setFont('helvetica', 'normal');
-        pdf.text(customerInfo.name, clientX, yPos);
-        yPos += 6;
-        if (customerInfo.company) {
-          pdf.text(customerInfo.company, clientX, yPos);
-          yPos += 5;
-        }
-        if (customerInfo.address) {
-          const addressLines = pdf.splitTextToSize(customerInfo.address, 80);
-          pdf.text(addressLines, clientX, yPos);
-          yPos += addressLines.length * 5;
-        }
-        pdf.text(`Email : ${customerInfo.email}`, clientX, yPos);
-      }
-
-      yPos = 140;
       
-      // Numéro de devis et date
-      pdf.setFont('helvetica', 'bold');
-      pdf.setFontSize(12);
-      pdf.text(`DEVIS N° ${quoteNumber}`, margin, yPos);
-      pdf.text('(PROVISOIRE)', margin + 80, yPos);
-      yPos += 8;
       pdf.setFont('helvetica', 'normal');
       pdf.setFontSize(10);
-      pdf.text(`Le samedi ${currentDate}`, margin, yPos);
+      pdf.text('Micro-entrepreneur', margin, yPos);
+      yPos += 5;
+      pdf.text('Spécialisé dans les prestations informatiques', margin, yPos);
+      yPos += 5;
+      pdf.text('avec installation de matériel', margin, yPos);
+      yPos += 8;
+      
+      pdf.text('2 bis route de Saint-Germain', margin, yPos);
+      yPos += 5;
+      pdf.text('91250 SAINT-GERMAIN-LÈS-CORBEIL', margin, yPos);
+      yPos += 8;
+      
+      pdf.setFont('helvetica', 'bold');
+      pdf.text('Email : contact@labtek.fr', margin, yPos);
+      yPos += 6;
+      pdf.setFont('helvetica', 'normal');
+      pdf.text('SIRET : [À compléter]', margin, yPos);
+      yPos += 5;
+      pdf.text('TVA non applicable, article 293 B du CGI', margin, yPos);
+      
+      // Colonne droite - Client
+      const rightColX = pageWidth / 2 + 10;
+      yPos = 60;
+      
+      pdf.setFont('helvetica', 'bold');
+      pdf.setFontSize(14);
+      pdf.text('Client :', rightColX, yPos);
+      yPos += 10;
+      
+      pdf.setFont('helvetica', 'bold');
+      pdf.setFontSize(11);
+      pdf.text(customerInfo.name.toUpperCase(), rightColX, yPos);
+      yPos += 6;
+      
+      if (customerInfo.company) {
+        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(10);
+        pdf.text(customerInfo.company, rightColX, yPos);
+        yPos += 6;
+      }
+      
+      if (customerInfo.address) {
+        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(10);
+        const addressLines = pdf.splitTextToSize(customerInfo.address, 80);
+        pdf.text(addressLines, rightColX, yPos);
+        yPos += addressLines.length * 5;
+      }
+      
+      yPos += 8;
+      pdf.text(`Email : ${customerInfo.email}`, rightColX, yPos);
+      
+      if (customerInfo.phone) {
+        yPos += 5;
+        pdf.text(`Téléphone : ${customerInfo.phone}`, rightColX, yPos);
+      }
+
+      yPos = 160;
+      
+      // === INFORMATIONS DEVIS ===
+      pdf.setFont('helvetica', 'bold');
+      pdf.setFontSize(12);
+      pdf.text(`Numéro de devis : ${quoteNumber}`, margin, yPos);
+      yPos += 6;
+      pdf.text(`Date d'émission : ${currentDate}`, margin, yPos);
+      yPos += 6;
+      pdf.text('Devis valable : 30 jours', margin, yPos);
       
       yPos += 20;
 
-      // === TABLEAU PROFESSIONNEL DES PRESTATIONS ===
-      const tableStartY = yPos;
-      const colWidths = [20, 80, 20, 25, 20, 25, 20]; // Référence, Désignation, Quantité, PU Vente, TVA, Montant HT, Image
-      const colX = [margin, margin + 20, margin + 100, margin + 120, margin + 145, margin + 165, margin + 190];
+      // === TABLEAU DES PRESTATIONS ===
+      // En-tête du tableau avec bordures
+      const tableHeaders = ['Désignation', 'Quantité', 'Prix unitaire HT', 'Total HT'];
+      const colWidths = [105, 25, 35, 30];
+      let currentX = margin;
       
-      // En-tête du tableau avec fond gris
+      // Bordure du tableau
+      pdf.setDrawColor(0, 0, 0);
+      pdf.setLineWidth(0.5);
+      
+      // En-tête
+      let tableStartY = yPos;
       pdf.setFillColor(240, 240, 240);
       pdf.rect(margin, yPos, pageWidth - 2 * margin, 12, 'F');
-      pdf.setDrawColor(200, 200, 200);
       pdf.rect(margin, yPos, pageWidth - 2 * margin, 12);
       
       pdf.setFont('helvetica', 'bold');
-      pdf.setFontSize(9);
-      pdf.text('Référence', colX[0] + 2, yPos + 8);
-      pdf.text('Désignation', colX[1] + 2, yPos + 8);
-      pdf.text('Quantité', colX[2] + 2, yPos + 8);
-      pdf.text('PU Vente', colX[3] + 2, yPos + 8);
-      pdf.text('TVA', colX[4] + 2, yPos + 8);
-      pdf.text('Montant HT', colX[5] + 2, yPos + 8);
-      pdf.text('Image', colX[6] + 2, yPos + 8);
+      pdf.setFontSize(10);
+      
+      // Textes d'en-tête
+      currentX = margin;
+      tableHeaders.forEach((header, i) => {
+        if (i > 0) {
+          pdf.line(currentX, yPos, currentX, yPos + 12);
+        }
+        pdf.text(header, currentX + 3, yPos + 8);
+        currentX += colWidths[i];
+      });
       
       yPos += 12;
       
       // Lignes du tableau
-      let refCounter = 454200;
       pdf.setFont('helvetica', 'normal');
-      pdf.setFontSize(8);
+      pdf.setFontSize(9);
       
       selectedServices.forEach(selectedService => {
         const service = servicePackages.find(s => s.id === selectedService.serviceId);
@@ -585,60 +624,105 @@ export default function QuoteCalculator() {
 
         // Service principal
         const serviceTotal = service.basePrice * selectedService.quantity;
-        pdf.rect(margin, yPos, pageWidth - 2 * margin, 8);
-        pdf.text(String(refCounter++), colX[0] + 2, yPos + 5);
-        pdf.text(service.title, colX[1] + 2, yPos + 5);
-        pdf.text(String(selectedService.quantity), colX[2] + 2, yPos + 5);
-        pdf.text(`${service.basePrice.toLocaleString('fr-FR')} €`, colX[3] + 2, yPos + 5);
-        pdf.text('20.00', colX[4] + 2, yPos + 5);
-        pdf.text(`${serviceTotal.toLocaleString('fr-FR')} €`, colX[5] + 2, yPos + 5);
-        yPos += 8;
+        currentX = margin;
+        
+        // Bordure de ligne
+        pdf.rect(margin, yPos, pageWidth - 2 * margin, 10);
+        
+        // Lignes verticales
+        currentX = margin;
+        tableHeaders.forEach((_, i) => {
+          if (i > 0) {
+            pdf.line(currentX, yPos, currentX, yPos + 10);
+          }
+          currentX += colWidths[i];
+        });
+        
+        // Contenu
+        currentX = margin;
+        const serviceName = pdf.splitTextToSize(service.title, colWidths[0] - 6);
+        pdf.text(serviceName, currentX + 3, yPos + 7);
+        currentX += colWidths[0];
+        
+        pdf.text(String(selectedService.quantity), currentX + 8, yPos + 7);
+        currentX += colWidths[1];
+        
+        pdf.text(`${service.basePrice.toFixed(2)} €`, currentX + 3, yPos + 7);
+        currentX += colWidths[2];
+        
+        pdf.text(`${serviceTotal.toFixed(2)} €`, currentX + 3, yPos + 7);
+        
+        yPos += 10;
 
         // Équipement sélectionné
         if (selectedService.selectedEquipment) {
           const equipment = service.equipment?.find(e => e.id === selectedService.selectedEquipment);
           if (equipment) {
             const equipmentTotal = equipment.price * selectedService.quantity;
+            currentX = margin;
+            
             pdf.rect(margin, yPos, pageWidth - 2 * margin, 8);
-            pdf.text(String(refCounter++), colX[0] + 2, yPos + 5);
-            pdf.text(equipment.name, colX[1] + 2, yPos + 5);
-            pdf.text(String(selectedService.quantity), colX[2] + 2, yPos + 5);
-            pdf.text(`${equipment.price.toLocaleString('fr-FR')} €`, colX[3] + 2, yPos + 5);
-            pdf.text('20.00', colX[4] + 2, yPos + 5);
-            pdf.text(`${equipmentTotal.toLocaleString('fr-FR')} €`, colX[5] + 2, yPos + 5);
+            
+            tableHeaders.forEach((_, i) => {
+              if (i > 0) {
+                pdf.line(currentX, yPos, currentX, yPos + 8);
+              }
+              currentX += colWidths[i];
+            });
+            
+            currentX = margin;
+            pdf.setFontSize(8);
+            pdf.text(`  • ${equipment.name}`, currentX + 3, yPos + 6);
+            currentX += colWidths[0];
+            
+            pdf.text(String(selectedService.quantity), currentX + 8, yPos + 6);
+            currentX += colWidths[1];
+            
+            pdf.text(`${equipment.price.toFixed(2)} €`, currentX + 3, yPos + 6);
+            currentX += colWidths[2];
+            
+            pdf.text(`${equipmentTotal.toFixed(2)} €`, currentX + 3, yPos + 6);
+            
             yPos += 8;
+            pdf.setFontSize(9);
           }
         }
 
-        // Addons
-        selectedService.addons.forEach(addonId => {
-          const addon = service.addons?.find(a => a.id === addonId);
-          if (addon) {
-            const addonTotal = addon.price * selectedService.quantity;
+        // Addons et logiciels
+        [...selectedService.addons, ...selectedService.software].forEach(itemId => {
+          const addon = service.addons?.find(a => a.id === itemId);
+          const software = service.software?.find(s => s.id === itemId);
+          const item = addon || software;
+          
+          if (item) {
+            const itemTotal = item.price * selectedService.quantity;
+            currentX = margin;
+            
             pdf.rect(margin, yPos, pageWidth - 2 * margin, 8);
-            pdf.text(String(refCounter++), colX[0] + 2, yPos + 5);
-            pdf.text(addon.name, colX[1] + 2, yPos + 5);
-            pdf.text(String(selectedService.quantity), colX[2] + 2, yPos + 5);
-            pdf.text(`${addon.price.toLocaleString('fr-FR')} €`, colX[3] + 2, yPos + 5);
-            pdf.text('20.00', colX[4] + 2, yPos + 5);
-            pdf.text(`${addonTotal.toLocaleString('fr-FR')} €`, colX[5] + 2, yPos + 5);
+            
+            tableHeaders.forEach((_, i) => {
+              if (i > 0) {
+                pdf.line(currentX, yPos, currentX, yPos + 8);
+              }
+              currentX += colWidths[i];
+            });
+            
+            currentX = margin;
+            pdf.setFontSize(8);
+            const itemName = pdf.splitTextToSize(`  • ${item.name}`, colWidths[0] - 6);
+            pdf.text(itemName, currentX + 3, yPos + 6);
+            currentX += colWidths[0];
+            
+            pdf.text(String(selectedService.quantity), currentX + 8, yPos + 6);
+            currentX += colWidths[1];
+            
+            pdf.text(`${item.price.toFixed(2)} €`, currentX + 3, yPos + 6);
+            currentX += colWidths[2];
+            
+            pdf.text(`${itemTotal.toFixed(2)} €`, currentX + 3, yPos + 6);
+            
             yPos += 8;
-          }
-        });
-
-        // Logiciels
-        selectedService.software.forEach(softwareId => {
-          const software = service.software?.find(s => s.id === softwareId);
-          if (software) {
-            const softwareTotal = software.price * selectedService.quantity;
-            pdf.rect(margin, yPos, pageWidth - 2 * margin, 8);
-            pdf.text(String(refCounter++), colX[0] + 2, yPos + 5);
-            pdf.text(software.name, colX[1] + 2, yPos + 5);
-            pdf.text(String(selectedService.quantity), colX[2] + 2, yPos + 5);
-            pdf.text(`${software.price.toLocaleString('fr-FR')} €`, colX[3] + 2, yPos + 5);
-            pdf.text('20.00', colX[4] + 2, yPos + 5);
-            pdf.text(`${softwareTotal.toLocaleString('fr-FR')} €`, colX[5] + 2, yPos + 5);
-            yPos += 8;
+            pdf.setFontSize(9);
           }
         });
       });
@@ -648,76 +732,98 @@ export default function QuoteCalculator() {
         const contract = maintenanceContracts.find(c => c.id === selectedMaintenanceContract);
         if (contract) {
           const contractTotal = contract.monthlyPrice * 12;
-          pdf.rect(margin, yPos, pageWidth - 2 * margin, 8);
-          pdf.text(String(refCounter++), colX[0] + 2, yPos + 5);
-          pdf.text(`Mise en service`, colX[1] + 2, yPos + 5);
-          pdf.text('1', colX[2] + 2, yPos + 5);
-          pdf.text(`${contractTotal.toLocaleString('fr-FR')} €`, colX[3] + 2, yPos + 5);
-          pdf.text('20.00', colX[4] + 2, yPos + 5);
-          pdf.text(`${contractTotal.toLocaleString('fr-FR')} €`, colX[5] + 2, yPos + 5);
-          yPos += 8;
+          currentX = margin;
+          
+          pdf.rect(margin, yPos, pageWidth - 2 * margin, 10);
+          
+          tableHeaders.forEach((_, i) => {
+            if (i > 0) {
+              pdf.line(currentX, yPos, currentX, yPos + 10);
+            }
+            currentX += colWidths[i];
+          });
+          
+          currentX = margin;
+          pdf.text(`Contrat de maintenance ${contract.name} (12 mois)`, currentX + 3, yPos + 7);
+          currentX += colWidths[0];
+          
+          pdf.text('1', currentX + 8, yPos + 7);
+          currentX += colWidths[1];
+          
+          pdf.text(`${contractTotal.toFixed(2)} €`, currentX + 3, yPos + 7);
+          currentX += colWidths[2];
+          
+          pdf.text(`${contractTotal.toFixed(2)} €`, currentX + 3, yPos + 7);
+          
+          yPos += 10;
         }
       }
 
-      // Bon pour Accord en bas du tableau
+      // === TOTAUX ===
       yPos += 10;
-      pdf.setFont('helvetica', 'bold');
-      pdf.setFontSize(10);
-      pdf.text('Bon pour Accord', margin, yPos);
-
-      // === TOTAUX DANS UN ENCADRÉ ===
       const total = calculateTotal();
-      const tva = total * 0.2; // 20% TVA
-      const totalTTC = total + tva;
       
-      const totalBoxX = pageWidth - 80;
-      const totalBoxY = yPos + 20;
-      const totalBoxWidth = 60;
-      const totalBoxHeight = 30;
-      
-      // Fond gris pour les totaux
-      pdf.setFillColor(245, 245, 245);
-      pdf.rect(totalBoxX, totalBoxY, totalBoxWidth, totalBoxHeight, 'F');
-      pdf.setDrawColor(0, 0, 0);
-      pdf.rect(totalBoxX, totalBoxY, totalBoxWidth, totalBoxHeight);
+      // Bordure pour les totaux
+      pdf.setFillColor(250, 250, 250);
+      pdf.rect(pageWidth - 100, yPos, 80, 30, 'F');
+      pdf.rect(pageWidth - 100, yPos, 80, 30);
       
       pdf.setFont('helvetica', 'bold');
-      pdf.setFontSize(10);
-      pdf.text('Total HT', totalBoxX + 5, totalBoxY + 8);
-      pdf.text(`${total.toLocaleString('fr-FR')} €`, totalBoxX + totalBoxWidth - 5, totalBoxY + 8, { align: 'right' });
-      
-      pdf.text('TVA ( 20 % )', totalBoxX + 5, totalBoxY + 16);
-      pdf.text(`${tva.toLocaleString('fr-FR')} €`, totalBoxX + totalBoxWidth - 5, totalBoxY + 16, { align: 'right' });
-      
       pdf.setFontSize(12);
-      pdf.text('Total TTC', totalBoxX + 5, totalBoxY + 25);
-      pdf.text(`${totalTTC.toLocaleString('fr-FR')} €`, totalBoxX + totalBoxWidth - 5, totalBoxY + 25, { align: 'right' });
+      pdf.text('TOTAL HT :', pageWidth - 95, yPos + 10);
+      pdf.text(`${total.toFixed(2)} €`, pageWidth - 25, yPos + 10, { align: 'right' });
+      
+      pdf.text('TVA :', pageWidth - 95, yPos + 18);
+      pdf.text('Non applicable', pageWidth - 25, yPos + 18, { align: 'right' });
+      
+      pdf.setFontSize(14);
+      pdf.text('TOTAL TTC :', pageWidth - 95, yPos + 26);
+      pdf.text(`${total.toFixed(2)} €`, pageWidth - 25, yPos + 26, { align: 'right' });
 
-      yPos = totalBoxY + totalBoxHeight + 20;
+      yPos += 50;
 
-      // === CONDITIONS DE PAIEMENT ===
+      // === CONDITIONS GÉNÉRALES ===
       pdf.setFont('helvetica', 'bold');
-      pdf.setFontSize(9);
-      pdf.text('Conditions de paiement :', margin, yPos);
-      yPos += 6;
+      pdf.setFontSize(12);
+      pdf.text('CONDITIONS D\'EXÉCUTION ET MODALITÉS DE PAIEMENT', margin, yPos);
+      yPos += 10;
+      
       pdf.setFont('helvetica', 'normal');
-      pdf.text('• 100,00 % soit 7 658,40 € : Paiement comptant.', margin, yPos);
-      yPos += 20;
-
-      // === MENTIONS LÉGALES EN BAS ===
-      pdf.setFontSize(7);
-      pdf.setTextColor(100, 100, 100);
-      const legalText = [
-        'CLAUSE DE RÉSERVE DE PROPRIÉTÉ : Conformément à la Loi du 12 mai 1980, les biens livrés demeurent la propriété des vendeurs et marchandises, objets des présents devis, jusqu\'au paiement de l\'intégralité du prix et des accessoires. En cas de non paiement',
-        'total ou partiel à l\'échéance convenue, la vente pourra être résolue de plein droit huit jours après mise en demeure restée infructueuse, sans préjudice de tous dommages et intérêts. Le transfert de propriété s\'effectue au jour du complet paiement',
-        'du prix de l\'objet vendu. Toute modification ou ajout au présent devis ne pourra être prise en compte qu\'après accord écrit des deux parties. En cas de litige, seuls les tribunaux compétents de MELUN sont compétents.'
+      pdf.setFontSize(10);
+      const conditions = [
+        '• Délai d\'intervention : sous 48h ouvrées après acceptation du devis',
+        '• Conditions de livraison : selon modalités convenues',
+        '• Garantie sur le matériel : selon conditions fabricant',
+        '• Modalités de paiement : Espèces, chèque, virement bancaire',
+        '• Délai de règlement : Paiement comptant à la livraison',
+        '• En cas de retard de paiement, des pénalités seront dues sur la base de 3 fois le taux',
+        '  d\'intérêt légal. Une indemnité forfaitaire de 40 euros sera également due pour frais',
+        '  de recouvrement.'
       ];
       
-      legalText.forEach((line, index) => {
-        pdf.text(line, margin, pageHeight - 25 + (index * 4));
+      conditions.forEach(condition => {
+        pdf.text(condition, margin, yPos);
+        yPos += 6;
       });
 
-      pdf.save(`Devis-LABTEK-${quoteNumber}.pdf`);
+      yPos += 15;
+      
+      // === BON POUR ACCORD ===
+      pdf.setFont('helvetica', 'bold');
+      pdf.setFontSize(12);
+      pdf.text('BON POUR ACCORD', margin, yPos);
+      yPos += 10;
+      
+      pdf.setFont('helvetica', 'normal');
+      pdf.setFontSize(10);
+      pdf.text('Date : ____________________', margin, yPos);
+      pdf.text('Signature du client :', pageWidth - 120, yPos);
+      
+      // Ligne pour signature
+      pdf.setDrawColor(0, 0, 0);
+      pdf.line(pageWidth - 80, yPos + 15, pageWidth - margin, yPos + 15);
+
+      pdf.save(`${quoteNumber}.pdf`);
 
       toast({
         title: "Devis généré !",
@@ -725,6 +831,7 @@ export default function QuoteCalculator() {
       });
 
     } catch (error) {
+      console.error('Erreur génération PDF:', error);
       toast({
         title: "Erreur",
         description: "Impossible de générer le PDF. Veuillez réessayer.",
@@ -1060,16 +1167,16 @@ export default function QuoteCalculator() {
           </div>
 
           {/* Sidebar - Summary & Customer Info */}
-          <div className="space-y-6">
+          <div className="lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:overflow-y-auto space-y-6">
             {/* Récapitulatif */}
-            <Card className="lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:overflow-y-auto">
-              <CardHeader>
+            <Card>
+              <CardHeader className="bg-white dark:bg-black border-b">
                 <CardTitle className="flex items-center gap-2">
                   <FileText className="w-5 h-5" />
                   Récapitulatif
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 p-4">
                 {selectedServices.length === 0 ? (
                   <div className="text-center py-8">
                     <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -1086,7 +1193,29 @@ export default function QuoteCalculator() {
                         const service = servicePackages.find(s => s.id === selectedService.serviceId);
                         if (!service) return null;
 
-                        let serviceTotal = service.basePrice * selectedService.quantity;
+                        let lineTotal = service.basePrice * selectedService.quantity;
+
+                        // Calculer le total de la ligne avec tous les composants
+                        if (selectedService.selectedEquipment) {
+                          const equipment = service.equipment?.find(e => e.id === selectedService.selectedEquipment);
+                          if (equipment) {
+                            lineTotal += equipment.price * selectedService.quantity;
+                          }
+                        }
+
+                        selectedService.addons.forEach(addonId => {
+                          const addon = service.addons?.find(a => a.id === addonId);
+                          if (addon) {
+                            lineTotal += addon.price * selectedService.quantity;
+                          }
+                        });
+
+                        selectedService.software.forEach(softwareId => {
+                          const software = service.software?.find(s => s.id === softwareId);
+                          if (software) {
+                            lineTotal += software.price * selectedService.quantity;
+                          }
+                        });
 
                         return (
                           <div key={selectedService.serviceId} className="border-b pb-3">
@@ -1099,9 +1228,14 @@ export default function QuoteCalculator() {
                                   </p>
                                 )}
                               </div>
-                              <p className="font-semibold text-sm ml-2">
-                                {serviceTotal}€
-                              </p>
+                              <div className="text-right">
+                                <p className="text-xs text-muted-foreground">
+                                  {service.basePrice}€ × {selectedService.quantity}
+                                </p>
+                                <p className="font-semibold text-sm text-labtek-blue">
+                                  {lineTotal.toFixed(2)}€ HT
+                                </p>
+                              </div>
                             </div>
 
                             {/* Équipement sélectionné */}
@@ -1111,11 +1245,10 @@ export default function QuoteCalculator() {
                                   const equipment = service.equipment?.find(e => e.id === selectedService.selectedEquipment);
                                   if (equipment) {
                                     const equipmentTotal = equipment.price * selectedService.quantity;
-                                    serviceTotal += equipmentTotal;
                                     return (
                                       <div className="flex justify-between text-xs text-blue-600">
                                         <span>• {equipment.name}</span>
-                                        <span>{equipmentTotal}€</span>
+                                        <span>{equipmentTotal.toFixed(2)}€</span>
                                       </div>
                                     );
                                   }
@@ -1129,13 +1262,12 @@ export default function QuoteCalculator() {
                               const addon = service.addons?.find(a => a.id === addonId);
                               if (addon) {
                                 const addonTotal = addon.price * selectedService.quantity;
-                                serviceTotal += addonTotal;
                                 return (
                                   <div key={addonId} className="pl-4 mb-1">
                                     <div className="flex justify-between text-xs text-purple-600">
                                       <span>• {addon.name}</span>
                                       <span>
-                                        {addonTotal}€
+                                        {addonTotal.toFixed(2)}€
                                         {addon.isSubscription && (
                                           <span className="text-orange-600">
                                             /{addon.subscriptionType === 'monthly' ? 'mois' : 'an'}
@@ -1154,13 +1286,12 @@ export default function QuoteCalculator() {
                               const software = service.software?.find(s => s.id === softwareId);
                               if (software) {
                                 const softwareTotal = software.price * selectedService.quantity;
-                                serviceTotal += softwareTotal;
                                 return (
                                   <div key={softwareId} className="pl-4 mb-1">
                                     <div className="flex justify-between text-xs text-green-600">
                                       <span>• {software.name}</span>
                                       <span>
-                                        {softwareTotal}€
+                                        {softwareTotal.toFixed(2)}€
                                         {software.isSubscription && (
                                           <span className="text-orange-600">
                                             /{software.subscriptionType === 'monthly' ? 'mois' : 'an'}
@@ -1197,12 +1328,14 @@ export default function QuoteCalculator() {
                               </p>
                             )}
                           </div>
-                          <p className="font-semibold text-sm">
-                            {selectedMaintenanceContract && selectedMaintenanceContract !== "none" ? 
-                              `${((maintenanceContracts.find(c => c.id === selectedMaintenanceContract)?.monthlyPrice || 0) * 12)}€` :
-                              '0€'
-                            }
-                          </p>
+                          <div className="text-right">
+                            <p className="font-semibold text-sm text-labtek-blue">
+                              {selectedMaintenanceContract && selectedMaintenanceContract !== "none" ? 
+                                `${((maintenanceContracts.find(c => c.id === selectedMaintenanceContract)?.monthlyPrice || 0) * 12).toFixed(2)}€ HT` :
+                                '0.00€ HT'
+                              }
+                            </p>
+                          </div>
                         </div>
                       </div>
 
@@ -1222,22 +1355,27 @@ export default function QuoteCalculator() {
                       )}
                     </div>
                     
-                    <div className="bg-labtek-blue/5 rounded-lg p-4">
-                      <div className="flex justify-between items-center mb-2">
-                        <p className="font-bold">Total HT</p>
-                        <p className="font-bold text-xl text-labtek-blue">
-                          {calculateTotal()}€
+                    <div className="bg-labtek-blue/5 rounded-lg p-4 space-y-2">
+                      <div className="flex justify-between items-center">
+                        <p className="font-semibold">Sous-total HT</p>
+                        <p className="font-semibold text-labtek-blue">
+                          {calculateTotal().toFixed(2)}€
                         </p>
                       </div>
-                      <div className="flex justify-between items-center text-sm text-muted-foreground mb-2">
-                        <p>TVA (0%)</p>
-                        <p>0€</p>
+                      <div className="flex justify-between items-center text-sm">
+                        <p className="text-muted-foreground">TVA non applicable</p>
+                        <p className="text-muted-foreground">0.00€</p>
                       </div>
-                      <div className="flex justify-between items-center text-lg font-bold border-t pt-2">
-                        <p>Total TTC</p>
-                        <p className="text-labtek-blue">
-                          {calculateTotal()}€
-                        </p>
+                      <div className="text-xs text-muted-foreground italic">
+                        Article 293 B du CGI - Micro-entreprise
+                      </div>
+                      <div className="border-t pt-2">
+                        <div className="flex justify-between items-center">
+                          <p className="text-lg font-bold">Total TTC</p>
+                          <p className="text-xl font-bold text-labtek-blue">
+                            {calculateTotal().toFixed(2)}€
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </>
