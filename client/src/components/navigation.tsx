@@ -65,6 +65,12 @@ export default function Navigation() {
                 Services
               </button>
               <button
+                onClick={() => scrollToSection("devis")}
+                className="text-foreground/80 hover:text-labtek-blue transition-colors duration-200"
+              >
+                Devis
+              </button>
+              <button
                 onClick={() => scrollToSection("processus")}
                 className="text-foreground/80 hover:text-labtek-blue transition-colors duration-200"
               >
@@ -138,6 +144,12 @@ export default function Navigation() {
               className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
             >
               Services
+            </button>
+            <button
+              onClick={() => scrollToSection("devis")}
+              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
+            >
+              Devis
             </button>
             <button
               onClick={() => scrollToSection("processus")}

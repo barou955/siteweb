@@ -2,6 +2,7 @@ import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import ProblemsSection from "@/components/problems-section";
 import ServicesSection from "@/components/services-section";
+import QuoteCalculator from "@/components/quote-calculator";
 import ProcessSection from "@/components/process-section";
 import TestimonialsSection from "@/components/testimonials-section";
 import AboutSection from "@/components/about-section";
@@ -17,12 +18,13 @@ export default function Home() {
       <Navigation />
       <HeroSection />
       <ServicesSection />
+      <QuoteCalculator />
       <ProblemsSection />
       <ProcessSection />
       <MaintenanceSection />
       <TestimonialsSection />
-      <ContactSection />
       <AboutSection />
+      <ContactSection />
       <Footer />
     </div>
   );

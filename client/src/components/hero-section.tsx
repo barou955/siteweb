@@ -28,22 +28,23 @@ export default function HeroSection() {
             technique à votre service.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              onClick={() => scrollToSection("contact")}
-              size="lg"
-              className="bg-white text-labtek-blue dark:text-black font-semibold hover:bg-blue-50 hover:text-labtek-dark-blue dark:hover:text-black transition-all duration-200 transform hover:scale-105"
-            >
-              Demander un devis
-              <ArrowRight className="ml-2 w-5 h-5 dark:text-black" />
-            </Button>
-            <Button
-              onClick={() => scrollToSection("services")}
-              size="lg"
-              className="bg-white text-labtek-blue dark:text-black font-semibold hover:bg-blue-50 hover:text-labtek-dark-blue dark:hover:text-black transition-all duration-200 transform hover:scale-105"
-            >
-              Découvrir nos services
-            </Button>
-          </div>
+          <Button 
+            size="lg" 
+            onClick={() => scrollToSection("devis")}
+            className="bg-labtek-blue hover:bg-labtek-blue/90 text-white px-8 py-3 text-lg"
+          >
+            Calculer mon Devis
+            <ArrowRight className="ml-2 w-5 h-5" />
+          </Button>
+          <Button 
+            size="lg" 
+            variant="outline" 
+            onClick={() => scrollToSection("services")}
+            className="border-2 border-labtek-blue text-labtek-blue hover:bg-labtek-blue hover:text-white px-8 py-3 text-lg"
+          >
+            Nos Services
+          </Button>
+        </div>
         </div>
       </div>
     </section>
