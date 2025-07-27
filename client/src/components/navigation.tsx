@@ -82,7 +82,7 @@ export default function Navigation() {
               </button>
               <button
                 onClick={() => scrollToSection("temoignages")}
-                className="text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out hover:scale-105 hover:bg-labtek-blue/5 px-3 py-2 rounded-lg relative overflow-hidden group"
+                className="text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out hover:scale-105 hover:bg-labtek-blue/5 px-3 py-2 rounded-lg relative overflow-hidden group hidden"
               >
                 <span className="relative z-10">Témoignages</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
@@ -170,7 +170,7 @@ export default function Navigation() {
             </button>
             <button
               onClick={() => scrollToSection("temoignages")}
-              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2 relative overflow-hidden group"
+              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2 relative overflow-hidden group hidden"
             >
               <span className="relative z-10">Témoignages</span>
               <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
