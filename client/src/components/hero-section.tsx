@@ -16,35 +16,35 @@ export default function HeroSection() {
     >
       <div className="absolute inset-0 bg-black/10 dark:bg-black/30"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
+        <div className="flex flex-col items-center justify-center text-center">
           <h1 className="text-4xl md:text-6xl font-bold dark:text-white text-black mb-6">
             Solutions Informatiques
             <br />
             <span className="dark:text-blue-200 text-[#3366cc]">Professionnelles</span>
           </h1>
-          <p className="text-xl md:text-2xl dark:text-blue-100 text-[#333333] mb-8 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl dark:text-blue-100 text-[#333333] mb-8 max-w-3xl">
             Services informatiques sur mesure pour particuliers et PME en
             Essonne et Île-de-France. Simplicité, sécurité et expertise
             technique à votre service.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button 
-            size="lg" 
-            onClick={() => scrollToSection("devis")}
-            className="bg-labtek-blue hover:bg-labtek-blue/90 text-white px-8 py-3 text-lg"
-          >
-            Calculer mon Devis
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-          <Button 
-            size="lg" 
-            variant="outline" 
-            onClick={() => scrollToSection("services")}
-            className="border-2 border-labtek-blue text-labtek-blue hover:bg-labtek-blue hover:text-white px-8 py-3 text-lg"
-          >
-            Nos Services
-          </Button>
-        </div>
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+            <Button 
+              size="lg" 
+              onClick={() => scrollToSection("contact")}
+              className="bg-white dark:bg-gray-800 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 px-8 py-3 text-lg font-semibold"
+            >
+              Contactez-nous
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+            <Button 
+              size="lg"
+              onClick={() => scrollToSection("services")}
+              className="bg-white dark:bg-gray-800 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 px-8 py-3 text-lg font-semibold"
+            >
+              Nos Services
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </div>
         </div>
       </div>
     </section>

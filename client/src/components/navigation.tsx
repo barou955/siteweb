@@ -54,45 +54,45 @@ export default function Navigation() {
             <div className="ml-10 flex items-baseline space-x-8">
               <button
                 onClick={() => scrollToSection("accueil")}
-                className="text-foreground/80 hover:text-labtek-blue transition-colors duration-200"
+                className="text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out hover:scale-105 hover:bg-labtek-blue/5 px-3 py-2 rounded-lg relative overflow-hidden group"
               >
-                Accueil
+                <span className="relative z-10">Accueil</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
               </button>
               <button
                 onClick={() => scrollToSection("services")}
-                className="text-foreground/80 hover:text-labtek-blue transition-colors duration-200"
+                className="text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out hover:scale-105 hover:bg-labtek-blue/5 px-3 py-2 rounded-lg relative overflow-hidden group"
               >
-                Services
-              </button>
-              <button
-                onClick={() => scrollToSection("devis")}
-                className="text-foreground/80 hover:text-labtek-blue transition-colors duration-200"
-              >
-                Devis
+                <span className="relative z-10">Services</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
               </button>
               <button
                 onClick={() => scrollToSection("processus")}
-                className="text-foreground/80 hover:text-labtek-blue transition-colors duration-200"
+                className="text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out hover:scale-105 hover:bg-labtek-blue/5 px-3 py-2 rounded-lg relative overflow-hidden group"
               >
-                Processus
+                <span className="relative z-10">Processus</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
               </button>
               <button
                 onClick={() => scrollToSection("maintenance")}
-                className="text-foreground/80 hover:text-labtek-blue transition-colors duration-200"
+                className="text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out hover:scale-105 hover:bg-labtek-blue/5 px-3 py-2 rounded-lg relative overflow-hidden group"
               >
-                Maintenance
+                <span className="relative z-10">Maintenance</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
               </button>
               <button
                 onClick={() => scrollToSection("temoignages")}
-                className="text-foreground/80 hover:text-labtek-blue transition-colors duration-200"
+                className="text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out hover:scale-105 hover:bg-labtek-blue/5 px-3 py-2 rounded-lg relative overflow-hidden group"
               >
-                Témoignages
+                <span className="relative z-10">Témoignages</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="text-foreground/80 hover:text-labtek-blue transition-colors duration-200"
+                className="text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out hover:scale-105 hover:bg-labtek-blue/5 px-3 py-2 rounded-lg relative overflow-hidden group"
               >
-                Contact
+                <span className="relative z-10">Contact</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
               </button>
             </div>
           </div>
@@ -135,45 +135,45 @@ export default function Navigation() {
           <div className="px-2 pt-2 pb-3 space-y-1">
             <button
               onClick={() => scrollToSection("accueil")}
-              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
+              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2 relative overflow-hidden group"
             >
-              Accueil
+              <span className="relative z-10">Accueil</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
+              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2 relative overflow-hidden group"
             >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection("devis")}
-              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
-            >
-              Devis
+              <span className="relative z-10">Services</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
             </button>
             <button
               onClick={() => scrollToSection("processus")}
-              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
+              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2 relative overflow-hidden group"
             >
-              Processus
+              <span className="relative z-10">Processus</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
             </button>
             <button
               onClick={() => scrollToSection("maintenance")}
-              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
+              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2 relative overflow-hidden group"
             >
-              Maintenance
+              <span className="relative z-10">Maintenance</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
+              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2 relative overflow-hidden group"
             >
-              Contact
+              <span className="relative z-10">Contact</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
             </button>
             <button
               onClick={() => scrollToSection("temoignages")}
-              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
+              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2 relative overflow-hidden group"
             >
-              Témoignages
+              <span className="relative z-10">Témoignages</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
             </button>
           </div>
         </div>

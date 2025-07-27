@@ -9,6 +9,7 @@ import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 import MaintenanceSection from "@/components/maintenance-section";
 import SeoMeta from "@/components/seo-meta";
+import ScrollToTopButton from "@/components/scroll-to-top-button";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <AboutSection />
       <ContactSection />
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }
