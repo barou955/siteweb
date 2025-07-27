@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 import fs from 'fs';
 import path from 'path';
@@ -12,7 +11,6 @@ export function generateSitemap() {
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <!-- Page d'accueil -->
   <url>
     <loc>https://labtek.fr/</loc>
     <lastmod>${currentDate}</lastmod>
@@ -25,7 +23,6 @@ export function generateSitemap() {
     </image:image>
   </url>
   
-  <!-- Section Services -->
   <url>
     <loc>https://labtek.fr/#services</loc>
     <lastmod>${currentDate}</lastmod>
@@ -33,7 +30,6 @@ export function generateSitemap() {
     <priority>0.9</priority>
   </url>
   
-  <!-- Section À propos -->
   <url>
     <loc>https://labtek.fr/#about</loc>
     <lastmod>${currentDate}</lastmod>
@@ -41,7 +37,6 @@ export function generateSitemap() {
     <priority>0.8</priority>
   </url>
   
-  <!-- Section Contact -->
   <url>
     <loc>https://labtek.fr/#contact</loc>
     <lastmod>${currentDate}</lastmod>
@@ -49,7 +44,6 @@ export function generateSitemap() {
     <priority>0.9</priority>
   </url>
   
-  <!-- Section Témoignages -->
   <url>
     <loc>https://labtek.fr/#testimonials</loc>
     <lastmod>${currentDate}</lastmod>
