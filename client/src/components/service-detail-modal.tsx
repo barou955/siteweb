@@ -273,7 +273,7 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
 
           {/* Équipements et tarifs */}
           <div>
-            <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
+            <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 flex items-center gap-2">
               <div className="w-2 h-6 bg-labtek-blue rounded-full"></div>
               Équipements proposés avec tarifs indicatifs
             </h3>
@@ -305,7 +305,7 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
 
           {/* Services inclus détaillés */}
           <div>
-            <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
+            <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 flex items-center gap-2">
               <div className="w-2 h-6 bg-labtek-violet rounded-full"></div>
               Services inclus dans la prestation
             </h3>
@@ -357,7 +357,7 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
                 })()}
               </div>
             </div>
-            
+
             <div className="text-center mb-6 mt-4">
               <h3 className="text-2xl font-bold mb-3 text-orange-800 dark:text-orange-200">
                 🛡️ Contrats de Maintenance Préventive
@@ -402,7 +402,7 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
                     </ul>
                   </CardContent>
                 </Card>
-                
+
                 <Card className="border-4 border-orange-400 bg-gradient-to-br from-orange-100 to-yellow-100 dark:from-orange-900/30 dark:to-yellow-900/30 transform scale-105 shadow-xl">
                   <CardContent className="p-6 text-center relative">
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
@@ -420,7 +420,7 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
                     </ul>
                   </CardContent>
                 </Card>
-                
+
                 <Card className="border-2 border-gray-300 hover:border-orange-300 transition-all duration-300 hover:shadow-md">
                   <CardContent className="p-6 text-center">
                     <div className="text-2xl mb-3">🏢</div>
@@ -433,7 +433,7 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
                   </CardContent>
                 </Card>
               </div>
-              
+
               <div className="text-center bg-white dark:bg-gray-800 rounded-lg p-6 border-2 border-orange-200 dark:border-orange-700">
                 <h4 className="text-lg font-bold mb-3 text-orange-800 dark:text-orange-200">
                   💡 Pourquoi associer un contrat de maintenance à ce service ?
@@ -478,9 +478,9 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
                         { icon: "📈", text: "Performances optimisées" }
                       ]
                     };
-                    
+
                     const serviceBenefits = benefits[service.title as keyof typeof benefits] || benefits["Dépannage & Assistance"];
-                    
+
                     return serviceBenefits.map((benefit, index) => (
                       <div key={index} className="flex items-center">
                         <span className="text-green-500 text-lg mr-2">{benefit.icon}</span>
@@ -489,7 +489,7 @@ export default function ServiceDetailModal({ service, children }: ServiceDetailP
                     ));
                   })()}
                 </div>
-                
+
                 <Button 
                   onClick={() => {
                     setIsOpen(false);
