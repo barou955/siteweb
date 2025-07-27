@@ -210,11 +210,11 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <Label htmlFor="service">
+                  <Label htmlFor="service-select">
                     Service demandé <span className="text-red-500">*</span>
                   </Label>
                   <Select name="service" required>
-                    <SelectTrigger className="mt-2">
+                    <SelectTrigger className="mt-2" id="service-select">
                       <SelectValue placeholder="Sélectionnez un service" />
                     </SelectTrigger>
                     <SelectContent>
