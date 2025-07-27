@@ -27,7 +27,11 @@ export function ThemeProvider({
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
+    () => {
+      const savedTheme = localStorage.getItem(storageKey) as Theme;
+      // Always default to light theme, ignore system preferences
+      return savedTheme || "light";
+    }
   );
 
   useEffect(() => {
@@ -35,17 +39,8 @@ export function ThemeProvider({
 
     root.classList.remove("light", "dark");
 
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
-
-      root.classList.add(systemTheme);
-      return;
-    }
-
-    root.classList.add(theme);
+    // Always use the selected theme, no system detection
+    root.classList.add(theme === "system" ? "light" : theme);
   }, [theme]);
 
   const value = {
