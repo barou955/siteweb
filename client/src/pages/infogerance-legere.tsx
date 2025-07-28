@@ -492,11 +492,19 @@ export default function InfogeranceLegere() {
             Contactez-nous pour une consultation gratuite et un devis personnalisé
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-labtek-blue hover:bg-labtek-blue/90">
+            <Button 
+              size="lg" 
+              className="bg-labtek-blue hover:bg-labtek-blue/90"
+              onClick={() => window.open('tel:0781166929', '_self')}
+            >
               <Phone className="w-4 h-4 mr-2" />
               07 81 16 69 29
             </Button>
-            <Button size="lg" variant="outline">
+            <Button 
+              size="lg" 
+              variant="outline"
+              onClick={() => window.location.href = '/#contact'}
+            >
               <Mail className="w-4 h-4 mr-2" />
               contact@labtek.fr
             </Button>
