@@ -120,6 +120,12 @@ export default function SeoMeta({
       <meta name="geo.position" content="48.6921;2.3708" />
       <meta name="ICBM" content="48.6921, 2.3708" />
       
+      {/* Bing/Microsoft Edge specific */}
+      <meta name="msapplication-TileColor" content="#3730A3" />
+      <meta name="msapplication-config" content="/browserconfig.xml" />
+      <meta name="msvalidate.01" content="" />
+      <meta name="keywords" content="informatique Essonne, dépannage ordinateur 91, installation logiciels, email professionnel, sauvegarde données, sécurité informatique Île-de-France" />
+      
       {/* Structured Data */}
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}
