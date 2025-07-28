@@ -5,7 +5,8 @@ import ScrollToTopButton from "@/components/scroll-to-top-button";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, ArrowLeft, Phone, Mail, Shield, Cloud, Zap, CheckCircle } from "lucide-react";
+import { Check, ArrowLeft, Phone, Mail, Shield, Cloud, Zap, CheckCircle, Users, Server, Smartphone } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export default function EmailProfessionnel() {
   const scrollToContact = () => {
