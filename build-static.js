@@ -29,6 +29,26 @@ async function buildStatic() {
   console.log('🚀 Building static site...');
 
   try {
+    // Ensure custom images are in place
+    console.log('📄 Copying custom images...');
+    const publicDir = path.resolve(__dirname, "client/public");
+    
+    // Copy custom images from attached_assets to public folder
+    const sourceOffice = path.resolve(__dirname, "attached_assets/outil collaboratif_1753702685573.png");
+    const sourceDepannage = path.resolve(__dirname, "attached_assets/dépannage_1753702867409.png");
+    const destOffice = path.resolve(publicDir, "office-suite-personnalise.png");
+    const destDepannage = path.resolve(publicDir, "depannage-personnalise.png");
+    
+    if (fs.existsSync(sourceOffice)) {
+      fs.copyFileSync(sourceOffice, destOffice);
+      console.log('✅ Copied office suite image');
+    }
+    
+    if (fs.existsSync(sourceDepannage)) {
+      fs.copyFileSync(sourceDepannage, destDepannage);
+      console.log('✅ Copied depannage image');
+    }
+
     console.log('📄 Generating sitemap...');
     generateSitemap();
   
