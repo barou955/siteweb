@@ -68,9 +68,9 @@ export default function EmailProfessionnel() {
           <h2 className="text-3xl font-bold text-center mb-12">Services inclus</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              "Je créé votre nom de domaine personnalisé",
-              "Je configure l'email sur tous vos appareils",
-              "Je vous forme à son utilisation"
+              "Nous créons votre nom de domaine personnalisé",
+              "Nous configurons l'email sur tous vos appareils",
+              "Nous vous formons à son utilisation"
             ].map((service, index) => (
               <Card key={index} className="text-center p-6 hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-0">
@@ -277,7 +277,7 @@ export default function EmailProfessionnel() {
                 <AccordionContent className="pt-4 pb-6">
                   <div className="ml-14 space-y-4">
                     <p className="text-muted-foreground">
-                      Je vous aide à choisir le nom de domaine parfait pour votre activité. 
+                      Nous vous aidons à choisir le nom de domaine parfait pour votre activité. 
                       Vérification de disponibilité et conseil sur l'extension (.fr, .com, .org).
                     </p>
                     <ul className="space-y-2 text-sm">
@@ -358,7 +358,7 @@ export default function EmailProfessionnel() {
                 <AccordionContent className="pt-4 pb-6">
                   <div className="ml-14 space-y-4">
                     <p className="text-muted-foreground">
-                      Je vous explique comment utiliser votre nouvel email professionnel. 
+                      Nous vous expliquons comment utiliser votre nouvel email professionnel. 
                       Formation sur la gestion des dossiers, règles automatiques et bonnes pratiques.
                     </p>
                     <ul className="space-y-2 text-sm">

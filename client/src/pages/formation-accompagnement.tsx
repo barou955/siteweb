@@ -1,3 +1,4 @@
+
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import SeoMeta from "@/components/seo-meta";
@@ -43,7 +44,7 @@ export default function FormationAccompagnement() {
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               Développez vos compétences numériques avec nos formations personnalisées. 
-              De la bureautique aux outils collaboratifs, je vous accompagne dans votre montée en compétences.
+              De la bureautique aux outils collaboratifs, nous vous accompagnons dans votre montée en compétences.
             </p>
             <div className="bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
               <div className="flex items-center justify-center">
@@ -64,7 +65,7 @@ export default function FormationAccompagnement() {
       {/* Services inclus */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Ce que je propose</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Ce que nous proposons</h2>
           <div className="grid md:grid-cols-4 gap-6">
             {[
               { icon: Target, title: "Formation personnalisée", desc: "Programme adapté à votre niveau et objectifs" },
@@ -87,7 +88,7 @@ export default function FormationAccompagnement() {
       {/* Catalogue de formations */}
       <section className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Mes formations disponibles</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Nos formations disponibles</h2>
           
           <div className="space-y-8">
             {/* Formation Bureautique */}
@@ -215,7 +216,7 @@ export default function FormationAccompagnement() {
       {/* Processus de formation détaillé avec accordéons */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Mon processus de formation personnalisée</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Notre processus de formation personnalisée</h2>
           <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
             Découvrez en détail chaque étape de votre parcours de formation. 
             Un accompagnement sur mesure pour un apprentissage efficace et durable.
@@ -449,7 +450,7 @@ export default function FormationAccompagnement() {
       {/* Publics ciblés */}
       <section className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">À qui s'adressent mes formations ?</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">À qui s'adressent nos formations ?</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
@@ -492,7 +493,7 @@ export default function FormationAccompagnement() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-8">Prêt à développer vos compétences ?</h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Contactez-moi pour définir ensemble un programme de formation adapté à vos besoins
+            Contactez-nous pour définir ensemble un programme de formation adapté à vos besoins
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-labtek-blue hover:bg-labtek-blue/90">

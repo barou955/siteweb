@@ -27,7 +27,7 @@ export default function SitesWeb() {
         description="Création de sites web modernes et responsives. Vitrine, e-commerce, référencement SEO. Visible sur Google et mobile."
       />
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-labtek-blue/10 to-labtek-violet/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,7 +35,7 @@ export default function SitesWeb() {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Retour
           </Button>
-          
+
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
               Sites Web
@@ -89,7 +89,7 @@ export default function SitesWeb() {
       <section className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">Types de sites web disponibles</h2>
-          
+
           <div className="space-y-8">
             {/* Site Vitrine */}
             <Card>

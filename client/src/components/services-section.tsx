@@ -23,7 +23,7 @@ const services = [
     title: "Installation d'Équipements",
     description:
       "Besoin d'un nouvel ordinateur ? D'une imprimante ? D'internet plus rapide ? Nous choisissons le bon matériel pour vous et l'installons chez vous. Ordinateurs, imprimantes, Wi-Fi, tout est configuré et prêt à utiliser !",
-    features: ["Je vous aide à choisir", "J'installe tout chez vous", "Je vous explique comment ça marche"],
+    features: ["Nous vous aidons à choisir", "Nous installons tout chez vous", "Nous vous expliquons comment ça marche"],
     color: "bg-labtek-blue",
     image: "https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=400&h=250&fit=crop&auto=format&q=80",
     imageAlt: "Installation d'ordinateur et équipements informatiques",
@@ -44,7 +44,7 @@ const services = [
     icon: Globe,
     title: "Sites Web Simples",
     description:
-      "Vous voulez être trouvé sur internet ? Je crée votre site web pour présenter votre activité. Vos clients pourront voir vos services, vous contacter facilement et vous trouver sur Google.",
+      "Vous voulez être trouvé sur internet ? Nous créons votre site web pour présenter votre activité. Vos clients pourront voir vos services, vous contacter facilement et vous trouver sur Google.",
     features: ["Site moderne et beau", "Vos clients vous trouvent sur Google", "Vous pouvez le modifier vous-même"],
     color: "bg-green-500",
     image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&h=250&fit=crop&auto=format&q=80",
@@ -55,8 +55,8 @@ const services = [
     icon: Download,
     title: "Installation de Programmes",
     description:
-      "Vous avez besoin de Word, Excel, un logiciel de comptabilité ? Je trouve et installe les programmes qu'il vous faut. Vos anciens fichiers sont récupérés et tout fonctionne parfaitement.",
-    features: ["Les bons logiciels pour votre travail", "Vos anciens fichiers sauvegardés", "Je vous montre comment les utiliser"],
+      "Vous avez besoin de Word, Excel, un logiciel de comptabilité ? Nous trouvons et installons les programmes qu'il vous faut. Vos anciens fichiers sont récupérés et tout fonctionne parfaitement.",
+    features: ["Les bons logiciels pour votre travail", "Vos anciens fichiers sauvegardés", "Nous vous montrons comment les utiliser"],
     color: "bg-blue-500",
     image: "https://i.imghippo.com/files/XjC1118wQ.png",
     imageAlt: "Suite Microsoft Office - Word, Excel, PowerPoint, Teams et autres logiciels professionnels",
@@ -77,7 +77,7 @@ const services = [
     icon: Shield,
     title: "Sécurité & Sauvegarde",
     description:
-      "Peur de perdre vos photos de famille ? Que des virus abîment votre ordinateur ? Je protège tout : vos photos, documents importants et votre navigation internet sont en sécurité.",
+      "Peur de perdre vos photos de famille ? Que des virus abîment votre ordinateur ? Nous protégeons tout : vos photos, documents importants et votre navigation internet sont en sécurité.",
     features: ["Vos photos et documents protégés", "Plus de virus sur votre PC", "Internet en toute sécurité"],
     color: "bg-labtek-violet",
     image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop&auto=format&q=80",
@@ -88,8 +88,8 @@ const services = [
     icon: Wrench,
     title: "Dépannage & Assistance",
     description:
-      "Votre ordinateur rame ? L'imprimante ne marche plus ? Internet est coupé ? J'arrive rapidement pour tout remettre en ordre. Disponible même le weekend pour les urgences !",
-    features: ["Je répare rapidement", "Aide par téléphone possible", "Disponible weekend et soirs"],
+      "Votre ordinateur rame ? L'imprimante ne marche plus ? Internet est coupé ? Nous arrivons rapidement pour tout remettre en ordre. Disponibles même le weekend pour les urgences !",
+    features: ["Nous réparons rapidement", "Aide par téléphone possible", "Disponibles weekend et soirs"],
     color: "bg-orange-500",
     image: "https://i.imghippo.com/files/sEJ1111MHM.png",
     imageAlt: "Technicien en train de réparer un ordinateur - service de dépannage informatique",

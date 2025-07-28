@@ -66,9 +66,9 @@ export default function InstallationEquipements() {
           <h2 className="text-3xl font-bold text-center mb-12">Services inclus</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              "Je vous aide à choisir le bon matériel",
-              "J'installe tout chez vous",
-              "Je vous explique comment ça marche"
+              "Nous vous aidons à choisir le bon matériel",
+              "Nous installons tout chez vous",
+              "Nous vous expliquons comment ça marche"
             ].map((service, index) => (
               <Card key={index} className="text-center p-6">
                 <CardContent className="p-0">

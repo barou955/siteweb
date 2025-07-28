@@ -37,10 +37,6 @@ export default function InstallationProgrammes() {
           </Button>
 
           <div className="text-center">
-            <Badge className="mb-4 bg-labtek-blue/10 text-labtek-blue border-labtek-blue/20">
-              <Download className="w-4 h-4 mr-2" />
-              Installation Logiciels
-            </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
               Installation de
               <br />
@@ -48,7 +44,7 @@ export default function InstallationProgrammes() {
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               Besoin de Word, Excel, un logiciel de comptabilité ou d'un programme spécialisé ? 
-              Je trouve, installe et configure tous vos logiciels. Vos anciens fichiers sont récupérés !
+              Nous trouvons, installons et configurons tous vos logiciels. Vos anciens fichiers sont récupérés !
             </p>
             <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
               <div className="flex items-center justify-center">
@@ -72,9 +68,9 @@ export default function InstallationProgrammes() {
           <h2 className="text-3xl font-bold text-center mb-12">Services inclus</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              "Je vous aide à choisir les bons logiciels",
-              "J'installe tout avec les licences légales",
-              "Je vous forme à leur utilisation"
+              "Nous vous aidons à choisir les bons logiciels",
+              "Nous installons tout avec les licences légales",
+              "Nous vous formons à leur utilisation"
             ].map((service, index) => (
               <Card key={index} className="text-center p-6 hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-0">
@@ -281,8 +277,8 @@ export default function InstallationProgrammes() {
                 <AccordionContent className="pt-4 pb-6">
                   <div className="ml-14 space-y-4">
                     <p className="text-muted-foreground">
-                      J'évalue vos besoins spécifiques, votre budget et la compatibilité avec votre matériel existant. 
-                      Je vous conseille les meilleures solutions selon votre activité.
+                      Nous évaluons vos besoins spécifiques, votre budget et la compatibilité avec votre matériel existant. 
+                      Nous vous conseillons les meilleures solutions selon votre activité.
                     </p>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Étude de vos besoins professionnels</li>
@@ -308,7 +304,7 @@ export default function InstallationProgrammes() {
                 <AccordionContent className="pt-4 pb-6">
                   <div className="ml-14 space-y-4">
                     <p className="text-muted-foreground">
-                      Je me charge de l'achat des licences légales au meilleur prix. 
+                      Nous nous chargeons de l'achat des licences légales au meilleur prix. 
                       Toutes les licences sont authentiques et vous appartiennent définitivement.
                     </p>
                     <ul className="space-y-2 text-sm">
@@ -362,7 +358,7 @@ export default function InstallationProgrammes() {
                 <AccordionContent className="pt-4 pb-6">
                   <div className="ml-14 space-y-4">
                     <p className="text-muted-foreground">
-                      Je vous forme aux fonctionnalités essentielles de vos nouveaux logiciels. 
+                      Nous vous formons aux fonctionnalités essentielles de vos nouveaux logiciels. 
                       Formation adaptée à votre niveau et vos besoins spécifiques.
                     </p>
                     <ul className="space-y-2 text-sm">
@@ -382,7 +378,7 @@ export default function InstallationProgrammes() {
       {/* Garanties */}
       <section className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Mes garanties</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Nos garanties</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { title: "Licences 100% légales", icon: Shield },

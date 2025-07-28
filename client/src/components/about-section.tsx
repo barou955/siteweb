@@ -21,14 +21,14 @@ export default function AboutSection() {
             </h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-muted-foreground mb-6">
-                Ingénieur réseaux et systèmes avec plus de 5 ans d'expérience,
-                j'ai créé LABTEK pour apporter des solutions
+                Ingénieurs réseaux et systèmes avec plus de 5 ans d'expérience,
+                nous avons créé LABTEK pour apporter des solutions
                 informatiques simples et efficaces aux particuliers et PME
                 d'Essonne et d'Île-de-France.
               </p>
 
               <p className="text-muted-foreground mb-6">
-                Ma mission est de démystifier l'informatique et de vous
+                Notre mission est de démystifier l'informatique et de vous
                 accompagner dans votre transformation numérique, quel que soit
                 votre niveau technique. Chaque solution est pensée pour être
                 durable, sécurisée et adaptée à vos besoins réels.

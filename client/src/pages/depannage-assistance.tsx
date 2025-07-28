@@ -43,7 +43,7 @@ export default function DepannageAssistance() {
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               Votre ordinateur ne marche plus ? Internet ne fonctionne pas ? 
-              Je viens chez vous le réparer rapidement et simplement !
+              Nous venons chez vous le réparer rapidement et simplement !
             </p>
             <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
               <div className="flex items-center justify-center">
@@ -64,7 +64,7 @@ export default function DepannageAssistance() {
       {/* Services inclus */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Ce que je fais pour vous</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Ce que nous faisons pour vous</h2>
           <div className="grid md:grid-cols-4 gap-6">
             {[
               { icon: Eye, title: "Diagnostic rapide", desc: "Identification précise du problème" },
@@ -87,7 +87,7 @@ export default function DepannageAssistance() {
       {/* Types d'intervention */}
       <section className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Mes types d'intervention</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Nos types d'intervention</h2>
 
           <div className="space-y-8">
             {/* Dépannage à domicile */}
@@ -100,7 +100,7 @@ export default function DepannageAssistance() {
                       <h3 className="text-2xl font-bold">🏠 Intervention à domicile - Sur devis</h3>
                     </div>
                     <p className="text-muted-foreground mb-6">
-                      Je me déplace chez vous avec tout le matériel nécessaire. Diagnostic sur place, 
+                      Nous nous déplaçons chez vous avec tout le matériel nécessaire. Diagnostic sur place, 
                       réparation immédiate si possible et conseils personnalisés.
                     </p>
                     <div className="space-y-4">
@@ -148,8 +148,8 @@ export default function DepannageAssistance() {
                       <h3 className="text-2xl font-bold">💻 Assistance à distance - Sur devis</h3>
                     </div>
                     <p className="text-muted-foreground mb-6">
-                      Résolution rapide par internet. Je prends le contrôle de votre écran pour 
-                      diagnostiquer et résoudre de nombreux problèmes sans me déplacer.
+                      Résolution rapide par internet. Nous prenons le contrôle de votre écran pour 
+                      diagnostiquer et résoudre de nombreux problèmes sans nous déplacer.
                     </p>
                     <div className="space-y-4">
                       <div className="border-l-4 border-cyan-500 pl-4">
@@ -215,7 +215,7 @@ export default function DepannageAssistance() {
       {/* Processus d'intervention détaillé avec accordéons */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Mon processus d'intervention professionnel</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Notre processus d'intervention professionnel</h2>
           <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
             Découvrez en détail chaque étape de mon intervention. Un processus structuré 
             pour résoudre efficacement tous vos problèmes informatiques.
@@ -457,7 +457,7 @@ export default function DepannageAssistance() {
       {/* Problèmes résolus */}
       <section className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Problèmes que je résous quotidiennement</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Problèmes que nous résolvons quotidiennement</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { title: "PC lent ou qui plante", desc: "Optimisation performances, nettoyage système" },
@@ -604,7 +604,7 @@ export default function DepannageAssistance() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-8">Besoin d'aide maintenant ?</h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Appelez-moi pour une intervention rapide ou une assistance immédiate
+            Appelez-nous pour une intervention rapide ou une assistance immédiate
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-labtek-blue hover:bg-labtek-blue/90">

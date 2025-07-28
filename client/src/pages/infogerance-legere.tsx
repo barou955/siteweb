@@ -38,17 +38,13 @@ export default function InfogeranceLegere() {
           </Button>
 
           <div className="text-center">
-            <Badge className="mb-4 bg-labtek-blue/10 text-labtek-blue border-labtek-blue/20">
-              <Activity className="w-4 h-4 mr-2" />
-              Infogérance
-            </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
               Infogérance Légère
               <br />
               <span className="text-labtek-blue">Surveillance 24h/24</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Je surveille votre informatique en continu pour vous alerter dès qu'un problème survient. 
+              Nous surveillons votre informatique en continu pour vous alerter dès qu'un problème survient. 
               Plus de mauvaises surprises, votre système est sous contrôle permanent.
             </p>
             <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
@@ -73,9 +69,9 @@ export default function InfogeranceLegere() {
           <h2 className="text-3xl font-bold text-center mb-12">Services inclus</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { text: "Je surveille vos équipements 24h/24", icon: Eye },
-              { text: "Je vous alerte dès qu'un problème survient", icon: Bell },
-              { text: "Je vous assiste pour résoudre rapidement", icon: HeadphonesIcon }
+              { text: "Nous surveillons vos équipements 24h/24", icon: Eye },
+              { text: "Nous vous alertons dès qu'un problème survient", icon: Bell },
+              { text: "Nous vous assistons pour résoudre rapidement", icon: HeadphonesIcon }
             ].map((service, index) => {
               const IconComponent = service.icon;
               return (
@@ -393,8 +389,8 @@ export default function InfogeranceLegere() {
                 <AccordionContent className="pt-4 pb-6">
                   <div className="ml-14 space-y-4">
                     <p className="text-muted-foreground">
-                      Je commence par faire le tour de votre parc informatique : serveurs, ordinateurs, 
-                      équipements réseau, imprimantes... Je note tout ce qui doit être surveillé.
+                      Nous commençons par faire le tour de votre parc informatique : serveurs, ordinateurs, 
+                      équipements réseau, imprimantes... Nous notons tout ce qui doit être surveillé.
                     </p>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Cartographie de tous vos équipements</li>
@@ -420,8 +416,8 @@ export default function InfogeranceLegere() {
                 <AccordionContent className="pt-4 pb-6">
                   <div className="ml-14 space-y-4">
                     <p className="text-muted-foreground">
-                      J'installe et configure des logiciels de surveillance sur vos équipements. 
-                      Ces outils vont me remonter en temps réel l'état de votre système.
+                      Nous installons et configurons des logiciels de surveillance sur vos équipements. 
+                      Ces outils nous remontent en temps réel l'état de votre système.
                     </p>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Installation d'agents de monitoring</li>
@@ -448,7 +444,7 @@ export default function InfogeranceLegere() {
                   <div className="ml-14 space-y-4">
                     <p className="text-muted-foreground">
                       Une fois tout en place, la surveillance se fait automatiquement. 
-                      Je reçois les alertes et je vous contacte immédiatement si nécessaire.
+                      Nous recevons les alertes et nous vous contactons immédiatement si nécessaire.
                     </p>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Surveillance automatique 24h/24</li>

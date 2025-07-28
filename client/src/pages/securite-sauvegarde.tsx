@@ -43,8 +43,8 @@ export default function SecuriteSauvegarde() {
               <span className="text-labtek-blue">Sauvegarde</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Protégez vos données importantes ! Je sécurise votre ordinateur contre les virus 
-              et je sauvegarde automatiquement vos fichiers précieux.
+              Protégez vos données importantes ! Nous sécurisons votre ordinateur contre les virus 
+              et nous sauvegardons automatiquement vos fichiers précieux.
             </p>
             <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
               <div className="flex items-center justify-center">
@@ -65,7 +65,7 @@ export default function SecuriteSauvegarde() {
       {/* Services inclus */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Ce que je fais pour vous</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Ce que nous faisons pour vous</h2>
           <div className="grid md:grid-cols-4 gap-6">
             {[
               { icon: Eye, title: "Audit sécurité complet", desc: "Analyse de vos vulnérabilités actuelles" },
@@ -88,7 +88,7 @@ export default function SecuriteSauvegarde() {
       {/* Solutions de sécurité */}
       <section className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Mes solutions de protection</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Nos solutions de protection</h2>
           
           <div className="space-y-8">
             {/* Protection Antivirus */}
@@ -216,7 +216,7 @@ export default function SecuriteSauvegarde() {
       {/* Processus de sécurisation détaillé avec accordéons */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Mon processus de sécurisation complète</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Notre processus de sécurisation complète</h2>
           <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
             Découvrez en détail chaque étape de la sécurisation de votre environnement informatique. 
             Un processus rigoureux pour une protection maximale.
@@ -456,7 +456,7 @@ export default function SecuriteSauvegarde() {
       {/* Garanties et services */}
       <section className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Mes garanties et services inclus</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Nos garanties et services inclus</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { icon: Eye, title: "Audit sécurité gratuit", desc: "Analyse complète de vos vulnérabilités" },
@@ -562,7 +562,7 @@ export default function SecuriteSauvegarde() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-8">Prêt à protéger vos données ?</h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Contactez-moi pour une consultation gratuite et sécuriser votre environnement
+            Contactez-nous pour une consultation gratuite et sécuriser votre environnement
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-labtek-blue hover:bg-labtek-blue/90">

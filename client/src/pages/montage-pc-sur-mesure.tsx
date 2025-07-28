@@ -43,7 +43,7 @@ export default function MontagePcSurMesure() {
               <span className="text-labtek-blue">Sur Mesure</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Je monte votre PC personnalisé selon vos besoins : travail, jeux ou création. 
+              Nous montons votre PC personnalisé selon vos besoins : travail, jeux ou création. 
               Composants de qualité, assemblage professionnel et garantie complète.
             </p>
             <div className="bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
@@ -65,7 +65,7 @@ export default function MontagePcSurMesure() {
       {/* Services inclus */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Ce que je fais pour vous</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Ce que nous faisons pour vous</h2>
           <div className="grid md:grid-cols-4 gap-6">
             {[
               { icon: Phone, title: "Conseil personnalisé", desc: "Évaluation de vos besoins et recommandations" },
@@ -233,7 +233,7 @@ export default function MontagePcSurMesure() {
       {/* Processus de montage détaillé avec accordéons */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Mon processus de montage professionnel</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Notre processus de montage professionnel</h2>
           <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
             Découvrez en détail chaque étape de l'assemblage de votre PC sur mesure. 
             Un processus rigoureux pour garantir performances et fiabilité.
@@ -482,7 +482,7 @@ export default function MontagePcSurMesure() {
       {/* Garanties et services */}
       <section className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Mes garanties et services inclus</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Nos garanties et services inclus</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { icon: Phone, title: "Conseil personnalisé gratuit", desc: "Analyse de vos besoins sans engagement" },
