@@ -39,15 +39,36 @@ async function buildStatic() {
     const destOffice = path.resolve(publicDir, "office-suite-personnalise.png");
     const destDepannage = path.resolve(publicDir, "depannage-personnalise.png");
     
+    // Ensure directory exists
+    if (!fs.existsSync(publicDir)) {
+      fs.mkdirSync(publicDir, { recursive: true });
+    }
+    
     if (fs.existsSync(sourceOffice)) {
       fs.copyFileSync(sourceOffice, destOffice);
       console.log('✅ Copied office suite image');
+    } else {
+      console.warn('⚠️ Source office image not found:', sourceOffice);
     }
     
     if (fs.existsSync(sourceDepannage)) {
       fs.copyFileSync(sourceDepannage, destDepannage);
       console.log('✅ Copied depannage image');
+    } else {
+      console.warn('⚠️ Source depannage image not found:', sourceDepannage);
     }
+    
+    // Create a manifest of available images
+    const imageManifest = {
+      officePersonnalise: fs.existsSync(destOffice) ? "/office-suite-personnalise.png" : "/microsoft-office-suite.png",
+      depannagePersonnalise: fs.existsSync(destDepannage) ? "/depannage-personnalise.png" : "/depannage-assistance.png"
+    };
+    
+    fs.writeFileSync(
+      path.resolve(publicDir, "image-manifest.json"),
+      JSON.stringify(imageManifest, null, 2)
+    );
+    console.log('✅ Created image manifest');
 
     console.log('📄 Generating sitemap...');
     generateSitemap();
