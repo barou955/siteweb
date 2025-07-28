@@ -48,12 +48,13 @@ export default function DepannageAssistance() {
             <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
               <div className="flex items-center justify-center">
                 <Zap className="w-6 h-6 text-orange-500 mr-3" />
-                <p className="text-orange-700 dark:text-orange-300 font-semibold">
+                <p className="text-orange-700 dark:text-orange-300 font-semibold text-center">
                   Intervention possible le jour même !
                 </p>
               </div>
             </div>
             <Button onClick={scrollToContact} size="lg" className="bg-labtek-blue hover:bg-labtek-blue/90">
+              <Wrench className="w-5 h-5 mr-2" />
               Demander une intervention
             </Button>
           </div>
@@ -96,7 +97,7 @@ export default function DepannageAssistance() {
                   <div>
                     <div className="flex items-center mb-4">
                       <MapPin className="w-8 h-8 text-blue-500 mr-3" />
-                      <h3 className="text-2xl font-bold">🏠 Intervention à domicile - 60€ base</h3>
+                      <h3 className="text-2xl font-bold">🏠 Intervention à domicile - Sur devis</h3>
                     </div>
                     <p className="text-muted-foreground mb-6">
                       Je me déplace chez vous avec tout le matériel nécessaire. Diagnostic sur place, 
@@ -104,11 +105,11 @@ export default function DepannageAssistance() {
                     </p>
                     <div className="space-y-4">
                       <div className="border-l-4 border-blue-500 pl-4">
-                        <h4 className="font-semibold">Diagnostic complet (60€)</h4>
+                        <h4 className="font-semibold">Diagnostic complet</h4>
                         <p className="text-muted-foreground">Identification précise du problème, devis transparent</p>
                       </div>
                       <div className="border-l-4 border-green-500 pl-4">
-                        <h4 className="font-semibold">Réparation sur place (60€/h)</h4>
+                        <h4 className="font-semibold">Réparation sur place</h4>
                         <p className="text-muted-foreground">Si réparable immédiatement, sinon emport en atelier</p>
                       </div>
                       <div className="border-l-4 border-purple-500 pl-4">
@@ -144,7 +145,7 @@ export default function DepannageAssistance() {
                   <div className="order-1 lg:order-2">
                     <div className="flex items-center mb-4">
                       <HeadphonesIcon className="w-8 h-8 text-green-500 mr-3" />
-                      <h3 className="text-2xl font-bold">💻 Assistance à distance - 30€/h</h3>
+                      <h3 className="text-2xl font-bold">💻 Assistance à distance - Sur devis</h3>
                     </div>
                     <p className="text-muted-foreground mb-6">
                       Résolution rapide par internet. Je prends le contrôle de votre écran pour 
@@ -152,7 +153,7 @@ export default function DepannageAssistance() {
                     </p>
                     <div className="space-y-4">
                       <div className="border-l-4 border-cyan-500 pl-4">
-                        <h4 className="font-semibold">Aide immédiate (30€/h)</h4>
+                        <h4 className="font-semibold">Aide immédiate</h4>
                         <p className="text-muted-foreground">Connexion sécurisée, résolution en temps réel</p>
                       </div>
                       <div className="border-l-4 border-indigo-500 pl-4">
@@ -176,7 +177,7 @@ export default function DepannageAssistance() {
                   <div>
                     <div className="flex items-center mb-4">
                       <Settings className="w-8 h-8 text-purple-500 mr-3" />
-                      <h3 className="text-2xl font-bold">🔧 Maintenance préventive - 35€/mois</h3>
+                      <h3 className="text-2xl font-bold">🔧 Maintenance préventive - Sur devis</h3>
                     </div>
                     <p className="text-muted-foreground mb-6">
                       Évitez les pannes avec un entretien régulier. Nettoyage, optimisation et 
@@ -184,7 +185,7 @@ export default function DepannageAssistance() {
                     </p>
                     <div className="space-y-4">
                       <div className="border-l-4 border-orange-500 pl-4">
-                        <h4 className="font-semibold">Visite mensuelle (35€/mois)</h4>
+                        <h4 className="font-semibold">Visite mensuelle</h4>
                         <p className="text-muted-foreground">Nettoyage physique et logiciel complet</p>
                       </div>
                       <div className="border-l-4 border-red-500 pl-4">
@@ -515,6 +516,85 @@ export default function DepannageAssistance() {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Contrats de maintenance spécifiques dépannage */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 dark:from-orange-950/20 dark:via-red-950/20 dark:to-pink-950/20 rounded-xl p-8 border-2 border-orange-200 dark:border-orange-800 shadow-lg">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md">
+                🔧 ASSOCIEZ UN CONTRAT DE MAINTENANCE !
+              </div>
+            </div>
+
+            <div className="text-center mb-8 mt-4">
+              <h3 className="text-2xl font-bold mb-4">💡 Pourquoi un contrat de maintenance préventive ?</h3>
+              <p className="text-muted-foreground">
+                Évitez les pannes et bénéficiez d'un support prioritaire !
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
+                <div className="text-xl mb-2">🏢</div>
+                <h4 className="font-bold text-lg mb-2">Essentiel</h4>
+                <p className="text-orange-600 dark:text-orange-400 font-medium mb-3">Maintenance de base</p>
+                <ul className="text-sm space-y-2">
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Assistance téléphonique</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>  
+                    <span>Diagnostic à distance</span>
+                  </li>
+                </ul>
+              </Card>
+
+              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center border-2 border-labtek-blue">
+                <div className="text-xl mb-2">🚀</div>
+                <h4 className="font-bold text-lg mb-2">Professionnel</h4>
+                <p className="text-purple-600 dark:text-purple-400 font-medium mb-3">Maintenance proactive</p>
+                <ul className="text-sm space-y-2">
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Intervention mensuelle</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Dépannage d'urgence -30%</span>
+                  </li>
+                </ul>
+              </Card>
+
+              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
+                <div className="text-xl mb-2">🏭</div>
+                <h4 className="font-bold text-lg mb-2">Entreprise</h4>
+                <p className="text-red-600 dark:text-red-400 font-medium mb-3">Support complet 24/7</p>
+                <ul className="text-sm space-y-2">
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Support technique 24/7</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Technicien dédié équipe</span>
+                  </li>
+                </ul>
+              </Card>
+            </div>
+
+            <div className="text-center">
+              <p className="text-sm text-muted-foreground mb-4">
+                Maintenance préventive + support prioritaire = tranquillité totale
+              </p>
+              <Button onClick={scrollToContact} className="bg-orange-500 hover:bg-orange-600 text-white">
+                Découvrir les formules complètes
+              </Button>
+            </div>
           </div>
         </div>
       </section>

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Check, ArrowLeft, Phone, Mail, Globe, Search, Smartphone, Shield, Palette, Code, Settings, Zap, Users, BarChart } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 export default function SitesWeb() {
   const scrollToContact = () => {
@@ -45,7 +46,16 @@ export default function SitesWeb() {
               Vous voulez être trouvé sur internet ? Je crée votre site web pour présenter votre activité. 
               Vos clients pourront voir vos services, vous contacter facilement et vous trouver sur Google.
             </p>
+            <div className="bg-cyan-50 dark:bg-cyan-900/20 border border-cyan-200 dark:border-cyan-800 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
+              <div className="flex items-center justify-center">
+                <Globe className="w-6 h-6 text-cyan-500 mr-3" />
+                <p className="text-cyan-700 dark:text-cyan-300 text-center">
+                  <strong>Site moderne et responsive</strong> - Visible sur Google !
+                </p>
+              </div>
+            </div>
             <Button onClick={scrollToContact} size="lg" className="bg-labtek-blue hover:bg-labtek-blue/90">
+              <Code className="w-5 h-5 mr-2" />
               Créer mon site web
             </Button>
           </div>
@@ -478,6 +488,85 @@ export default function SitesWeb() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contrats de maintenance spécifiques sites web */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 dark:from-orange-950/20 dark:via-red-950/20 dark:to-pink-950/20 rounded-xl p-8 border-2 border-orange-200 dark:border-orange-800 shadow-lg">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md">
+                🔧 ASSOCIEZ UN CONTRAT DE MAINTENANCE !
+              </div>
+            </div>
+
+            <div className="text-center mb-8 mt-4">
+              <h3 className="text-2xl font-bold mb-4">💡 Pourquoi un contrat de maintenance pour votre site ?</h3>
+              <p className="text-muted-foreground">
+                Assurez la disponibilité et la sécurité de votre présence en ligne !
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
+                <div className="text-xl mb-2">🏢</div>
+                <h4 className="font-bold text-lg mb-2">Essentiel</h4>
+                <p className="text-orange-600 dark:text-orange-400 font-medium mb-3">Maintenance de base</p>
+                <ul className="text-sm space-y-2">
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Mises à jour sécurité</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>  
+                    <span>Sauvegarde hebdomadaire</span>
+                  </li>
+                </ul>
+              </Card>
+
+              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center border-2 border-labtek-blue">
+                <div className="text-xl mb-2">🚀</div>
+                <h4 className="font-bold text-lg mb-2">Professionnel</h4>
+                <p className="text-purple-600 dark:text-purple-400 font-medium mb-3">Maintenance + SEO</p>
+                <ul className="text-sm space-y-2">
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Optimisation SEO mensuelle</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Rapports de performance</span>
+                  </li>
+                </ul>
+              </Card>
+
+              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
+                <div className="text-xl mb-2">🏭</div>
+                <h4 className="font-bold text-lg mb-2">Entreprise</h4>
+                <p className="text-red-600 dark:text-red-400 font-medium mb-3">Premium e-commerce</p>
+                <ul className="text-sm space-y-2">
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Surveillance 24/7</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>CDN optimisation vitesse</span>
+                  </li>
+                </ul>
+              </Card>
+            </div>
+
+            <div className="text-center">
+              <p className="text-sm text-muted-foreground mb-4">
+                Site performant + maintenance continue = présence en ligne sans souci
+              </p>
+              <Button onClick={scrollToContact} className="bg-orange-500 hover:bg-orange-600 text-white">
+                Découvrir les formules complètes
+              </Button>
+            </div>
           </div>
         </div>
       </section>

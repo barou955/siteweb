@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Check, ArrowLeft, Phone, Mail, Cpu, HardDrive, Zap, Monitor, Settings, Wrench, Shield, Thermometer, Cable, Gamepad2 } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 export default function MontagePcSurMesure() {
   const scrollToContact = () => {
@@ -45,7 +46,16 @@ export default function MontagePcSurMesure() {
               Je monte votre PC personnalisé selon vos besoins : travail, jeux ou création. 
               Composants de qualité, assemblage professionnel et garantie complète.
             </p>
+            <div className="bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
+              <div className="flex items-center justify-center">
+                <Cpu className="w-6 h-6 text-purple-500 mr-3" />
+                <p className="text-purple-700 dark:text-purple-300 text-center">
+                  <strong>Montage professionnel certifié</strong> - Composants haut de gamme !
+                </p>
+              </div>
+            </div>
             <Button onClick={scrollToContact} size="lg" className="bg-labtek-blue hover:bg-labtek-blue/90">
+              <Settings className="w-5 h-5 mr-2" />
               Configurez votre PC
             </Button>
           </div>
@@ -490,6 +500,85 @@ export default function MontagePcSurMesure() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contrats de maintenance spécifiques PC sur mesure */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 dark:from-orange-950/20 dark:via-red-950/20 dark:to-pink-950/20 rounded-xl p-8 border-2 border-orange-200 dark:border-orange-800 shadow-lg">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md">
+                🔧 ASSOCIEZ UN CONTRAT DE MAINTENANCE !
+              </div>
+            </div>
+
+            <div className="text-center mb-8 mt-4">
+              <h3 className="text-2xl font-bold mb-4">💡 Pourquoi un contrat de maintenance pour votre PC ?</h3>
+              <p className="text-muted-foreground">
+                Préservez les performances de votre PC et optimisez sa longévité !
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
+                <div className="text-xl mb-2">🏢</div>
+                <h4 className="font-bold text-lg mb-2">Essentiel</h4>
+                <p className="text-orange-600 dark:text-orange-400 font-medium mb-3">Entretien semestriel</p>
+                <ul className="text-sm space-y-2">
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Nettoyage complet 2x/an</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>  
+                    <span>Optimisation système</span>
+                  </li>
+                </ul>
+              </Card>
+
+              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center border-2 border-labtek-blue">
+                <div className="text-xl mb-2">🚀</div>
+                <h4 className="font-bold text-lg mb-2">Professionnel</h4>
+                <p className="text-purple-600 dark:text-purple-400 font-medium mb-3">Maintenance trimestrielle</p>
+                <ul className="text-sm space-y-2">
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Surveillance composants</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Support gaming prioritaire</span>
+                  </li>
+                </ul>
+              </Card>
+
+              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
+                <div className="text-xl mb-2">🏭</div>
+                <h4 className="font-bold text-lg mb-2">Entreprise</h4>
+                <p className="text-red-600 dark:text-red-400 font-medium mb-3">Premium workstation</p>
+                <ul className="text-sm space-y-2">
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Surveillance 24/7</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Overclocking sécurisé</span>
+                  </li>
+                </ul>
+              </Card>
+            </div>
+
+            <div className="text-center">
+              <p className="text-sm text-muted-foreground mb-4">
+                PC performant + maintenance experte = performances durables
+              </p>
+              <Button onClick={scrollToContact} className="bg-orange-500 hover:bg-orange-600 text-white">
+                Découvrir les formules complètes
+              </Button>
+            </div>
           </div>
         </div>
       </section>

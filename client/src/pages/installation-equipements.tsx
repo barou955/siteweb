@@ -1,11 +1,10 @@
-
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import SeoMeta from "@/components/seo-meta";
 import ScrollToTopButton from "@/components/scroll-to-top-button";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Check, ArrowLeft, Phone, Mail, Monitor, Wifi, Shield, Camera, Tv } from "lucide-react";
+import { Check, ArrowLeft, Phone, Mail, Monitor, Wifi, Shield, Camera, Tv, CheckCircle } from "lucide-react";
 
 export default function InstallationEquipements() {
   const scrollToContact = () => {
@@ -26,7 +25,7 @@ export default function InstallationEquipements() {
         description="Installation professionnelle d'ordinateurs, imprimantes, Wi-Fi et équipements informatiques. Service à domicile en Essonne et Île-de-France."
       />
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-labtek-blue/10 to-labtek-violet/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,7 +33,7 @@ export default function InstallationEquipements() {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Retour
           </Button>
-          
+
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
               Installation d'Équipements
@@ -45,8 +44,17 @@ export default function InstallationEquipements() {
               Besoin d'un nouvel ordinateur ? D'une imprimante ? D'internet plus rapide ? 
               Nous choisissons le bon matériel pour vous et l'installons chez vous.
             </p>
+            <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
+              <div className="flex items-center justify-center">
+                <Monitor className="w-6 h-6 text-blue-500 mr-3" />
+                <p className="text-blue-700 dark:text-blue-300 text-center">
+                  <strong>Installation professionnelle garantie</strong> - Matériel de qualité !
+                </p>
+              </div>
+            </div>
             <Button onClick={scrollToContact} size="lg" className="bg-labtek-blue hover:bg-labtek-blue/90">
-              Demander un devis gratuit
+              <CheckCircle className="w-5 h-5 mr-2" />
+              Demander un devis
             </Button>
           </div>
         </div>
@@ -77,7 +85,7 @@ export default function InstallationEquipements() {
       <section className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">Équipements disponibles</h2>
-          
+
           <div className="space-y-8">
             {/* Équipements informatiques */}
             <Card>
@@ -277,12 +285,91 @@ export default function InstallationEquipements() {
         </div>
       </section>
 
+      {/* Contrats de maintenance spécifiques équipements */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 dark:from-orange-950/20 dark:via-red-950/20 dark:to-pink-950/20 rounded-xl p-8 border-2 border-orange-200 dark:border-orange-800 shadow-lg">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md">
+                🔧 ASSOCIEZ UN CONTRAT DE MAINTENANCE !
+              </div>
+            </div>
+
+            <div className="text-center mb-8 mt-4">
+              <h3 className="text-2xl font-bold mb-4">💡 Pourquoi un contrat de maintenance pour vos équipements ?</h3>
+              <p className="text-muted-foreground">
+                Prolongez la durée de vie de vos équipements et évitez les pannes coûteuses !
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
+                <div className="text-xl mb-2">🏢</div>
+                <h4 className="font-bold text-lg mb-2">Essentiel</h4>
+                <p className="text-orange-600 dark:text-orange-400 font-medium mb-3">Maintenance de base</p>
+                <ul className="text-sm space-y-2">
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Nettoyage trimestriel</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>  
+                    <span>Vérification connexions</span>
+                  </li>
+                </ul>
+              </Card>
+
+              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center border-2 border-labtek-blue">
+                <div className="text-xl mb-2">🚀</div>
+                <h4 className="font-bold text-lg mb-2">Professionnel</h4>
+                <p className="text-purple-600 dark:text-purple-400 font-medium mb-3">Maintenance complète</p>
+                <ul className="text-sm space-y-2">
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Maintenance mensuelle</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Support étendu 8h-20h</span>
+                  </li>
+                </ul>
+              </Card>
+
+              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
+                <div className="text-xl mb-2">🏭</div>
+                <h4 className="font-bold text-lg mb-2">Entreprise</h4>
+                <p className="text-red-600 dark:text-red-400 font-medium mb-3">Premium 24/7</p>
+                <ul className="text-sm space-y-2">
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Support 24/7</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Ingénieur dédié</span>
+                  </li>
+                </ul>
+              </Card>
+            </div>
+
+            <div className="text-center">
+              <p className="text-sm text-muted-foreground mb-4">
+                Équipements protégés + maintenance préventive = longévité maximale
+              </p>
+              <Button onClick={scrollToContact} className="bg-orange-500 hover:bg-orange-600 text-white">
+                Découvrir les formules complètes
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-8">Prêt à installer vos équipements ?</h2>
+          <h2 className="text-3xl font-bold mb-8">Prêt à équiper votre espace ?</h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Contactez-nous pour un devis personnalisé et gratuit
+            Contactez-moi pour un devis personnalisé selon vos besoins
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-labtek-blue hover:bg-labtek-blue/90">

@@ -4,8 +4,8 @@ import SeoMeta from "@/components/seo-meta";
 import ScrollToTopButton from "@/components/scroll-to-top-button";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Check, ArrowLeft, Phone, Mail, Shield, Smartphone, Globe, Server, Users, Zap } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Check, ArrowLeft, Phone, Mail, Shield, Cloud, Zap, CheckCircle } from "lucide-react";
 
 export default function EmailProfessionnel() {
   const scrollToContact = () => {
@@ -26,7 +26,7 @@ export default function EmailProfessionnel() {
         description="Créez votre adresse email professionnelle @votre-nom.fr. Configuration automatique sur tous vos appareils. Hébergement français sécurisé."
       />
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-labtek-blue/10 to-labtek-violet/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,7 +34,7 @@ export default function EmailProfessionnel() {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Retour
           </Button>
-          
+
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
               Email
@@ -45,8 +45,17 @@ export default function EmailProfessionnel() {
               Fini les adresses @gmail.com ! Avec votre email @votre-nom.fr, 
               vous paraissez plus sérieux et professionnel. Ça marche sur tous vos appareils !
             </p>
+            <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
+              <div className="flex items-center justify-center">
+                <Shield className="w-6 h-6 text-green-500 mr-3" />
+                <p className="text-green-700 dark:text-green-300 text-center">
+                  <strong>Hébergement français sécurisé</strong> - Vos données restent en France !
+                </p>
+              </div>
+            </div>
             <Button onClick={scrollToContact} size="lg" className="bg-labtek-blue hover:bg-labtek-blue/90">
-              Créer mon email pro
+              <CheckCircle className="w-5 h-5 mr-2" />
+              Demander un devis
             </Button>
           </div>
         </div>
@@ -62,9 +71,11 @@ export default function EmailProfessionnel() {
               "Je configure l'email sur tous vos appareils",
               "Je vous forme à son utilisation"
             ].map((service, index) => (
-              <Card key={index} className="text-center p-6">
+              <Card key={index} className="text-center p-6 hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-0">
-                  <Check className="w-12 h-12 text-green-500 mx-auto mb-4" />
+                  <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Check className="w-8 h-8 text-blue-500" />
+                  </div>
                   <p className="font-medium">{service}</p>
                 </CardContent>
               </Card>
@@ -77,7 +88,7 @@ export default function EmailProfessionnel() {
       <section className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">Solutions email disponibles</h2>
-          
+
           <div className="space-y-8">
             {/* Email basique pour particuliers */}
             <Card>
@@ -242,72 +253,124 @@ export default function EmailProfessionnel() {
         </div>
       </section>
 
-      {/* Processus de création */}
+      {/* Comment je procède */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">Comment je procède</h2>
-          
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            <AccordionItem value="item-1" className="border rounded-lg px-6">
-              <AccordionTrigger className="text-left">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-labtek-blue text-white rounded-full flex items-center justify-center font-bold">1</div>
-                  <span className="font-semibold">Choix du nom de domaine</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-4 pl-11">
-                <p className="text-muted-foreground">
-                  Je vous aide à choisir le nom de domaine parfait pour votre activité. 
-                  Vérification de disponibilité et conseil sur l'extension (.fr, .com, .org).
-                </p>
-              </AccordionContent>
-            </AccordionItem>
 
-            <AccordionItem value="item-2" className="border rounded-lg px-6">
-              <AccordionTrigger className="text-left">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-labtek-blue text-white rounded-full flex items-center justify-center font-bold">2</div>
-                  <span className="font-semibold">Configuration serveur email</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-4 pl-11">
-                <p className="text-muted-foreground">
-                  Mise en place de votre boîte email sur des serveurs français sécurisés. 
-                  Configuration des protocoles IMAP, SMTP et des paramètres de sécurité.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
 
-            <AccordionItem value="item-3" className="border rounded-lg px-6">
-              <AccordionTrigger className="text-left">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-labtek-blue text-white rounded-full flex items-center justify-center font-bold">3</div>
-                  <span className="font-semibold">Installation sur vos appareils</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-4 pl-11">
-                <p className="text-muted-foreground">
-                  Configuration automatique sur votre téléphone, tablette et ordinateur. 
-                  Paramétrage des notifications et synchronisation des contacts/calendrier.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
+              <AccordionItem value="etape1" className="border rounded-lg px-6">
+                <AccordionTrigger className="hover:no-underline">
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-4 text-white font-bold">
+                      1
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-bold text-lg">Choix du nom de domaine</h3>
+                      <p className="text-muted-foreground text-sm">Votre identité numérique personnalisée</p>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-4 pb-6">
+                  <div className="ml-14 space-y-4">
+                    <p className="text-muted-foreground">
+                      Je vous aide à choisir le nom de domaine parfait pour votre activité. 
+                      Vérification de disponibilité et conseil sur l'extension (.fr, .com, .org).
+                    </p>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Recherche et vérification de disponibilité</li>
+                      <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Conseil sur la meilleure extension</li>
+                      <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Enregistrement et gestion du domaine</li>
+                    </ul>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
 
-            <AccordionItem value="item-4" className="border rounded-lg px-6">
-              <AccordionTrigger className="text-left">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-labtek-blue text-white rounded-full flex items-center justify-center font-bold">4</div>
-                  <span className="font-semibold">Formation et prise en main</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-4 pl-11">
-                <p className="text-muted-foreground">
-                  Je vous explique comment utiliser votre nouvel email professionnel. 
-                  Formation sur la gestion des dossiers, règles automatiques et bonnes pratiques.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+              <AccordionItem value="etape2" className="border rounded-lg px-6">
+                <AccordionTrigger className="hover:no-underline">
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mr-4 text-white font-bold">
+                      2
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-bold text-lg">Configuration serveur email</h3>
+                      <p className="text-muted-foreground text-sm">Hébergement sécurisé en France</p>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-4 pb-6">
+                  <div className="ml-14 space-y-4">
+                    <p className="text-muted-foreground">
+                      Mise en place de votre boîte email sur des serveurs français sécurisés. 
+                      Configuration des protocoles IMAP, SMTP et des paramètres de sécurité.
+                    </p>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Hébergement sur serveurs français</li>
+                      <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Configuration sécurisée IMAP/SMTP</li>
+                      <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Protection anti-spam et antivirus</li>
+                    </ul>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="etape3" className="border rounded-lg px-6">
+                <AccordionTrigger className="hover:no-underline">
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center mr-4 text-white font-bold">
+                      3
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-bold text-lg">Installation sur vos appareils</h3>
+                      <p className="text-muted-foreground text-sm">Synchronisation automatique partout</p>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-4 pb-6">
+                  <div className="ml-14 space-y-4">
+                    <p className="text-muted-foreground">
+                      Configuration automatique sur votre téléphone, tablette et ordinateur. 
+                      Paramétrage des notifications et synchronisation des contacts/calendrier.
+                    </p>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Configuration sur tous vos appareils</li>
+                      <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Synchronisation contacts et calendrier</li>
+                      <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Paramétrage des notifications</li>
+                    </ul>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="etape4" className="border rounded-lg px-6">
+                <AccordionTrigger className="hover:no-underline">
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center mr-4 text-white font-bold">
+                      4
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-bold text-lg">Formation et prise en main</h3>
+                      <p className="text-muted-foreground text-sm">Maîtrisez votre nouvel email pro</p>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-4 pb-6">
+                  <div className="ml-14 space-y-4">
+                    <p className="text-muted-foreground">
+                      Je vous explique comment utiliser votre nouvel email professionnel. 
+                      Formation sur la gestion des dossiers, règles automatiques et bonnes pratiques.
+                    </p>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Formation à l'utilisation</li>
+                      <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Configuration des règles automatiques</li>
+                      <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Bonnes pratiques professionnelles</li>
+                    </ul>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+            </Accordion>
+          </div>
         </div>
       </section>
 
@@ -317,15 +380,17 @@ export default function EmailProfessionnel() {
           <h2 className="text-3xl font-bold text-center mb-12">Pourquoi un email professionnel ?</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              "Image professionnelle renforcée",
-              "Crédibilité auprès des clients",
-              "Indépendance des services gratuits",
-              "Contrôle total de vos données"
+              { title: "Image professionnelle renforcée", icon: CheckCircle },
+              { title: "Crédibilité auprès des clients", icon: Users },
+              { title: "Indépendance des services gratuits", icon: Shield },
+              { title: "Contrôle total de vos données", icon: Server }
             ].map((avantage, index) => (
-              <Card key={index} className="text-center p-6">
+              <Card key={index} className="text-center p-6 hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-0">
-                  <Check className="w-8 h-8 text-green-500 mx-auto mb-3" />
-                  <p className="font-medium">{avantage}</p>
+                  <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <avantage.icon className="w-8 h-8 text-blue-500" />
+                  </div>
+                  <p className="font-medium">{avantage.title}</p>
                 </CardContent>
               </Card>
             ))}
@@ -333,12 +398,91 @@ export default function EmailProfessionnel() {
         </div>
       </section>
 
+      {/* Contrats de maintenance spécifiques email */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 dark:from-orange-950/20 dark:via-red-950/20 dark:to-pink-950/20 rounded-xl p-8 border-2 border-orange-200 dark:border-orange-800 shadow-lg">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md">
+                🔧 ASSOCIEZ UN CONTRAT DE MAINTENANCE !
+              </div>
+            </div>
+
+            <div className="text-center mb-8 mt-4">
+              <h3 className="text-2xl font-bold mb-4">💡 Pourquoi un contrat de maintenance email ?</h3>
+              <p className="text-muted-foreground">
+                Garantissez la continuité de vos communications professionnelles !
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
+                <div className="text-xl mb-2">🏢</div>
+                <h4 className="font-bold text-lg mb-2">Essentiel</h4>
+                <p className="text-orange-600 dark:text-orange-400 font-medium mb-3">Protection de base</p>
+                <ul className="text-sm space-y-2">
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Sauvegarde hebdomadaire</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>  
+                    <span>Anti-spam et antivirus</span>
+                  </li>
+                </ul>
+              </Card>
+
+              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center border-2 border-labtek-blue">
+                <div className="text-xl mb-2">🚀</div>
+                <h4 className="font-bold text-lg mb-2">Professionnel</h4>
+                <p className="text-purple-600 dark:text-purple-400 font-medium mb-3">Solution complète</p>
+                <ul className="text-sm space-y-2">
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Sauvegarde quotidienne</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Synchronisation multi-appareils</span>
+                  </li>
+                </ul>
+              </Card>
+
+              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
+                <div className="text-xl mb-2">🏭</div>
+                <h4 className="font-bold text-lg mb-2">Entreprise</h4>
+                <p className="text-red-600 dark:text-red-400 font-medium mb-3">Infrastructure premium</p>
+                <ul className="text-sm space-y-2">
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Redondance serveurs</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>SLA 99.9% disponibilité</span>
+                  </li>
+                </ul>
+              </Card>
+            </div>
+
+            <div className="text-center">
+              <p className="text-sm text-muted-foreground mb-4">
+                Email sécurisé + maintenance = communication sans interruption
+              </p>
+              <Button onClick={scrollToContact} className="bg-orange-500 hover:bg-orange-600 text-white">
+                Découvrir les formules complètes
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
-      <section id="contact" className="py-16">
+      <section id="contact" className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-8">Prêt pour votre email professionnel ?</h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Contactez-moi pour créer votre adresse email personnalisée
+            Contactez-nous pour créer votre adresse email personnalisée
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-labtek-blue hover:bg-labtek-blue/90">
