@@ -41,7 +41,7 @@ const services = [
       "Vous avez besoin de Word, Excel, un logiciel de comptabilité ? Je trouve et installe les programmes qu'il vous faut. Vos anciens fichiers sont récupérés et tout fonctionne parfaitement.",
     features: ["Les bons logiciels pour votre travail", "Vos anciens fichiers sauvegardés", "Je vous montre comment les utiliser"],
     color: "bg-blue-500",
-    image: "/office-suite-personnalise.png",
+    image: "https://i.imghippo.com/files/XjC1118wQ.png",
     imageAlt: "Suite Microsoft Office - Word, Excel, PowerPoint, Teams et autres logiciels professionnels"
   },
   {
@@ -71,7 +71,7 @@ const services = [
       "Votre ordinateur rame ? L'imprimante ne marche plus ? Internet est coupé ? J'arrive rapidement pour tout remettre en ordre. Disponible même le weekend pour les urgences !",
     features: ["Je répare rapidement", "Aide par téléphone possible", "Disponible weekend et soirs"],
     color: "bg-orange-500",
-    image: "/depannage-personnalise.png",
+    image: "https://i.imghippo.com/files/sEJ1111MHM.png",
     imageAlt: "Technicien en train de réparer un ordinateur - service de dépannage informatique"
   },
 ];
