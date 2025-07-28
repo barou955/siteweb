@@ -5,7 +5,7 @@ import SeoMeta from "@/components/seo-meta";
 import ScrollToTopButton from "@/components/scroll-to-top-button";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Check, ArrowLeft, Phone, Mail } from "lucide-react";
+import { Check, ArrowLeft, Phone, Mail, Monitor, Wifi, Shield, Camera, Tv } from "lucide-react";
 
 export default function InstallationEquipements() {
   const scrollToContact = () => {
@@ -79,25 +79,31 @@ export default function InstallationEquipements() {
           <h2 className="text-3xl font-bold text-center mb-12">Équipements disponibles</h2>
           
           <div className="space-y-8">
-            {/* Ordinateurs de bureau */}
+            {/* Équipements informatiques */}
             <Card>
               <CardContent className="p-6">
                 <div className="grid lg:grid-cols-2 gap-6 items-center">
                   <div>
-                    <h3 className="text-2xl font-bold mb-4">Ordinateurs de bureau</h3>
+                    <div className="flex items-center mb-4">
+                      <Monitor className="w-8 h-8 text-labtek-blue mr-3" />
+                      <h3 className="text-2xl font-bold">💻 Équipements informatiques</h3>
+                    </div>
                     <div className="space-y-4">
                       <div className="border-l-4 border-labtek-blue pl-4">
-                        <h4 className="font-semibold">Entrée de gamme (300€)</h4>
-                        <p className="text-muted-foreground">Pour bureautique et navigation web</p>
-                        <p className="text-sm">Unité centrale, écran, clavier, souris inclus</p>
+                        <h4 className="font-semibold">Ordinateurs de bureau et portables (Windows, Mac)</h4>
+                        <p className="text-muted-foreground">Configuration et installation complète</p>
                       </div>
                       <div className="border-l-4 border-labtek-violet pl-4">
-                        <h4 className="font-semibold">Milieu de gamme (700€)</h4>
-                        <p className="text-muted-foreground">Pour usage polyvalent et professionnel</p>
+                        <h4 className="font-semibold">Écrans, claviers, souris, stations d'accueil</h4>
+                        <p className="text-muted-foreground">Périphériques et accessoires professionnels</p>
                       </div>
                       <div className="border-l-4 border-green-500 pl-4">
-                        <h4 className="font-semibold">Stations de travail (1200€)</h4>
-                        <p className="text-muted-foreground">Pour création et jeux</p>
+                        <h4 className="font-semibold">Imprimantes, scanners, multifonctions</h4>
+                        <p className="text-muted-foreground">Installation et configuration réseau</p>
+                      </div>
+                      <div className="border-l-4 border-orange-500 pl-4">
+                        <h4 className="font-semibold">NAS (serveur de stockage en réseau)</h4>
+                        <p className="text-muted-foreground">Stockage centralisé et partage de fichiers</p>
                       </div>
                     </div>
                   </div>
@@ -112,33 +118,40 @@ export default function InstallationEquipements() {
               </CardContent>
             </Card>
 
-            {/* Ordinateurs portables */}
+            {/* Équipements réseau et Internet */}
             <Card>
               <CardContent className="p-6">
                 <div className="grid lg:grid-cols-2 gap-6 items-center">
                   <div className="order-2 lg:order-1">
                     <div className="relative h-64 rounded-lg overflow-hidden">
                       <img 
-                        src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&h=300&fit=crop&auto=format&q=80"
-                        alt="Ordinateur portable moderne ouvert"
+                        src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&h=300&fit=crop&auto=format&q=80"
+                        alt="Équipements réseau et routeurs Wi-Fi"
                         className="w-full h-full object-cover"
                       />
                     </div>
                   </div>
                   <div className="order-1 lg:order-2">
-                    <h3 className="text-2xl font-bold mb-4">Ordinateurs portables</h3>
+                    <div className="flex items-center mb-4">
+                      <Wifi className="w-8 h-8 text-blue-500 mr-3" />
+                      <h3 className="text-2xl font-bold">🌐 Équipements réseau et Internet</h3>
+                    </div>
                     <div className="space-y-4">
                       <div className="border-l-4 border-blue-500 pl-4">
-                        <h4 className="font-semibold">Ultraportables (400€)</h4>
-                        <p className="text-muted-foreground">Pour mobilité et déplacements</p>
+                        <h4 className="font-semibold">Box Internet, routeurs, répéteurs Wi-Fi</h4>
+                        <p className="text-muted-foreground">Optimisation de votre connexion Internet</p>
                       </div>
                       <div className="border-l-4 border-purple-500 pl-4">
-                        <h4 className="font-semibold">Polyvalents (800€)</h4>
-                        <p className="text-muted-foreground">Écran 15 pouces, usage quotidien</p>
+                        <h4 className="font-semibold">Switchs, points d'accès Wi-Fi professionnels</h4>
+                        <p className="text-muted-foreground">Infrastructure réseau d'entreprise</p>
                       </div>
-                      <div className="border-l-4 border-orange-500 pl-4">
-                        <h4 className="font-semibold">Gamers (1800€)</h4>
-                        <p className="text-muted-foreground">Carte graphique dédiée et SSD</p>
+                      <div className="border-l-4 border-cyan-500 pl-4">
+                        <h4 className="font-semibold">Baies de brassage et câblage réseau</h4>
+                        <p className="text-muted-foreground">Installation de réseaux filaires structurés</p>
+                      </div>
+                      <div className="border-l-4 border-indigo-500 pl-4">
+                        <h4 className="font-semibold">Installation de VPN pour accès distant</h4>
+                        <p className="text-muted-foreground">Sécurisation des connexions à distance</p>
                       </div>
                     </div>
                   </div>
@@ -146,31 +159,114 @@ export default function InstallationEquipements() {
               </CardContent>
             </Card>
 
-            {/* Imprimantes */}
+            {/* Équipements de sécurité informatique */}
             <Card>
               <CardContent className="p-6">
                 <div className="grid lg:grid-cols-2 gap-6 items-center">
                   <div>
-                    <h3 className="text-2xl font-bold mb-4">Imprimantes multifonctions</h3>
+                    <div className="flex items-center mb-4">
+                      <Shield className="w-8 h-8 text-red-500 mr-3" />
+                      <h3 className="text-2xl font-bold">🔐 Équipements de sécurité informatique</h3>
+                    </div>
                     <div className="space-y-4">
-                      <div className="border-l-4 border-cyan-500 pl-4">
-                        <h4 className="font-semibold">Jet d'encre couleur (80€)</h4>
-                        <p className="text-muted-foreground">Pour impressions occasionnelles</p>
+                      <div className="border-l-4 border-red-500 pl-4">
+                        <h4 className="font-semibold">Pare-feu (firewall) matériel</h4>
+                        <p className="text-muted-foreground">Protection réseau avancée</p>
                       </div>
-                      <div className="border-l-4 border-gray-500 pl-4">
-                        <h4 className="font-semibold">Laser monochrome (150€)</h4>
-                        <p className="text-muted-foreground">Pour gros volumes de texte</p>
+                      <div className="border-l-4 border-yellow-500 pl-4">
+                        <h4 className="font-semibold">Contrôle d'accès réseau</h4>
+                        <p className="text-muted-foreground">Gestion des autorisations utilisateurs</p>
                       </div>
-                      <div className="border-l-4 border-indigo-500 pl-4">
-                        <h4 className="font-semibold">Avec scanner et Wi-Fi (400€)</h4>
-                        <p className="text-muted-foreground">Pour télétravail</p>
+                      <div className="border-l-4 border-green-600 pl-4">
+                        <h4 className="font-semibold">Systèmes de sauvegarde physiques</h4>
+                        <p className="text-muted-foreground">Disques durs externes, NAS avec RAID</p>
+                      </div>
+                      <div className="border-l-4 border-orange-600 pl-4">
+                        <h4 className="font-semibold">Onduleurs (UPS) pour la protection électrique</h4>
+                        <p className="text-muted-foreground">Protection contre les coupures de courant</p>
                       </div>
                     </div>
                   </div>
                   <div className="relative h-64 rounded-lg overflow-hidden">
                     <img 
-                      src="https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=500&h=300&fit=crop&auto=format&q=80"
-                      alt="Imprimante multifonction moderne"
+                      src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop&auto=format&q=80"
+                      alt="Équipements de sécurité informatique"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Équipements de surveillance & domotique */}
+            <Card>
+              <CardContent className="p-6">
+                <div className="grid lg:grid-cols-2 gap-6 items-center">
+                  <div className="order-2 lg:order-1">
+                    <div className="relative h-64 rounded-lg overflow-hidden">
+                      <img 
+                        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop&auto=format&q=80"
+                        alt="Caméras de surveillance et domotique"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div className="order-1 lg:order-2">
+                    <div className="flex items-center mb-4">
+                      <Camera className="w-8 h-8 text-purple-500 mr-3" />
+                      <h3 className="text-2xl font-bold">🎥 Équipements de surveillance & domotique</h3>
+                    </div>
+                    <div className="space-y-4">
+                      <div className="border-l-4 border-purple-500 pl-4">
+                        <h4 className="font-semibold">Caméras IP de sécurité (intérieur / extérieur)</h4>
+                        <p className="text-muted-foreground">Surveillance haute définition</p>
+                      </div>
+                      <div className="border-l-4 border-pink-500 pl-4">
+                        <h4 className="font-semibold">Systèmes de vidéosurveillance connectés</h4>
+                        <p className="text-muted-foreground">Monitoring à distance via smartphone</p>
+                      </div>
+                      <div className="border-l-4 border-red-400 pl-4">
+                        <h4 className="font-semibold">Alarmes connectées</h4>
+                        <p className="text-muted-foreground">Sécurité intelligente et notifications</p>
+                      </div>
+                      <div className="border-l-4 border-teal-500 pl-4">
+                        <h4 className="font-semibold">Objets domotiques</h4>
+                        <p className="text-muted-foreground">Prises, ampoules, assistants vocaux</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Équipements audiovisuels et bureautiques */}
+            <Card>
+              <CardContent className="p-6">
+                <div className="grid lg:grid-cols-2 gap-6 items-center">
+                  <div>
+                    <div className="flex items-center mb-4">
+                      <Tv className="w-8 h-8 text-green-500 mr-3" />
+                      <h3 className="text-2xl font-bold">📺 Équipements audiovisuels et bureautiques</h3>
+                    </div>
+                    <div className="space-y-4">
+                      <div className="border-l-4 border-green-500 pl-4">
+                        <h4 className="font-semibold">Vidéoprojecteurs, écrans interactifs</h4>
+                        <p className="text-muted-foreground">Équipement pour salles de réunion</p>
+                      </div>
+                      <div className="border-l-4 border-blue-600 pl-4">
+                        <h4 className="font-semibold">Systèmes de visioconférence</h4>
+                        <p className="text-muted-foreground">Zoom, Teams, Google Meet optimisés</p>
+                      </div>
+                      <div className="border-l-4 border-violet-500 pl-4">
+                        <h4 className="font-semibold">Installation de postes de travail complets</h4>
+                        <p className="text-muted-foreground">Bureaux ou salles informatiques</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative h-64 rounded-lg overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=500&h=300&fit=crop&auto=format&q=80"
+                      alt="Équipements audiovisuels et bureautiques"
                       className="w-full h-full object-cover"
                     />
                   </div>
