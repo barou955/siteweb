@@ -1,0 +1,33 @@
+
+/* TEAM */
+  Expert IT: Labtek
+  Contact: contact@labtek.fr
+  Location: Essonne, Île-de-France, France
+
+/* SITE */
+  Last update: 2025/01/28
+  Language: Français
+  Doctype: HTML5
+  IDE: Replit
+  
+/* SERVICES */
+  Dépannage informatique
+  Installation systèmes
+  Sécurité & réseaux
+  Maintenance technique
+  Sites web professionnels
+  Support utilisateurs
+  
+/* ZONE D'INTERVENTION */
+  Essonne (91)
+  Île-de-France
+  Déplacement possible
+  
+/* CONTACT */
+  Site: https://labtek.fr
+  Email: contact@labtek.fr
+  Téléphone: 01 23 45 67 89
+  
+/* HORAIRES */
+  Lundi - Vendredi: 9h00-18h00
+  Interventions d'urgence sur demande

@@ -1,11 +1,9 @@
 
+# Robots.txt optimisé pour Labtek - Services Informatiques Essonne
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://labtek.fr/sitemap.xml
-
-# Optimisations pour les moteurs de recherche
+# Priorité maximum pour les moteurs de recherche
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
@@ -14,19 +12,57 @@ User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
 
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
 # Empêcher l'indexation des fichiers de développement
 Disallow: /src/
 Disallow: /node_modules/
+Disallow: /dist/
 Disallow: /*.json$
 Disallow: /*.config.*
-Disallow: /dist/
+Disallow: /build/
+Disallow: /.git/
+Disallow: /private/
+Disallow: /admin/
+Disallow: /test/
+Disallow: /tests/
 
 # Autoriser l'accès aux assets importants
 Allow: /logo-*.png
 Allow: /favicon.png
 Allow: /site.webmanifest
+Allow: /browserconfig.xml
+Allow: /images/
+Allow: /*.css$
+Allow: /*.js$
 
-# Informations additionnelles
+# Sitemaps
+Sitemap: https://labtek.fr/sitemap.xml
+
+# Informations entreprise
+# Société: Labtek Services Informatiques
+# Secteur: Services informatiques professionnels
+# Zone: Essonne (91) & Île-de-France
 # Site web: https://labtek.fr
 # Contact: contact@labtek.fr
-# Services: Informatique, Réseaux, Sécurité, Sites Web - Essonne & Île-de-France
+# Téléphone: 01 23 45 67 89
+# Services: Dépannage, Installation, Sécurité, Réseaux, Sites Web
+# Spécialités: PME, Particuliers, Support technique, Maintenance

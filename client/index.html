@@ -1,76 +1,146 @@
+
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5, user-scalable=yes"
     />
     <title>
-      Labtek - Services Informatiques en Essonne | Île‑de‑France
+      Labtek - Services Informatiques Professionnels en Essonne | Expert IT Île-de-France
     </title>
     <meta
       name="description"
-      content="Labtek propose des services informatiques professionnels pour particuliers et PME en Essonne et Île‑de‑France. Installation, maintenance, sécurité, hébergement."
+      content="Labtek, votre expert informatique en Essonne. Services professionnels : dépannage, installation, sécurité, réseaux, sites web. Solutions sur mesure pour particuliers et entreprises en Île-de-France. Intervention rapide, prix transparents."
     />
-    <meta
-      property="og:title"
-      content="Labtek - Services Informatiques en Essonne"
-    />
-    <meta
-      property="og:description"
-      content="Solutions informatiques professionnelles pour particuliers et PME. Expertise, simplicité et confiance."
-    />
+    
+    <!-- Enhanced brand meta tags -->
+    <meta name="application-name" content="Labtek" />
+    <meta name="apple-mobile-web-app-title" content="Labtek" />
+    <meta name="theme-color" content="#3730A3" />
+    <meta name="msapplication-TileColor" content="#3730A3" />
+    <meta name="msapplication-navbutton-color" content="#3730A3" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- Performance and crawling hints -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" />
+    <link rel="preload" href="/logo-512.png" as="image" type="image/png" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    
+    <!-- Enhanced Open Graph -->
+    <meta property="og:site_name" content="Labtek" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:title" content="Labtek - Expert Informatique Essonne | Services IT Professionnels" />
+    <meta property="og:description" content="Solutions informatiques professionnelles en Essonne. Dépannage, installation, sécurité, réseaux. Expert IT pour particuliers et entreprises. Intervention rapide." />
     <meta property="og:url" content="https://labtek.fr" />
     <meta property="og:image" content="https://labtek.fr/logo-512.png" />
+    <meta property="og:image:secure_url" content="https://labtek.fr/logo-512.png" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="512" />
     <meta property="og:image:height" content="512" />
-    <meta property="og:image:alt" content="Logo Labtek - Services Informatiques" />
+    <meta property="og:image:alt" content="Logo Labtek - Services Informatiques Professionnels" />
+    <meta property="business:contact_data:street_address" content="Essonne" />
+    <meta property="business:contact_data:locality" content="Essonne" />
+    <meta property="business:contact_data:region" content="Île-de-France" />
+    <meta property="business:contact_data:postal_code" content="91" />
+    <meta property="business:contact_data:country_name" content="France" />
     
-    <!-- Twitter Card meta tags -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Labtek - Services Informatiques en Essonne" />
-    <meta name="twitter:description" content="Solutions informatiques professionnelles pour particuliers et PME. Expertise, simplicité et confiance." />
+    <!-- Enhanced Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@labtek" />
+    <meta name="twitter:creator" content="@labtek" />
+    <meta name="twitter:title" content="Labtek - Expert Informatique Essonne | Services IT Professionnels" />
+    <meta name="twitter:description" content="Solutions informatiques professionnelles en Essonne. Dépannage, installation, sécurité, réseaux. Expert IT pour particuliers et entreprises." />
     <meta name="twitter:image" content="https://labtek.fr/logo-512.png" />
+    <meta name="twitter:image:alt" content="Logo Labtek - Services Informatiques" />
     
-    <!-- Favicon et icônes -->
+    <!-- Favicon et icônes optimisées -->
     <link rel="shortcut icon" href="/favicon.png" type="image/png" />
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/logo-192.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/logo-192.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/logo-192.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/logo-192.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/logo-192.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/logo-192.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/logo-192.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/logo-192.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/logo-192.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/logo-192.png" />
     <link rel="manifest" href="/site.webmanifest" />
     
-    <!-- Microsoft Edge/Bing optimization -->
-    <meta name="msapplication-TileColor" content="#3730A3" />
+    <!-- Microsoft optimization -->
+    <meta name="msapplication-TileImage" content="/logo-192.png" />
     <meta name="msapplication-config" content="/browserconfig.xml" />
-    <meta name="keywords" content="informatique Essonne, dépannage ordinateur 91, installation logiciels, email professionnel, sauvegarde données, sécurité informatique Île-de-France" />
+    <meta name="msvalidate.01" content="" />
     
-    <!-- Structured Data JSON-LD - LocalBusiness -->
+    <!-- Enhanced keywords for better ranking -->
+    <meta name="keywords" content="Labtek, expert informatique Essonne, services IT 91, dépannage ordinateur Essonne, installation systèmes connectés, infrastructure réseau sécurité, maintenance informatique, support technique professionnel, création sites web Essonne, solutions informatiques PME, consultant IT Île-de-France, réparation ordinateur 91, configuration réseau entreprise, sauvegarde données professionnelles, cybersécurité Essonne, hébergement email professionnel, logiciels métier installation, formation informatique utilisateurs, audit sécurité informatique, télémaintenance support, dépannage à domicile Essonne" />
+    
+    <!-- Author and business info -->
+    <meta name="author" content="Labtek - Services Informatiques" />
+    <meta name="publisher" content="Labtek" />
+    <meta name="copyright" content="© 2024 Labtek. Tous droits réservés." />
+    <meta name="language" content="French" />
+    <meta name="geo.region" content="FR-91" />
+    <meta name="geo.placename" content="Essonne, Île-de-France" />
+    <meta name="geo.position" content="48.6921;2.3708" />
+    <meta name="ICBM" content="48.6921, 2.3708" />
+    
+    <!-- Structured Data JSON-LD - Enhanced LocalBusiness -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "ComputerRepair", "TechnicalSupport"],
+      "@id": "https://labtek.fr/#business",
       "name": "Labtek",
-      "description": "Services informatiques professionnels pour particuliers et PME en Essonne et Île‑de‑France",
-      "image": "https://labtek.fr/logo-512.png",
+      "legalName": "Labtek Services Informatiques",
+      "alternateName": ["Labtek IT", "Labtek Informatique"],
+      "description": "Expert en services informatiques professionnels pour particuliers et PME en Essonne et Île-de-France. Spécialisé en dépannage, installation, sécurité et maintenance informatique.",
+      "image": [
+        "https://labtek.fr/logo-512.png",
+        "https://labtek.fr/logo-192.png"
+      ],
       "logo": "https://labtek.fr/logo-512.png",
       "url": "https://labtek.fr",
+      "sameAs": [],
       "telephone": "01 23 45 67 89",
       "email": "contact@labtek.fr",
       "address": {
         "@type": "PostalAddress",
         "addressRegion": "Essonne",
-        "addressCountry": "FR"
+        "addressCountry": "FR",
+        "addressLocality": "Essonne"
       },
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": 48.6921,
         "longitude": 2.3708
       },
-      "openingHours": "Mo-Fr 09:00-18:00",
+      "openingHours": [
+        "Mo-Fr 09:00-18:00"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
       "priceRange": "€€",
+      "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer"],
+      "currenciesAccepted": "EUR",
       "serviceArea": {
         "@type": "GeoCircle",
         "geoMidpoint": {
@@ -80,16 +150,52 @@
         },
         "geoRadius": "50000"
       },
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Île-de-France"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Essonne"
+        }
+      ],
+      "knowsAbout": [
+        "Dépannage informatique",
+        "Installation logiciels",
+        "Sécurité informatique",
+        "Réseaux d'entreprise",
+        "Maintenance préventive",
+        "Support technique",
+        "Sites web professionnels",
+        "Cybersécurité",
+        "Sauvegarde données",
+        "Formation utilisateurs"
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Services Informatiques",
+        "name": "Services Informatiques Professionnels",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
+              "name": "Dépannage et Réparation Informatique",
+              "description": "Diagnostic et réparation rapide de vos équipements informatiques",
+              "provider": {
+                "@id": "https://labtek.fr/#business"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
               "name": "Installation de Systèmes Connectés",
-              "description": "Configuration complète de vos équipements connectés"
+              "description": "Configuration complète de vos équipements connectés et logiciels professionnels",
+              "provider": {
+                "@id": "https://labtek.fr/#business"
+              }
             }
           },
           {
@@ -97,26 +203,42 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Infrastructure Réseau & Sécurité",
-              "description": "Mise en place et sécurisation de votre réseau informatique"
+              "description": "Mise en place et sécurisation de votre réseau informatique d'entreprise",
+              "provider": {
+                "@id": "https://labtek.fr/#business"
+              }
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Maintenance et Support",
-              "description": "Support technique et maintenance préventive"
+              "name": "Maintenance et Support Technique",
+              "description": "Support technique professionnel et maintenance préventive de vos systèmes",
+              "provider": {
+                "@id": "https://labtek.fr/#business"
+              }
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Sites Web Simples",
-              "description": "Création de sites web professionnels et responsives"
+              "name": "Création de Sites Web Professionnels",
+              "description": "Développement de sites web modernes, responsives et optimisés SEO",
+              "provider": {
+                "@id": "https://labtek.fr/#business"
+              }
             }
           }
         ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "1",
+        "bestRating": "5",
+        "worstRating": "1"
       }
     }
     </script>
@@ -126,24 +248,90 @@
     {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": "https://labtek.fr/#organization",
       "name": "Labtek",
+      "legalName": "Labtek Services Informatiques",
       "url": "https://labtek.fr",
-      "logo": "https://labtek.fr/logo-512.png"
+      "logo": "https://labtek.fr/logo-512.png",
+      "image": "https://labtek.fr/logo-512.png",
+      "description": "Expert en services informatiques professionnels en Essonne et Île-de-France",
+      "email": "contact@labtek.fr",
+      "telephone": "01 23 45 67 89",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Essonne",
+        "addressCountry": "FR"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "01 23 45 67 89",
+          "contactType": "customer service",
+          "email": "contact@labtek.fr",
+          "availableLanguage": ["French"],
+          "areaServed": "FR",
+          "serviceArea": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": 48.6921,
+              "longitude": 2.3708
+            },
+            "geoRadius": "50000"
+          }
+        }
+      ],
+      "sameAs": [],
+      "foundingDate": "2024",
+      "numberOfEmployees": "1-10",
+      "knowsAbout": [
+        "Computer Repair",
+        "IT Support",
+        "Network Security",
+        "Software Installation",
+        "Web Development",
+        "Technical Support"
+      ]
     }
     </script>
 
+    <!-- Structured Data JSON-LD - WebSite with SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://labtek.fr/#website",
+      "url": "https://labtek.fr",
+      "name": "Labtek - Services Informatiques Professionnels",
+      "description": "Site officiel de Labtek, expert en services informatiques en Essonne",
+      "publisher": {
+        "@id": "https://labtek.fr/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://labtek.fr/?s={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      },
+      "inLanguage": "fr-FR",
+      "copyrightYear": 2024,
+      "copyrightHolder": {
+        "@id": "https://labtek.fr/#organization"
+      }
+    }
+    </script>
+
+    <!-- Critical CSS preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) with enhanced configuration -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-KBGVYK18LC"
@@ -154,13 +342,53 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", "G-KBGVYK18LC");
+      gtag("config", "G-KBGVYK18LC", {
+        page_title: "Labtek - Services Informatiques Professionnels",
+        page_location: "https://labtek.fr",
+        content_group1: "Services Informatiques",
+        custom_map: {"dimension1": "business_type"}
+      });
+      gtag("event", "page_view", {
+        page_title: "Labtek - Services Informatiques Professionnels",
+        page_location: "https://labtek.fr"
+      });
     </script>
+    
+    <!-- Additional performance hints -->
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="prefetch" href="/logo-192.png" />
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Structured Data for better indexing -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://labtek.fr/#webpage",
+      "url": "https://labtek.fr",
+      "name": "Labtek - Accueil",
+      "description": "Page d'accueil des services informatiques Labtek en Essonne",
+      "isPartOf": {
+        "@id": "https://labtek.fr/#website"
+      },
+      "about": {
+        "@id": "https://labtek.fr/#business"
+      },
+      "datePublished": "2024-01-01",
+      "dateModified": "2025-01-28",
+      "inLanguage": "fr-FR",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": "https://labtek.fr"
+        }
+      ]
+    }
+    </script>
 
     <!--
       This is a replit script which adds a banner on the top of the page

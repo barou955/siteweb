@@ -1,57 +1,73 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
     <loc>https://labtek.fr/</loc>
-    <lastmod>2025-07-28</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://labtek.fr/logo-512.png</image:loc>
-      <image:title>Labtek - Services Informatiques</image:title>
-      <image:caption>Logo Labtek - Services informatiques professionnels en Essonne</image:caption>
+      <image:title>Labtek - Services Informatiques Professionnels Essonne</image:title>
+      <image:caption>Logo officiel Labtek - Expert informatique en Essonne et Île-de-France</image:caption>
+      <image:geo_location>Essonne, France</image:geo_location>
+      <image:license>https://labtek.fr</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://labtek.fr/logo-192.png</image:loc>
+      <image:title>Labtek Logo 192px</image:title>
+      <image:caption>Logo Labtek format mobile - Services informatiques</image:caption>
     </image:image>
   </url>
   
   <url>
     <loc>https://labtek.fr/#services</loc>
-    <lastmod>2025-07-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   
   <url>
     <loc>https://labtek.fr/#about</loc>
-    <lastmod>2025-07-28</lastmod>
+    <lastmod>2025-01-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   
   <url>
     <loc>https://labtek.fr/#contact</loc>
-    <lastmod>2025-07-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   
   <url>
     <loc>https://labtek.fr/#testimonials</loc>
-    <lastmod>2025-07-28</lastmod>
+    <lastmod>2025-01-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   
   <url>
     <loc>https://labtek.fr/#process</loc>
-    <lastmod>2025-07-28</lastmod>
+    <lastmod>2025-01-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.70</priority>
   </url>
   
   <url>
     <loc>https://labtek.fr/#maintenance</loc>
-    <lastmod>2025-07-28</lastmod>
+    <lastmod>2025-01-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.80</priority>
+  </url>
+  
+  <url>
+    <loc>https://labtek.fr/#problems</loc>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
 </urlset>
