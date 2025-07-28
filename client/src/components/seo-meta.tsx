@@ -94,6 +94,7 @@ export default function SeoMeta({
       <link rel="canonical" href={canonical} />
       
       {noindex && <meta name="robots" content="noindex,nofollow" />}
+      {!noindex && <meta name="robots" content="index,follow" />}
       
       {/* Open Graph */}
       <meta property="og:title" content={title} />
