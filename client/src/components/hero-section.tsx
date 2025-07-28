@@ -20,12 +20,12 @@ export default function HeroSection() {
           <h1 className="text-4xl md:text-6xl font-bold dark:text-white text-black mb-6">
             Solutions Informatiques
             <br />
-            <span className="dark:text-blue-200 text-[#3366cc]">Professionnelles</span>
+            <span className="dark:text-blue-200 text-[#3366cc]">Sur Mesure</span>
           </h1>
           <p className="text-xl md:text-2xl dark:text-blue-100 text-[#333333] mb-8 max-w-3xl">
-            Services informatiques sur mesure pour particuliers et PME en
-            Essonne et Île-de-France. Simplicité, sécurité et expertise
-            technique à votre service.
+            Services informatiques personnalisés pour particuliers, 
+            auto-entrepreneurs et PME en Essonne et Île-de-France. 
+            De l'aide ponctuelle aux solutions complètes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
             <Button 

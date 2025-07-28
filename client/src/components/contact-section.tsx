@@ -61,7 +61,7 @@ export default function ContactSection() {
             Contactez-nous
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Prêt à résoudre vos problèmes informatiques ? Parlons de vos besoins !
+            Particulier ou professionnel, nous avons la solution ! Parlons de vos besoins informatiques.
           </p>
         </div>
 
@@ -218,26 +218,41 @@ export default function ContactSection() {
                       <SelectValue placeholder="Sélectionnez un service" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="installation">
-                        Installation de systèmes connectés
+                      <SelectItem value="installation-equipements">
+                        Installation d'équipements
                       </SelectItem>
-                      <SelectItem value="infrastructure">
-                        Infrastructure réseau et sécurité
+                      <SelectItem value="montage-pc">
+                        Montage PC sur mesure
                       </SelectItem>
-                      <SelectItem value="logiciels">
-                        Déploiement de logiciels
+                      <SelectItem value="sites-web">
+                        Sites web professionnels
                       </SelectItem>
-                      <SelectItem value="emails">
-                        Emails et hébergement pro
+                      <SelectItem value="installation-programmes">
+                        Installation de programmes
+                      </SelectItem>
+                      <SelectItem value="email-professionnel">
+                        Email professionnel
+                      </SelectItem>
+                      <SelectItem value="securite-sauvegarde">
+                        Sécurité & Sauvegarde
+                      </SelectItem>
+                      <SelectItem value="depannage-assistance">
+                        Dépannage & Assistance
+                      </SelectItem>
+                      <SelectItem value="infogerance-legere">
+                        Infogérance légère
+                      </SelectItem>
+                      <SelectItem value="formation-accompagnement">
+                        Formation & accompagnement
+                      </SelectItem>
+                      <SelectItem value="autre">
+                        Autre demande
                       </SelectItem>
                       <SelectItem value="maintenance">
                         Maintenance et support
                       </SelectItem>
                       <SelectItem value="siteweb">Création de site web</SelectItem>
                       <SelectItem value="audit">Audit complet</SelectItem>
-                      <SelectItem value="autre">
-                        Autre (préciser dans le message)
-                      </SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

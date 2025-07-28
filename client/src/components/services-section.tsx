@@ -3,13 +3,17 @@ import { Button } from "@/components/ui/button";
 import ServiceDetailModal from "./service-detail-modal";
 import {
   Laptop,
-  Shield,
-  Download,
-  Mail,
   Settings,
   Globe,
-  Check,
+  Download,
+  Mail,
+  Shield,
+  Wrench,
+  Monitor,
+  GraduationCap,
   ArrowRight,
+  ExternalLink,
+  Check
 } from "lucide-react";
 import { useImages } from "@/hooks/use-images";
 
@@ -22,7 +26,19 @@ const services = [
     features: ["Je vous aide à choisir", "J'installe tout chez vous", "Je vous explique comment ça marche"],
     color: "bg-labtek-blue",
     image: "https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=400&h=250&fit=crop&auto=format&q=80",
-    imageAlt: "Installation d'ordinateur et équipements informatiques"
+    imageAlt: "Installation d'ordinateur et équipements informatiques",
+    link: "/services/installation-equipements"
+  },
+  {
+    icon: Settings,
+    title: "Montage PC sur Mesure",
+    description:
+      "Configuration personnalisée selon vos besoins : gaming, bureautique, workstation. Nous sélectionnons les meilleurs composants et assemblons votre PC idéal. Garantie 2 ans sur le montage et formation incluse.",
+    features: ["Configuration personnalisée", "Composants de qualité", "Garantie 2 ans sur le montage"],
+    color: "bg-purple-500",
+    image: "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=400&h=250&fit=crop&auto=format&q=80",
+    imageAlt: "PC gaming assemblé avec éclairage RGB",
+    link: "/services/montage-pc-sur-mesure"
   },
   {
     icon: Globe,
@@ -30,9 +46,10 @@ const services = [
     description:
       "Vous voulez être trouvé sur internet ? Je crée votre site web pour présenter votre activité. Vos clients pourront voir vos services, vous contacter facilement et vous trouver sur Google.",
     features: ["Site moderne et beau", "Vos clients vous trouvent sur Google", "Vous pouvez le modifier vous-même"],
-    color: "bg-purple-500",
+    color: "bg-green-500",
     image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&h=250&fit=crop&auto=format&q=80",
-    imageAlt: "Création de site web professionnel"
+    imageAlt: "Création de site web professionnel",
+    link: "/services/sites-web"
   },
   {
     icon: Download,
@@ -42,17 +59,19 @@ const services = [
     features: ["Les bons logiciels pour votre travail", "Vos anciens fichiers sauvegardés", "Je vous montre comment les utiliser"],
     color: "bg-blue-500",
     image: "https://i.imghippo.com/files/XjC1118wQ.png",
-    imageAlt: "Suite Microsoft Office - Word, Excel, PowerPoint, Teams et autres logiciels professionnels"
+    imageAlt: "Suite Microsoft Office - Word, Excel, PowerPoint, Teams et autres logiciels professionnels",
+    link: "/services/installation-programmes"
   },
   {
     icon: Mail,
     title: "Email Professionnel",
     description:
       "Fini les adresses @gmail.com ! Avec votre email @votre-nom.fr, vous paraissez plus professionnel. Ça marche sur votre téléphone, tablette et ordinateur automatiquement.",
-    features: ["Email à votre nom d'entreprise", "Ça marche partout (téléphone, PC...)", "Vos emails sont sauvegardés"],
+    features: ["Email à votre nom d'entreprise", "Ça marche partout (téléphone, PC...)", "Plus crédible pour vos clients"],
     color: "bg-green-500",
     image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=400&h=250&fit=crop&auto=format&q=80",
-    imageAlt: "Email professionnel et messagerie"
+    imageAlt: "Email professionnel sur ordinateur et smartphone",
+    link: "/services/email-professionnel"
   },
   {
     icon: Shield,
@@ -62,18 +81,42 @@ const services = [
     features: ["Vos photos et documents protégés", "Plus de virus sur votre PC", "Internet en toute sécurité"],
     color: "bg-labtek-violet",
     image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop&auto=format&q=80",
-    imageAlt: "Sécurité informatique et sauvegarde de données"
+    imageAlt: "Sécurité informatique et sauvegarde de données",
+    link: "/services/securite-sauvegarde"
   },
   {
-    icon: Settings,
+    icon: Wrench,
     title: "Dépannage & Assistance",
     description:
       "Votre ordinateur rame ? L'imprimante ne marche plus ? Internet est coupé ? J'arrive rapidement pour tout remettre en ordre. Disponible même le weekend pour les urgences !",
     features: ["Je répare rapidement", "Aide par téléphone possible", "Disponible weekend et soirs"],
     color: "bg-orange-500",
     image: "https://i.imghippo.com/files/sEJ1111MHM.png",
-    imageAlt: "Technicien en train de réparer un ordinateur - service de dépannage informatique"
+    imageAlt: "Technicien en train de réparer un ordinateur - service de dépannage informatique",
+    link: "/services/depannage-assistance"
   },
+  {
+    icon: Monitor,
+    title: "Infogérance légère",
+    description:
+      "Confiez-nous la surveillance et la maintenance de votre infrastructure informatique. Notre service d'infogérance légère vous garantit sérénité et performance au quotidien avec une surveillance proactive.",
+    features: ["Surveillance 24h/24", "Maintenance préventive", "Support prioritaire"],
+    color: "bg-teal-500",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop&auto=format&q=80",
+    imageAlt: "Centre de surveillance informatique",
+    link: "/services/infogerance-legere"
+  },
+  {
+    icon: GraduationCap,
+    title: "Formation & Accompagnement",
+    description:
+      "Développez vos compétences numériques avec nos formations personnalisées. De la bureautique aux outils collaboratifs, nous vous accompagnons dans votre montée en compétences digitales.",
+    features: ["Formation sur mesure", "Accompagnement personnalisé", "Certification"],
+    color: "bg-indigo-500",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop&auto=format&q=80",
+    imageAlt: "Formation informatique en groupe",
+    link: "/services/formation-accompagnement"
+  }
 ];
 
 export default function ServicesSection() {
@@ -85,8 +128,7 @@ export default function ServicesSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-4">Nos Services</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Des solutions informatiques complètes adaptées à vos besoins,
-            expliquées simplement
+            Des solutions informatiques adaptées à tous : particuliers, professionnels et entreprises,
           </p>
         </div>
 
@@ -114,7 +156,9 @@ export default function ServicesSection() {
                              'bg-blue-500': '#3B82F690',
                              'bg-green-500': '#10B98190',
                              'bg-orange-500': '#F59E0B90',
-                             'bg-purple-500': '#8B5CF690'
+                             'bg-purple-500': '#8B5CF690',
+                             'bg-teal-500': '#00808090',
+                             'bg-indigo-500': '#4B008290'
                            };
                            return colorMap[service.color] || '#4F6FEF90';
                          })()
@@ -140,15 +184,26 @@ export default function ServicesSection() {
                   </ul>
 
                   <div className="mt-auto">
-                    <ServiceDetailModal service={service}>
+                    {service.link ? (
                       <Button 
                         variant="outline" 
                         className="w-full group-hover:bg-labtek-blue group-hover:text-white transition-colors duration-300"
+                        onClick={() => window.location.href = service.link}
                       >
                         Voir les détails
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
-                    </ServiceDetailModal>
+                    ) : (
+                      <ServiceDetailModal service={service}>
+                        <Button 
+                          variant="outline" 
+                          className="w-full group-hover:bg-labtek-blue group-hover:text-white transition-colors duration-300"
+                        >
+                          Voir les détails
+                          <ArrowRight className="ml-2 w-4 h-4" />
+                        </Button>
+                      </ServiceDetailModal>
+                    )}
                   </div>
                 </CardContent>
               </Card>

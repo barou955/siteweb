@@ -37,6 +37,31 @@ interface ServiceDetailProps {
 }
 
 const serviceDetails = {
+  "Montage PC sur Mesure": {
+    equipment: [
+      "Configuration Bureautique (450€) : AMD Ryzen 5 5600G, 16GB RAM, SSD 500GB, parfaite pour navigation web, emails et bureautique quotidienne.",
+      "Configuration Gaming (1200€) : AMD Ryzen 7 5800X, RTX 4060 Ti, 32GB RAM, SSD 1TB + HDD 2TB, pour jouer aux derniers jeux en haute qualité.",
+      "Configuration Workstation (2500€) : AMD Ryzen 9 5950X, RTX 4080, 64GB RAM ECC, SSD 2TB NVMe Gen4, pour création 3D et montage vidéo professionnel.",
+      "Processeurs Intel ou AMD : Du Core i5 pour bureautique au Core i9 pour création, choix selon vos besoins de performance.",
+      "Cartes graphiques : De l'intégrée pour bureautique aux RTX 4090 pour gaming et workstation, optimisation selon l'usage.",
+      "Mémoire vive : 16GB minimum en DDR4/DDR5, jusqu'à 128GB pour workstations, fréquences optimisées pour chaque configuration.",
+      "Stockage : SSD NVMe rapides pour le système, HDD ou SSD supplémentaires pour le stockage, sauvegarde et redondance.",
+      "Alimentation : 80+ Bronze minimum, modulaires et certifiées, dimensionnées selon la consommation avec marge de sécurité."
+    ],
+    options: [
+      "Conseil personnalisé selon vos besoins et budget",
+      "Sélection des meilleurs composants rapport qualité/prix",
+      "Montage professionnel avec gestion des câbles",
+      "Tests complets de stabilité et performances",
+      "Installation et configuration du système d'exploitation",
+      "Installation des pilotes et logiciels essentiels",
+      "Formation à l'utilisation et maintenance",
+      "Garantie 2 ans sur le montage et assemblage"
+    ],
+    duration: "3-5 jours selon configuration",
+    price: "450€ - 3000€ selon configuration",
+    target: "Gamers, créateurs, professionnels"
+  },
   "Installation d'Équipements": {
     equipment: [
       "Ordinateurs de bureau (unité centrale, écran, clavier, souris) : Modèles entrée de gamme (300€) pour bureautique et navigation web, modèles milieu de gamme (700€) pour usage polyvalent, stations de travail (1200€) pour création et jeux.",
