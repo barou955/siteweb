@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import SeoMeta from "@/components/seo-meta";
@@ -489,18 +488,18 @@ export default function FormationAccompagnement() {
       
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 bg-gradient-to-r from-labtek-blue to-labtek-violet text-white">
+      <section id="contact" className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-8">Prêt à développer vos compétences ?</h2>
-          <p className="text-xl mb-8 opacity-90">
+          <p className="text-xl text-muted-foreground mb-8">
             Contactez-moi pour définir ensemble un programme de formation adapté à vos besoins
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-labtek-blue hover:bg-gray-100">
+            <Button size="lg" className="bg-labtek-blue hover:bg-labtek-blue/90">
               <Phone className="w-4 h-4 mr-2" />
               07 81 16 69 29
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-labtek-blue">
+            <Button size="lg" variant="outline">
               <Mail className="w-4 h-4 mr-2" />
               contact@labtek.fr
             </Button>
