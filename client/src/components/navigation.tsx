@@ -102,7 +102,8 @@ export default function Navigation() {
                 
                 {isServicesOpen && (
                   <div 
-                    className="absolute top-full left-0 mt-2 w-64 bg-background border border-border rounded-lg shadow-lg py-2 z-50 animate-in fade-in-0 zoom-in-95 duration-200"
+                    className="absolute top-full left-0 mt-0 w-64 bg-background border border-border rounded-lg shadow-lg py-2 z-50 animate-in fade-in-0 zoom-in-95 duration-200"
+                    onMouseEnter={() => setIsServicesOpen(true)}
                   >
                     <button
                       onClick={() => {
