@@ -1,7 +1,6 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import SeoMeta from "@/components/seo-meta";
-import ScrollToTopButton from "@/components/scroll-to-top-button";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -23,8 +22,9 @@ export default function SitesWeb() {
   return (
     <div className="min-h-screen">
       <SeoMeta 
-        title="Création de Sites Web Professionnels - Labtek"
-        description="Création de sites web modernes et responsives. Vitrine, e-commerce, référencement SEO. Visible sur Google et mobile."
+        title="Sites Web Simples - Labtek Services Informatiques"
+        description="Création de sites web responsives et modernes : sites vitrines, portfolios et présentation d'entreprise adaptés aux mobiles en Essonne."
+        canonical="https://labtek.fr/services/sites-web"
       />
       <Navigation />
 
