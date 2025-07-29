@@ -297,11 +297,6 @@ export default function InfogeranceLegere() {
 
             {/* Formule Professionnel */}
             <Card className="relative border-2 border-labtek-blue shadow-lg scale-105">
-              <div className="absolute -top-6 sm:-top-4 left-1/2 transform -translate-x-1/2">
-                <div className="maintenance-badge bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md">
-                  🔧 ASSOCIEZ UN CONTRAT DE MAINTENANCE !
-                </div>
-              </div>
               <CardContent className="p-6">
                 <div className="text-center mb-6">
                   <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
