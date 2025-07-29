@@ -23,8 +23,9 @@ export default function InstallationProgrammes() {
   return (
     <div className="min-h-screen">
       <SeoMeta 
-        title="Installation de Programmes et Logiciels - Labtek"
-        description="Installation professionnelle de logiciels bureautiques, comptables et métier. Microsoft Office, Adobe, logiciels spécialisés. Formation incluse."
+        title="Installation de Programmes - Labtek Services Informatiques"
+        description="Installation et configuration de logiciels professionnels : suites bureautiques, antivirus, logiciels métier et applications spécialisées en Essonne."
+        canonical="https://labtek.fr/services/installation-programmes"
       />
       <Navigation />
 
