@@ -51,7 +51,7 @@ export default function InfogeranceLegere() {
               <div className="flex items-center justify-center">
                 <Eye className="w-6 h-6 text-green-500 mr-3" />
                 <p className="text-green-700 dark:text-green-300 text-center">
-                  <strong>Surveillance automatique 24h/24</strong> - Je veille quand vous dormez !
+                  <strong>Surveillance automatique 24h/24</strong> - Nous veillons quand vous dormez !
                 </p>
               </div>
             </div>

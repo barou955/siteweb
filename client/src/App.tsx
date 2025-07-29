@@ -30,7 +30,8 @@ function Router() {
       <Route path="/services/depannage-assistance" component={DepannageAssistance} />
       <Route path="/services/infogerance-legere" component={InfogeranceLegere} />
       <Route path="/services/formation-accompagnement" component={FormationAccompagnement} />
-      <Route path="*" component={NotFound} />
+      <Route path="/services/sites-web" component={SitesWeb} />
+      <Route component={NotFound} />
     </Switch>
   );
 }

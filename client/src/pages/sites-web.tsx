@@ -1,6 +1,7 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import SeoMeta from "@/components/seo-meta";
+import ScrollToTopButton from "@/components/scroll-to-top-button";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -43,7 +44,7 @@ export default function SitesWeb() {
               <span className="text-labtek-blue">Professionnels</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Vous voulez être trouvé sur internet ? Je crée votre site web pour présenter votre activité. 
+              Vous voulez être trouvé sur internet ? Nous créons votre site web pour présenter votre activité. 
               Vos clients pourront voir vos services, vous contacter facilement et vous trouver sur Google.
             </p>
             <div className="bg-cyan-50 dark:bg-cyan-900/20 border border-cyan-200 dark:border-cyan-800 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
@@ -65,7 +66,7 @@ export default function SitesWeb() {
       {/* Services inclus */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Ce que je fais pour vous</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Ce que nous faisons pour vous</h2>
           <div className="grid md:grid-cols-4 gap-6">
             {[
               { icon: Users, title: "Analyse de vos besoins", desc: "Étude de votre activité et objectifs" },
@@ -225,9 +226,9 @@ export default function SitesWeb() {
       {/* Processus de création détaillé avec accordéons */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Mon processus de création de site web</h2>
-          <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Découvrez comment je crée votre site web de A à Z. Un processus structuré 
+          <h2 className="text-3xl font-bold text-center mb-12">Notre processus de création de site web</h2>
+          <p className="text-center text-muted-foreraine mb-8 max-w-3xl mx-auto">
+            Découvrez comment nous créons votre site web de A à Z. Un processus structuré 
             pour garantir un résultat professionnel qui correspond exactement à vos attentes.
           </p>
 
@@ -470,7 +471,7 @@ export default function SitesWeb() {
       {/* Avantages et garanties */}
       <section className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Mes garanties et services inclus</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Nos garanties et services inclus</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { icon: Globe, title: "Site moderne et responsive", desc: "Adaptation automatique sur tous les appareils" },

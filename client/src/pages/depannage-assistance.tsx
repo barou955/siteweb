@@ -70,7 +70,7 @@ export default function DepannageAssistance() {
               { icon: Eye, title: "Diagnostic rapide", desc: "Identification précise du problème" },
               { icon: Wrench, title: "Réparation sur place", desc: "Intervention directe chez vous" },
               { icon: HeadphonesIcon, title: "Assistance à distance", desc: "Aide immédiate par internet" },
-              { icon: Clock, title: "Formation incluse", desc: "Je vous explique pour éviter la récidive" }
+              { icon: Clock, title: "Formation incluse", desc: "Nous vous expliquons pour éviter la récidive" }
             ].map((service, index) => (
               <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
                 <CardContent className="p-0">
@@ -579,7 +579,7 @@ export default function DepannageAssistance() {
                     <span>Assistance étendue 8h-20h</span>
                   </li>
                 </ul>
-              </Card>
+                            </Card>
 
               <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
                 <div className="text-xl mb-2">🏢</div>

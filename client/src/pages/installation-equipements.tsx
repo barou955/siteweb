@@ -381,7 +381,7 @@ export default function InstallationEquipements() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-8">Prêt à équiper votre espace ?</h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Contactez-moi pour un devis personnalisé selon vos besoins
+            Contactez-nous pour un devis personnalisé selon vos besoins
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
