@@ -404,7 +404,7 @@ export default function EmailProfessionnel() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 dark:from-orange-950/20 dark:via-red-950/20 dark:to-pink-950/20 rounded-xl p-8 border-2 border-orange-200 dark:border-orange-800 shadow-lg">
             <div className="absolute -top-6 sm:-top-4 left-1/2 transform -translate-x-1/2">
-              <div className="maintenance-badge bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md">
+              <div className="maintenance-badge bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md hidden sm:block">
                 🔧 ASSOCIEZ UN CONTRAT DE MAINTENANCE !
               </div>
             </div>
@@ -418,49 +418,61 @@ export default function EmailProfessionnel() {
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
-                <div className="text-xl mb-2">🏢</div>
-                <h4 className="font-bold text-lg mb-2">Essentiel</h4>
-                <p className="text-orange-600 dark:text-orange-400 font-medium mb-3">Protection de base</p>
+                <div className="text-xl mb-2">✉️</div>
+                <h4 className="font-bold text-lg mb-2">Email Personnel</h4>
+                <p className="text-orange-600 dark:text-orange-400 font-medium mb-3">Protection de base - 8€/mois</p>
                 <ul className="text-sm space-y-2">
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Sauvegarde hebdomadaire</span>
+                    <span>Sauvegarde emails hebdomadaire</span>
                   </li>
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>  
-                    <span>Anti-spam et antivirus</span>
+                    <span>Anti-spam renforcé 99.5%</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>  
+                    <span>Surveillance disponibilité</span>
                   </li>
                 </ul>
               </Card>
 
               <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center border-2 border-labtek-blue">
-                <div className="text-xl mb-2">🚀</div>
-                <h4 className="font-bold text-lg mb-2">Professionnel</h4>
-                <p className="text-purple-600 dark:text-purple-400 font-medium mb-3">Solution complète</p>
+                <div className="text-xl mb-2">💼</div>
+                <h4 className="font-bold text-lg mb-2">Email Business</h4>
+                <p className="text-purple-600 dark:text-purple-400 font-medium mb-3">Solution complète - 18€/mois</p>
                 <ul className="text-sm space-y-2">
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Sauvegarde quotidienne</span>
+                    <span>Sauvegarde quotidienne + archivage</span>
                   </li>
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Synchronisation multi-appareils</span>
+                    <span>Sync parfaite multi-appareils</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Support prioritaire 8h-19h</span>
                   </li>
                 </ul>
               </Card>
 
               <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
-                <div className="text-xl mb-2">🏭</div>
-                <h4 className="font-bold text-lg mb-2">Entreprise</h4>
-                <p className="text-red-600 dark:text-red-400 font-medium mb-3">Infrastructure premium</p>
+                <div className="text-xl mb-2">🏢</div>
+                <h4 className="font-bold text-lg mb-2">Mail Entreprise</h4>
+                <p className="text-red-600 dark:text-red-400 font-medium mb-3">Infrastructure premium - Sur devis</p>
                 <ul className="text-sm space-y-2">
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Redondance serveurs</span>
+                    <span>Haute disponibilité 99.9%</span>
                   </li>
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>SLA 99.9% disponibilité</span>
+                    <span>Serveurs dédiés redondants</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Admin messagerie dédié</span>
                   </li>
                 </ul>
               </Card>

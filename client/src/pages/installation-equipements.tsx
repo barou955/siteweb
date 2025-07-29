@@ -290,7 +290,7 @@ export default function InstallationEquipements() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 dark:from-orange-950/20 dark:via-red-950/20 dark:to-pink-950/20 rounded-xl p-8 border-2 border-orange-200 dark:border-orange-800 shadow-lg">
             <div className="absolute -top-6 sm:-top-4 left-1/2 transform -translate-x-1/2">
-              <div className="maintenance-badge bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md">
+              <div className="maintenance-badge bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md hidden sm:block">
                 🔧 ASSOCIEZ UN CONTRAT DE MAINTENANCE !
               </div>
             </div>
@@ -304,29 +304,37 @@ export default function InstallationEquipements() {
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
-                <div className="text-xl mb-2">🏢</div>
-                <h4 className="font-bold text-lg mb-2">Essentiel</h4>
-                <p className="text-orange-600 dark:text-orange-400 font-medium mb-3">Maintenance de base</p>
+                <div className="text-xl mb-2">💻</div>
+                <h4 className="font-bold text-lg mb-2">Matériel Bureau</h4>
+                <p className="text-orange-600 dark:text-orange-400 font-medium mb-3">Entretien périodique - 35€/an</p>
                 <ul className="text-sm space-y-2">
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Nettoyage trimestriel</span>
+                    <span>Nettoyage équipements 2x/an</span>
                   </li>
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>  
-                    <span>Vérification connexions</span>
+                    <span>Vérification connexions réseau</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>  
+                    <span>Diagnostic préventif annuel</span>
                   </li>
                 </ul>
               </Card>
 
               <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center border-2 border-labtek-blue">
-                <div className="text-xl mb-2">🚀</div>
-                <h4 className="font-bold text-lg mb-2">Professionnel</h4>
-                <p className="text-purple-600 dark:text-purple-400 font-medium mb-3">Maintenance complète</p>
+                <div className="text-xl mb-2">🌐</div>
+                <h4 className="font-bold text-lg mb-2">Infrastructure Réseau</h4>
+                <p className="text-purple-600 dark:text-purple-400 font-medium mb-3">Maintenance pro - 80€/mois</p>
                 <ul className="text-sm space-y-2">
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Maintenance mensuelle</span>
+                    <span>Surveillance équipements réseau</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Mise à jour firmware trimestrielle</span>
                   </li>
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
@@ -336,17 +344,21 @@ export default function InstallationEquipements() {
               </Card>
 
               <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
-                <div className="text-xl mb-2">🏭</div>
-                <h4 className="font-bold text-lg mb-2">Entreprise</h4>
-                <p className="text-red-600 dark:text-red-400 font-medium mb-3">Premium 24/7</p>
+                <div className="text-xl mb-2">🏢</div>
+                <h4 className="font-bold text-lg mb-2">Parc Informatique</h4>
+                <p className="text-red-600 dark:text-red-400 font-medium mb-3">Gestion complète - Sur devis</p>
                 <ul className="text-sm space-y-2">
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Support 24/7</span>
+                    <span>Surveillance parc 24/7</span>
                   </li>
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Ingénieur dédié</span>
+                    <span>Remplacement matériel 4h</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Ingénieur système dédié</span>
                   </li>
                 </ul>
               </Card>

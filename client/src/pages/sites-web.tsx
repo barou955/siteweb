@@ -497,7 +497,7 @@ export default function SitesWeb() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 dark:from-orange-950/20 dark:via-red-950/20 dark:to-pink-950/20 rounded-xl p-8 border-2 border-orange-200 dark:border-orange-800 shadow-lg">
             <div className="absolute -top-6 sm:-top-4 left-1/2 transform -translate-x-1/2">
-              <div className="maintenance-badge bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md">
+              <div className="maintenance-badge bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md hidden sm:block">
                 🔧 ASSOCIEZ UN CONTRAT DE MAINTENANCE !
               </div>
             </div>
@@ -511,9 +511,9 @@ export default function SitesWeb() {
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
-                <div className="text-xl mb-2">🏢</div>
-                <h4 className="font-bold text-lg mb-2">Essentiel</h4>
-                <p className="text-orange-600 dark:text-orange-400 font-medium mb-3">Maintenance de base</p>
+                <div className="text-xl mb-2">🌐</div>
+                <h4 className="font-bold text-lg mb-2">Site Vitrine</h4>
+                <p className="text-orange-600 dark:text-orange-400 font-medium mb-3">Maintenance de base - 15€/mois</p>
                 <ul className="text-sm space-y-2">
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
@@ -523,13 +523,17 @@ export default function SitesWeb() {
                     <span className="text-green-500 mr-2">✓</span>  
                     <span>Sauvegarde hebdomadaire</span>
                   </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>  
+                    <span>Surveillance disponibilité</span>
+                  </li>
                 </ul>
               </Card>
 
               <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center border-2 border-labtek-blue">
-                <div className="text-xl mb-2">🚀</div>
-                <h4 className="font-bold text-lg mb-2">Professionnel</h4>
-                <p className="text-purple-600 dark:text-purple-400 font-medium mb-3">Maintenance + SEO</p>
+                <div className="text-xl mb-2">📊</div>
+                <h4 className="font-bold text-lg mb-2">Site Pro + SEO</h4>
+                <p className="text-purple-600 dark:text-purple-400 font-medium mb-3">Optimisation complète - 35€/mois</p>
                 <ul className="text-sm space-y-2">
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
@@ -537,23 +541,31 @@ export default function SitesWeb() {
                   </li>
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Rapports de performance</span>
+                    <span>Rapport trafic et positions</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Ajout contenu (1 article/mois)</span>
                   </li>
                 </ul>
               </Card>
 
               <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
-                <div className="text-xl mb-2">🏭</div>
-                <h4 className="font-bold text-lg mb-2">Entreprise</h4>
-                <p className="text-red-600 dark:text-red-400 font-medium mb-3">Premium e-commerce</p>
+                <div className="text-xl mb-2">🛒</div>
+                <h4 className="font-bold text-lg mb-2">E-commerce</h4>
+                <p className="text-red-600 dark:text-red-400 font-medium mb-3">Solution premium - 75€/mois</p>
                 <ul className="text-sm space-y-2">
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Surveillance 24/7</span>
+                    <span>Surveillance 24/7 boutique</span>
                   </li>
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>CDN optimisation vitesse</span>
+                    <span>Optimisation vitesse CDN</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Sauvegarde quotidienne BDD</span>
                   </li>
                 </ul>
               </Card>

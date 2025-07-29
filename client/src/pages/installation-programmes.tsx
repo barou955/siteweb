@@ -404,7 +404,7 @@ export default function InstallationProgrammes() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 dark:from-orange-950/20 dark:via-red-950/20 dark:to-pink-950/20 rounded-xl p-8 border-2 border-orange-200 dark:border-orange-800 shadow-lg">
             <div className="absolute -top-6 sm:-top-4 left-1/2 transform -translate-x-1/2">
-              <div className="maintenance-badge bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md">
+              <div className="maintenance-badge bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md hidden sm:block">
                 🔧 ASSOCIEZ UN CONTRAT DE MAINTENANCE !
               </div>
             </div>
@@ -418,41 +418,49 @@ export default function InstallationProgrammes() {
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
-                <div className="text-xl mb-2">🏢</div>
-                <h4 className="font-bold text-lg mb-2">Essentiel</h4>
-                <p className="text-orange-600 dark:text-orange-400 font-medium mb-3">Suivi de base</p>
+                <div className="text-xl mb-2">💾</div>
+                <h4 className="font-bold text-lg mb-2">Suite Bureau</h4>
+                <p className="text-orange-600 dark:text-orange-400 font-medium mb-3">Suivi logiciels - 20€/mois</p>
                 <ul className="text-sm space-y-2">
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Mises à jour trimestrielles</span>
+                    <span>Mises à jour Office/Adobe</span>
                   </li>
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>  
-                    <span>Vérification licences</span>
+                    <span>Vérification licences actives</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>  
+                    <span>Support téléphonique inclus</span>
                   </li>
                 </ul>
               </Card>
 
               <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center border-2 border-labtek-blue">
-                <div className="text-xl mb-2">🚀</div>
-                <h4 className="font-bold text-lg mb-2">Professionnel</h4>
-                <p className="text-purple-600 dark:text-purple-400 font-medium mb-3">Gestion complète</p>
+                <div className="text-xl mb-2">🎨</div>
+                <h4 className="font-bold text-lg mb-2">Suite Créative</h4>
+                <p className="text-purple-600 dark:text-purple-400 font-medium mb-3">Gestion pro - 45€/mois</p>
                 <ul className="text-sm space-y-2">
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Mises à jour automatiques</span>
+                    <span>Gestion Adobe Creative Cloud</span>
                   </li>
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Formation utilisateurs</span>
+                    <span>Formation nouveautés mensuelles</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Optimisation performances</span>
                   </li>
                 </ul>
               </Card>
 
               <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
-                <div className="text-xl mb-2">🏭</div>
-                <h4 className="font-bold text-lg mb-2">Entreprise</h4>
-                <p className="text-red-600 dark:text-red-400 font-medium mb-3">Solution premium</p>
+                <div className="text-xl mb-2">🏢</div>
+                <h4 className="font-bold text-lg mb-2">Parc Logiciel</h4>
+                <p className="text-red-600 dark:text-red-400 font-medium mb-3">Gestion centralisée - Sur devis</p>
                 <ul className="text-sm space-y-2">
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
@@ -460,7 +468,11 @@ export default function InstallationProgrammes() {
                   </li>
                   <li className="flex items-center justify-center">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Support 24/7</span>
+                    <span>Inventaire licences complet</span>
+                  </li>
+                  <li className="flex items-center justify-center">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Support prioritaire équipes</span>
                   </li>
                 </ul>
               </Card>
