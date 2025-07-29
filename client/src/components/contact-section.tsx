@@ -156,6 +156,7 @@ export default function ContactSection() {
                       name="nom"
                       id="nom"
                       required
+                      autoComplete="family-name"
                       className="mt-2"
                     />
                   </div>
@@ -169,6 +170,7 @@ export default function ContactSection() {
                       name="prenom"
                       id="prenom"
                       required
+                      autoComplete="given-name"
                       className="mt-2"
                     />
                   </div>
@@ -184,6 +186,7 @@ export default function ContactSection() {
                       name="email"
                       id="email"
                       required
+                      autoComplete="email"
                       className="mt-2"
                     />
                   </div>
@@ -194,6 +197,7 @@ export default function ContactSection() {
                       type="tel"
                       name="telephone"
                       id="telephone"
+                      autoComplete="tel"
                       className="mt-2"
                     />
                   </div>
@@ -205,6 +209,7 @@ export default function ContactSection() {
                     type="text"
                     name="entreprise"
                     id="entreprise"
+                    autoComplete="organization"
                     className="mt-2"
                   />
                 </div>
