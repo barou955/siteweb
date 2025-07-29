@@ -23,8 +23,9 @@ export default function InfogeranceLegere() {
   return (
     <div className="min-h-screen">
       <SeoMeta 
-        title="Infogérance Légère - Surveillance Informatique 24h/24 - Labtek"
-        description="Service d'infogérance légère pour PME : surveillance continue, support prioritaire, rapports détaillés. Sérénité informatique garantie."
+        title="Infogérance Légère - Labtek Services Informatiques"
+        description="Services d'infogérance adaptés aux PME : surveillance système, maintenance préventive et support technique en Essonne."
+        canonical="https://labtek.fr/services/infogerance-legere"
       />
       <Navigation />
 
