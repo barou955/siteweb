@@ -7,6 +7,7 @@ import MaintenanceSection from "@/components/maintenance-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 import ScrollToTopButton from "@/components/scroll-to-top-button";
+import SeoMeta from "@/components/seo-meta";
 
 export default function Home() {
   useEffect(() => {
@@ -24,6 +25,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
+      <SeoMeta />
       <Navigation />
       <HeroSection />
       <ServicesSection />
