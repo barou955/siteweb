@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import SeoMeta from "@/components/seo-meta";
@@ -23,11 +22,12 @@ export default function SecuriteSauvegarde() {
   return (
     <div className="min-h-screen">
       <SeoMeta 
-        title="Sécurité Informatique et Sauvegarde de Données - Labtek"
-        description="Protection complète de vos données : antivirus, sauvegarde automatique, sécurité réseau. Évitez les pertes de données et cyberattaques."
+        title="Sécurité & Sauvegarde - Labtek Services Informatiques"
+        description="Solutions de sécurité informatique et sauvegarde de données : antivirus, pare-feu, chiffrement et sauvegarde automatique en Essonne."
+        canonical="https://labtek.fr/services/securite-sauvegarde"
       />
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-labtek-blue/10 to-labtek-violet/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,7 +35,7 @@ export default function SecuriteSauvegarde() {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Retour
           </Button>
-          
+
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
               Sécurité &
@@ -89,7 +89,7 @@ export default function SecuriteSauvegarde() {
       <section className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">Nos solutions de protection</h2>
-          
+
           <div className="space-y-8">
             {/* Protection Antivirus */}
             <Card>
@@ -583,7 +583,7 @@ export default function SecuriteSauvegarde() {
               onClick={() => window.open('tel:0768852880', '_self')}
             >
               <Phone className="w-4 h-4 mr-2" />
-              07 68 85 28 80
+              07 68 85 2880
             </Button>
             <Button 
               size="lg" 
