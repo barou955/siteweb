@@ -5,7 +5,7 @@ import ScrollToTopButton from "@/components/scroll-to-top-button";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Check, ArrowLeft, Phone, Mail, Wrench, Clock, MapPin, Zap, Monitor, Wifi, AlertTriangle, Settings, Eye, HeadphonesIcon } from "lucide-react";
+import { Check, ArrowLeft, Phone, Mail, Wrench, Clock, MapPin, Zap, Monitor, Wifi, AlertTriangle, Settings, Eye, HeadphonesIcon, HardDrive, Globe, Shield, ScreenShare, KeyRound, Printer } from "lucide-react";
 
 export default function DepannageAssistance() {
   const scrollToContact = () => {
@@ -460,21 +460,24 @@ export default function DepannageAssistance() {
           <h2 className="text-3xl font-bold text-center mb-12">Problèmes que nous résolvons quotidiennement</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "PC lent ou qui plante", desc: "Optimisation performances, nettoyage système" },
-              { title: "Plus d'internet ou Wi-Fi", desc: "Configuration réseau, diagnostic connexion" },
-              { title: "Virus et fenêtres popup", desc: "Nettoyage complet, protection renforcée" },
-              { title: "Écran noir ou bleu", desc: "Diagnostic matériel, réparation système" },
-              { title: "Mots de passe oubliés", desc: "Récupération accès Windows, emails, comptes" },
-              { title: "Imprimante en panne", desc: "Installation pilotes, configuration réseau" }
-            ].map((probleme, index) => (
-              <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
-                <CardContent className="p-0">
-                  <Wrench className="w-12 h-12 text-labtek-blue mx-auto mb-4" />
-                  <h3 className="font-bold text-lg mb-2">{probleme.title}</h3>
-                  <p className="text-muted-foreground text-sm">{probleme.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
+              { title: "PC lent ou qui plante", desc: "Optimisation performances, nettoyage système", icon: HardDrive },
+              { title: "Plus d'internet ou Wi-Fi", desc: "Configuration réseau, diagnostic connexion", icon: Wifi },
+              { title: "Virus et fenêtres popup", desc: "Nettoyage complet, protection renforcée", icon: Shield },
+              { title: "Écran noir ou bleu", desc: "Diagnostic matériel, réparation système", icon: ScreenShare },
+              { title: "Mots de passe oubliés", desc: "Récupération accès Windows, emails, comptes", icon: KeyRound },
+              { title: "Imprimante en panne", desc: "Installation pilotes, configuration réseau", icon: Printer }
+            ].map((probleme, index) => {
+              const IconComponent = probleme.icon;
+              return (
+                <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
+                  <CardContent className="p-0">
+                    <IconComponent className="w-12 h-12 text-labtek-blue mx-auto mb-4" />
+                    <h3 className="font-bold text-lg mb-2">{probleme.title}</h3>
+                    <p className="text-muted-foreground text-sm">{probleme.desc}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -525,7 +528,7 @@ export default function DepannageAssistance() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 dark:from-orange-950/20 dark:via-red-950/20 dark:to-pink-950/20 rounded-xl p-8 border-2 border-orange-200 dark:border-orange-800 shadow-lg">
             <div className="absolute -top-6 sm:-top-4 left-1/2 transform -translate-x-1/2">
-              <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md">
+              <div className="maintenance-badge bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md">
                 🔧 ASSOCIEZ UN CONTRAT DE MAINTENANCE !
               </div>
             </div>
@@ -610,10 +613,10 @@ export default function DepannageAssistance() {
             <Button 
               size="lg" 
               className="bg-labtek-blue hover:bg-labtek-blue/90"
-              onClick={() => window.open('tel:0781166929', '_self')}
+              onClick={() => window.open('tel:0768852880', '_self')}
             >
               <Phone className="w-4 h-4 mr-2" />
-              07 81 16 69 29
+              07 68 85 28 80
             </Button>
             <Button 
               size="lg" 

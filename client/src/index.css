@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Badge de maintenance - positionnement mobile amélioré */
+@media (max-width: 640px) {
+  .maintenance-badge {
+    top: -12px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    max-width: 90% !important;
+  }
+}
+
 :root {
   --background: hsl(0, 0%, 97%);
   --foreground: hsl(222, 20%, 15%);

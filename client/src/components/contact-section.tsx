@@ -112,7 +112,7 @@ export default function ContactSection() {
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Téléphone</h4>
                     <p className="text-muted-foreground">
-                      01 69 XX XX XX
+                      07 68 85 28 80
                     </p>
                     <p className="text-sm text-muted-foreground mt-1">
                       Disponible aux heures d'ouverture

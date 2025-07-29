@@ -290,7 +290,7 @@ export default function InstallationEquipements() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 dark:from-orange-950/20 dark:via-red-950/20 dark:to-pink-950/20 rounded-xl p-8 border-2 border-orange-200 dark:border-orange-800 shadow-lg">
             <div className="absolute -top-6 sm:-top-4 left-1/2 transform -translate-x-1/2">
-              <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md">
+              <div className="maintenance-badge bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md">
                 🔧 ASSOCIEZ UN CONTRAT DE MAINTENANCE !
               </div>
             </div>
@@ -375,10 +375,10 @@ export default function InstallationEquipements() {
             <Button 
               size="lg" 
               className="bg-labtek-blue hover:bg-labtek-blue/90"
-              onClick={() => window.open('tel:0781166929', '_self')}
+              onClick={() => window.open('tel:0768852880', '_self')}
             >
               <Phone className="w-4 h-4 mr-2" />
-              07 81 16 69 29
+              07 68 85 28 80
             </Button>
             <Button 
               size="lg" 

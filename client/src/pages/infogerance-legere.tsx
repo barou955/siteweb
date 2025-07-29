@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import SeoMeta from "@/components/seo-meta";
@@ -93,7 +92,7 @@ export default function InfogeranceLegere() {
       <section className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">Solutions d'infogérance disponibles</h2>
-          
+
           <div className="space-y-8">
             {/* Surveillance système et performances */}
             <Card>
@@ -298,8 +297,10 @@ export default function InfogeranceLegere() {
 
             {/* Formule Professionnel */}
             <Card className="relative border-2 border-labtek-blue shadow-lg scale-105">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <Badge className="bg-labtek-blue text-white px-4 py-1">Le plus populaire</Badge>
+              <div className="absolute -top-6 sm:-top-4 left-1/2 transform -translate-x-1/2">
+                <div className="maintenance-badge bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md">
+                  🔧 ASSOCIEZ UN CONTRAT DE MAINTENANCE !
+                </div>
               </div>
               <CardContent className="p-6">
                 <div className="text-center mb-6">

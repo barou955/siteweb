@@ -499,10 +499,10 @@ export default function FormationAccompagnement() {
             <Button 
               size="lg" 
               className="bg-labtek-blue hover:bg-labtek-blue/90"
-              onClick={() => window.open('tel:0781166929', '_self')}
+              onClick={() => window.open('tel:0768852880', '_self')}
             >
               <Phone className="w-4 h-4 mr-2" />
-              07 81 16 69 29
+              07 68 85 28 80
             </Button>
             <Button 
               size="lg" 
