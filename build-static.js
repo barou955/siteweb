@@ -1,16 +1,16 @@
 
-const { build } = require('vite');
-const path = require('path');
-const { fileURLToPath } = require('url');
-const fs = require('fs');
+import { build } from 'vite';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import fs from 'fs';
 
-// Pour CommonJS, nous devons créer __dirname manuellement
+// Pour ES modules, nous devons créer __dirname manuellement
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const config = {
   plugins: [
-    require('@vitejs/plugin-react').default()
+    (await import('@vitejs/plugin-react')).default()
   ],
   resolve: {
     alias: {
