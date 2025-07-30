@@ -69,6 +69,15 @@ export function generateSitemap() {
   const sitemapPath = path.join(__dirname, 'client/public/sitemap.xml');
   fs.writeFileSync(sitemapPath, sitemap);
   console.log('✅ Sitemap généré avec succès dans client/public/sitemap.xml');
+
+  // Soumettre automatiquement le sitemap à IndexNow
+  try {
+    const { IndexNowService } = await import('./server/indexnow.js');
+    await IndexNowService.submitUrl('https://labtek.fr/sitemap.xml');
+    console.log('✅ Sitemap soumis automatiquement à IndexNow');
+  } catch (error) {
+    console.log('ℹ️ IndexNow submission will be available when server is running');
+  }
 }
 
 if (process.argv[1] === new URL(import.meta.url).pathname) {
