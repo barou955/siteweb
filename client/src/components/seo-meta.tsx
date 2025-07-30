@@ -158,7 +158,7 @@ export default function SeoMeta({
       {/* Bing/Microsoft Edge specific */}
       <meta name="msapplication-TileColor" content="#3730A3" />
       <meta name="msapplication-config" content="/browserconfig.xml" />
-      <meta name="msvalidate.01" content="" />
+      <meta name="msvalidate.01" content="labtek-bing-validation-2025" />
       <meta name="keywords" content="Labtek, informatique Essonne, dépannage ordinateur 91, installation logiciels, email professionnel, sauvegarde données, sécurité informatique Île-de-France, services informatiques professionnels, maintenance ordinateur, réseaux sécurisés, sites web responsives" />
     
     {/* Enhanced SEO meta tags */}
@@ -180,6 +180,55 @@ export default function SeoMeta({
     <meta name="designer" content="Labtek" />
     <meta name="owner" content="Labtek" />
     <meta name="reply-to" content="contact@labtek.fr" />
+    <meta name="url" content={canonical} />
+    
+    {/* JSON-LD structured data for better Bing understanding */}
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Labtek Services Informatiques",
+        "alternateName": "Labtek",
+        "description": "Services informatiques professionnels en Essonne : dépannage, installation, sécurité, réseaux, sites web. Expert informatique Île-de-France.",
+        "url": "https://labtek.fr",
+        "telephone": "+33768852880",
+        "email": "contact@labtek.fr",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Essonne",
+          "addressRegion": "Île-de-France",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "48.6921",
+          "longitude": "2.3708"
+        },
+        "areaServed": [
+          {
+            "@type": "State",
+            "name": "Essonne"
+          },
+          {
+            "@type": "State", 
+            "name": "Île-de-France"
+          }
+        ],
+        "serviceType": [
+          "Dépannage informatique",
+          "Installation équipements",
+          "Sécurité informatique",
+          "Création sites web",
+          "Email professionnel",
+          "Formation informatique"
+        ],
+        "priceRange": "€€",
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "sameAs": [
+          "https://labtek.fr"
+        ]
+      })}
+    </script>
     <meta name="url" content="https://labtek.fr" />
     <meta name="identifier-URL" content="https://labtek.fr" />
     <meta name="directory" content="submission" />
