@@ -12,6 +12,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
     res.send(IndexNowService.getApiKey());
   });
 
+  // Route pour la validation Bing
+  app.get('/BingSiteAuth.xml', (req, res) => {
+    res.setHeader('Content-Type', 'application/xml');
+    res.send(`<?xml version="1.0"?>
+<users>
+	<user>labtek-bing-validation-2025</user>
+</users>`);
+  });
+
   // Route pour soumettre manuellement une URL
   app.post('/api/indexnow/submit', async (req, res) => {
     try {

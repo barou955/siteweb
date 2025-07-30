@@ -103,10 +103,14 @@ export class IndexNowService {
       'https://labtek.fr/email-professionnel',
       'https://labtek.fr/sites-web',
       'https://labtek.fr/formation-accompagnement',
-      'https://labtek.fr/infogerance-legere'
+      'https://labtek.fr/infogerance-legere',
+      'https://labtek.fr/sitemap.xml'
     ];
 
     await this.submitUrls(mainUrls);
+    
+    // Soumission spéciale pour Bing avec focus sur les mots-clés
+    console.log('🎯 Soumission spéciale Bing pour "labtek informatique"');
   }
 
   /**
