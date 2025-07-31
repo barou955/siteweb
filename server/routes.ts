@@ -21,6 +21,29 @@ export async function registerRoutes(app: Express): Promise<Server> {
 </users>`);
   });
 
+  // Route pour servir le sitemap.xml
+  app.get('/sitemap.xml', (req, res) => {
+    try {
+      const fs = require('fs');
+      const path = require('path');
+      
+      const sitemapPath = path.join(__dirname, '../client/public/sitemap.xml');
+      
+      if (!fs.existsSync(sitemapPath)) {
+        return res.status(404).send('Sitemap not found');
+      }
+      
+      const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
+      
+      res.setHeader('Content-Type', 'application/xml');
+      res.setHeader('Cache-Control', 'public, max-age=3600'); // Cache pendant 1 heure
+      res.send(sitemapContent);
+    } catch (error) {
+      console.error('Erreur lors du service du sitemap:', error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+
   // Route pour valider le sitemap
   app.get('/api/sitemap/validate', async (req, res) => {
     try {
