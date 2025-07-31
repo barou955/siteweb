@@ -21,6 +21,40 @@ export async function registerRoutes(app: Express): Promise<Server> {
 </users>`);
   });
 
+  // Route pour valider le sitemap
+  app.get('/api/sitemap/validate', async (req, res) => {
+    try {
+      const fs = require('fs');
+      const path = require('path');
+      
+      const sitemapPath = path.join(__dirname, '../client/public/sitemap.xml');
+      
+      if (!fs.existsSync(sitemapPath)) {
+        return res.status(404).json({ error: 'Sitemap non trouvé' });
+      }
+      
+      const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
+      
+      // Validation XML basique
+      const isValidXML = sitemapContent.includes('<?xml version="1.0"') && 
+                        sitemapContent.includes('<urlset') && 
+                        sitemapContent.includes('</urlset>');
+      
+      const urlCount = (sitemapContent.match(/<url>/g) || []).length;
+      
+      res.json({
+        isValid: isValidXML,
+        urlCount: urlCount,
+        size: sitemapContent.length,
+        lastModified: fs.statSync(sitemapPath).mtime,
+        sitemapUrl: 'https://labtek.fr/sitemap.xml'
+      });
+    } catch (error) {
+      console.error('Erreur validation sitemap:', error);
+      res.status(500).json({ error: 'Erreur serveur' });
+    }
+  });
+
   // Route pour soumettre manuellement une URL
   app.post('/api/indexnow/submit', async (req, res) => {
     try {
