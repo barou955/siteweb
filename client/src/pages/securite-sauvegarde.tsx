@@ -6,13 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Check, ArrowLeft, Phone, Mail, Shield, HardDrive, Cloud, AlertTriangle, Lock, Zap, Eye, Settings, Database, RefreshCw } from "lucide-react";
+import { scrollToContact as scrollToContactUtil } from "@/lib/utils";
 
 export default function SecuriteSauvegarde() {
   const scrollToContact = () => {
-    const element = document.getElementById("contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    scrollToContactUtil();
   };
 
   const goBack = () => {
@@ -588,18 +586,10 @@ export default function SecuriteSauvegarde() {
             <Button 
               size="lg" 
               variant="outline"
-              onClick={() => {
-                window.location.href = '/';
-                setTimeout(() => {
-                  const element = document.getElementById('contact');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }, 100);
-              }}
+              onClick={scrollToContact}
             >
               <Mail className="w-4 h-4 mr-2" />
-              contact@labtek.fr
+              Contactez-nous !
             </Button>
           </div>
         </div>

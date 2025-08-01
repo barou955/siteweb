@@ -7,15 +7,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Check, ArrowLeft, Phone, Mail, Cpu, HardDrive, Zap, Monitor, Settings, Wrench, Shield, Thermometer, Cable, Gamepad2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { scrollToContact } from "@/lib/utils";
 
 export default function MontagePcSurMesure() {
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const goBack = () => {
     window.location.href = '/';
   };
@@ -613,18 +607,10 @@ export default function MontagePcSurMesure() {
             <Button 
               size="lg" 
               variant="outline"
-              onClick={() => {
-                window.location.href = '/';
-                setTimeout(() => {
-                  const element = document.getElementById('contact');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }, 100);
-              }}
+              onClick={scrollToContact}
             >
               <Mail className="w-4 h-4 mr-2" />
-              contact@labtek.fr
+              Contactez-nous !
             </Button>
           </div>
         </div>

@@ -7,15 +7,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Check, ArrowLeft, Phone, Mail, Monitor, Shield, Clock, HeadphonesIcon, CheckCircle, Server, Eye, Zap, Database, Users, BarChart3, AlertTriangle, Bell, Activity, Cpu, HardDrive, Wifi } from "lucide-react";
+import { scrollToContact } from "@/lib/utils";
 
 export default function InfogeranceLegere() {
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const goBack = () => {
     window.location.href = '/';
   };
@@ -500,18 +494,10 @@ export default function InfogeranceLegere() {
             <Button 
               size="lg" 
               variant="outline"
-              onClick={() => {
-                window.location.href = '/';
-                setTimeout(() => {
-                  const element = document.getElementById('contact');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }, 100);
-              }}
+              onClick={scrollToContact}
             >
               <Mail className="w-4 h-4 mr-2" />
-              contact@labtek.fr
+              Contactez-nous !
             </Button>
           </div>
         </div>

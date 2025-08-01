@@ -60,7 +60,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
+          <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={() => window.location.href = '/'}>
             <div className="w-40 h-14 rounded-lg overflow-hidden mr-3 -ml-12">
               <img
                 src={labtekLogo}
@@ -80,7 +80,7 @@ export default function Navigation() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               <button
-                onClick={() => scrollToSection("accueil")}
+                onClick={() => window.location.href = '/'}
                 className="text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out hover:scale-105 hover:bg-labtek-blue/5 px-3 py-2 rounded-lg relative overflow-hidden group"
               >
                 <span className="relative z-10">Accueil</span>
@@ -250,7 +250,7 @@ export default function Navigation() {
         <div className="md:hidden bg-background border-t border-border">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <button
-              onClick={() => scrollToSection("accueil")}
+              onClick={() => window.location.href = '/'}
               className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2 relative overflow-hidden group"
             >
               <span className="relative z-10">Accueil</span>
