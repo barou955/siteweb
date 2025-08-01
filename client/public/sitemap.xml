@@ -1,8 +1,7 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://labtek.fr/</loc>
     <lastmod>2025-01-28</lastmod>
@@ -12,8 +11,6 @@
       <image:loc>https://labtek.fr/logo-512.png</image:loc>
       <image:title>Labtek - Services Informatiques Professionnels Essonne</image:title>
       <image:caption>Logo officiel Labtek - Expert informatique en Essonne et Île-de-France</image:caption>
-      <image:geo_location>Essonne, France</image:geo_location>
-      <image:license>https://labtek.fr</image:license>
     </image:image>
     <image:image>
       <image:loc>https://labtek.fr/logo-192.png</image:loc>
@@ -22,7 +19,6 @@
     </image:image>
   </url>
   
-  <!-- Pages de services principales -->
   <url>
     <loc>https://labtek.fr/services/depannage-assistance</loc>
     <lastmod>2025-01-28</lastmod>
@@ -86,7 +82,6 @@
     <priority>0.85</priority>
   </url>
   
-  <!-- Sections de la page d'accueil -->
   <url>
     <loc>https://labtek.fr/#services</loc>
     <lastmod>2025-01-28</lastmod>
