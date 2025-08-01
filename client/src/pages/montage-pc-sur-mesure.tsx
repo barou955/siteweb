@@ -536,8 +536,7 @@ export default function MontagePcSurMesure() {
                     <span>Optimisation performances</span>
                   </li>
                   <li className="flex items-center justify-center">
-                    <span className="text-green-500 mr-2">✓</span>  
-                    <span>Vérification garanties composants</span>
+                    <span className="text-green-500 mr-2">✓</span>                    <span>Vérification garanties composants</span>
                   </li>
                 </ul>
               </Card>
@@ -614,7 +613,15 @@ export default function MontagePcSurMesure() {
             <Button 
               size="lg" 
               variant="outline"
-              onClick={() => window.location.href = '/#contact'}
+              onClick={() => {
+                window.location.href = '/';
+                setTimeout(() => {
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }, 100);
+              }}
             >
               <Mail className="w-4 h-4 mr-2" />
               contact@labtek.fr

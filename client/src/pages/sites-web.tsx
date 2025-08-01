@@ -570,7 +570,7 @@ export default function SitesWeb() {
                   </li>
                 </ul>
               </Card>
-            </div>
+                        </div>
 
             <div className="text-center">
               <p className="text-sm text-muted-foreground mb-4">
@@ -603,7 +603,15 @@ export default function SitesWeb() {
             <Button 
               size="lg" 
               variant="outline"
-              onClick={() => window.location.href = '/#contact'}
+              onClick={() => {
+                window.location.href = '/';
+                setTimeout(() => {
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }, 100);
+              }}
             >
               <Mail className="w-4 h-4 mr-2" />
               contact@labtek.fr

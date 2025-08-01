@@ -500,7 +500,15 @@ export default function InfogeranceLegere() {
             <Button 
               size="lg" 
               variant="outline"
-              onClick={() => window.location.href = '/#contact'}
+              onClick={() => {
+                window.location.href = '/';
+                setTimeout(() => {
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }, 100);
+              }}
             >
               <Mail className="w-4 h-4 mr-2" />
               contact@labtek.fr
