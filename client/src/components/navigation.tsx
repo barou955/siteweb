@@ -61,7 +61,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <div className="w-40 h-14 rounded-lg overflow-hidden mr-3">
+            <div className="w-40 h-14 rounded-lg overflow-hidden mr-3 -ml-12">
               <img
                 src={labtekLogo}
                 alt="Labtek Logo"
