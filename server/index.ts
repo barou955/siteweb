@@ -1,7 +1,6 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
-import { IndexNowScheduler } from "./scheduler";
 
 const app = express();
 app.use(express.json());
@@ -68,19 +67,5 @@ app.use((req, res, next) => {
     reusePort: true,
   }, () => {
     log(`serving on port ${port}`);
-    
-    // Démarrer le planificateur IndexNow
-    IndexNowScheduler.start();
-    
-    // Soumission initiale après 30 secondes
-    setTimeout(async () => {
-      try {
-        const { IndexNowService } = await import("./indexnow");
-        await IndexNowService.submitAllPages();
-        log("✅ Soumission initiale IndexNow effectuée");
-      } catch (error) {
-        log("❌ Erreur lors de la soumission initiale IndexNow:", error);
-      }
-    }, 30000);
   });
 })();

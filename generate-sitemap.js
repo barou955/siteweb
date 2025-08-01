@@ -64,97 +64,11 @@ export function generateSitemap() {
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
-  <url>
-    <loc>https://labtek.fr/#problems</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://labtek.fr/depannage-assistance</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://labtek.fr/installation-equipements</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://labtek.fr/installation-programmes</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://labtek.fr/montage-pc-sur-mesure</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://labtek.fr/securite-sauvegarde</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://labtek.fr/email-professionnel</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://labtek.fr/sites-web</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://labtek.fr/formation-accompagnement</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://labtek.fr/infogerance-legere</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
 </urlset>`;
 
   const sitemapPath = path.join(__dirname, 'client/public/sitemap.xml');
-  
-  // S'assurer que le dossier existe
-  const publicDir = path.dirname(sitemapPath);
-  if (!fs.existsSync(publicDir)) {
-    fs.mkdirSync(publicDir, { recursive: true });
-  }
-  
   fs.writeFileSync(sitemapPath, sitemap);
   console.log('✅ Sitemap généré avec succès dans client/public/sitemap.xml');
-
-  // Soumettre automatiquement le sitemap à IndexNow
-  try {
-    const { IndexNowService } = await import('./server/indexnow.js');
-    await IndexNowService.submitUrl('https://labtek.fr/sitemap.xml');
-    console.log('✅ Sitemap soumis automatiquement à IndexNow');
-  } catch (error) {
-    console.log('ℹ️ IndexNow submission will be available when server is running');
-  }
 }
 
 if (process.argv[1] === new URL(import.meta.url).pathname) {
