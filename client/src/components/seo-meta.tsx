@@ -1,4 +1,3 @@
-
 import { Helmet } from "react-helmet-async";
 
 interface SeoMetaProps {
@@ -17,14 +16,14 @@ export default function SeoMeta({
   // Générer l'URL canonique basée sur l'URL courante si non fournie
   const getCanonicalUrl = () => {
     if (canonical) return canonical;
-    
+
     if (typeof window !== 'undefined') {
       const path = window.location.pathname;
       // Supprimer le trailing slash sauf pour la racine
       const cleanPath = path === '/' ? path : path.replace(/\/$/, '');
       return `https://labtek.fr${cleanPath}`;
     }
-    
+
     return "https://labtek.fr";
   };
 
@@ -140,11 +139,12 @@ export default function SeoMeta({
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={canonicalUrl} />
-      
+      {/* Canonical URL - Force HTTPS et supprime les trailing slashes */}
+      <link rel="canonical" href={canonicalUrl.replace(/\/$/, '').replace(/^http:/, 'https:')} />
+
       {noindex && <meta name="robots" content="noindex,nofollow" />}
       {!noindex && <meta name="robots" content="index,follow" />}
-      
+
       {/* Open Graph */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
@@ -156,26 +156,26 @@ export default function SeoMeta({
       <meta property="og:image:alt" content="Logo Labtek - Services Informatiques" />
       <meta property="og:locale" content="fr_FR" />
       <meta property="og:site_name" content="Labtek" />
-      
+
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content="https://labtek.fr/logo-512.png" />
-      
+
       {/* Additional SEO */}
       <meta name="author" content="Labtek" />
       <meta name="geo.region" content="FR-91" />
       <meta name="geo.placename" content="Essonne" />
       <meta name="geo.position" content="48.6921;2.3708" />
       <meta name="ICBM" content="48.6921, 2.3708" />
-      
+
       {/* Bing/Microsoft Edge specific */}
       <meta name="msapplication-TileColor" content="#3730A3" />
       <meta name="msapplication-config" content="/browserconfig.xml" />
       <meta name="msvalidate.01" content="" />
       <meta name="keywords" content="Labtek, informatique Essonne, dépannage ordinateur 91, installation logiciels, email professionnel, sauvegarde données, sécurité informatique Île-de-France, services informatiques professionnels, maintenance ordinateur, réseaux sécurisés, sites web responsives" />
-    
+
     {/* Enhanced SEO meta tags */}
     <meta name="language" content="fr" />
     <meta name="revisit-after" content="7 days" />
@@ -188,7 +188,7 @@ export default function SeoMeta({
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="format-detection" content="telephone=yes" />
-    
+
     {/* Brand specific */}
     <meta name="brand" content="Labtek" />
     <meta name="company" content="Labtek Services Informatiques" />
@@ -202,20 +202,20 @@ export default function SeoMeta({
     <meta name="coverage" content="Worldwide" />
     <meta name="distribution" content="Global" />
     <meta name="rating" content="General" />
-    
+
     {/* Local SEO */}
     <meta name="geo.region" content="FR-91" />
     <meta name="geo.placename" content="Essonne, Île-de-France" />
     <meta name="geo.position" content="48.6921;2.3708" />
     <meta name="ICBM" content="48.6921, 2.3708" />
     <meta name="DC.title" content={title} />
-    
+
     {/* Social Media Optimization */}
     <meta property="article:author" content="Labtek" />
     <meta property="article:publisher" content="https://labtek.fr" />
     <meta name="application-name" content="Labtek" />
     <meta name="msapplication-tooltip" content="Services informatiques professionnels en Essonne" />
-      
+
       {/* Structured Data */}
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}
