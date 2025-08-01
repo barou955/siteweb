@@ -487,7 +487,7 @@ export default function MontagePcSurMesure() {
             {[
               { icon: Phone, title: "Conseil personnalisé gratuit", desc: "Analyse de vos besoins sans engagement" },
               { icon: Shield, title: "Composants garantis 2 ans minimum", desc: "Garantie constructeur + intervention gratuite" }, 
-              { icon: Wrench, title: "Montage professionnel certifié", desc: "10 ans d'expérience, assemblage expert" },
+              { icon: Wrench, title: "Montage professionnel certifié", desc: "15 ans d'expérience, assemblage expert" },
               { icon: Zap, title: "Tests complets avant livraison", desc: "Validation performances et stabilité" },
               { icon: HardDrive, title: "Installation et formation incluses", desc: "Mise en service complète à domicile" },
               { icon: Settings, title: "Support technique 6 mois", desc: "Assistance téléphonique illimitée" }

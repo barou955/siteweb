@@ -11,9 +11,24 @@ interface SeoMetaProps {
 export default function SeoMeta({
   title = "Labtek - Services Informatiques en Essonne | Île‑de‑France",
   description = "Labtek propose des services informatiques professionnels pour particuliers et PME en Essonne et Île‑de‑France. Installation, maintenance, sécurité, hébergement.",
-  canonical = "https://labtek.fr",
+  canonical,
   noindex = false,
 }: SeoMetaProps) {
+  // Générer l'URL canonique basée sur l'URL courante si non fournie
+  const getCanonicalUrl = () => {
+    if (canonical) return canonical;
+    
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname;
+      // Supprimer le trailing slash sauf pour la racine
+      const cleanPath = path === '/' ? path : path.replace(/\/$/, '');
+      return `https://labtek.fr${cleanPath}`;
+    }
+    
+    return "https://labtek.fr";
+  };
+
+  const canonicalUrl = getCanonicalUrl();
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -125,7 +140,7 @@ export default function SeoMeta({
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={canonical} />
+      <link rel="canonical" href={canonicalUrl} />
       
       {noindex && <meta name="robots" content="noindex,nofollow" />}
       {!noindex && <meta name="robots" content="index,follow" />}
@@ -133,7 +148,7 @@ export default function SeoMeta({
       {/* Open Graph */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:url" content={canonical} />
+      <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content="https://labtek.fr/logo-512.png" />
       <meta property="og:image:width" content="512" />
@@ -158,7 +173,7 @@ export default function SeoMeta({
       {/* Bing/Microsoft Edge specific */}
       <meta name="msapplication-TileColor" content="#3730A3" />
       <meta name="msapplication-config" content="/browserconfig.xml" />
-      <meta name="msvalidate.01" content="labtek-bing-validation-2025" />
+      <meta name="msvalidate.01" content="" />
       <meta name="keywords" content="Labtek, informatique Essonne, dépannage ordinateur 91, installation logiciels, email professionnel, sauvegarde données, sécurité informatique Île-de-France, services informatiques professionnels, maintenance ordinateur, réseaux sécurisés, sites web responsives" />
     
     {/* Enhanced SEO meta tags */}
@@ -180,55 +195,6 @@ export default function SeoMeta({
     <meta name="designer" content="Labtek" />
     <meta name="owner" content="Labtek" />
     <meta name="reply-to" content="contact@labtek.fr" />
-    <meta name="url" content={canonical} />
-    
-    {/* JSON-LD structured data for better Bing understanding */}
-    <script type="application/ld+json">
-      {JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Labtek Services Informatiques",
-        "alternateName": "Labtek",
-        "description": "Services informatiques professionnels en Essonne : dépannage, installation, sécurité, réseaux, sites web. Expert informatique Île-de-France.",
-        "url": "https://labtek.fr",
-        "telephone": "+33768852880",
-        "email": "contact@labtek.fr",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Essonne",
-          "addressRegion": "Île-de-France",
-          "addressCountry": "FR"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "48.6921",
-          "longitude": "2.3708"
-        },
-        "areaServed": [
-          {
-            "@type": "State",
-            "name": "Essonne"
-          },
-          {
-            "@type": "State", 
-            "name": "Île-de-France"
-          }
-        ],
-        "serviceType": [
-          "Dépannage informatique",
-          "Installation équipements",
-          "Sécurité informatique",
-          "Création sites web",
-          "Email professionnel",
-          "Formation informatique"
-        ],
-        "priceRange": "€€",
-        "openingHours": "Mo-Fr 09:00-18:00",
-        "sameAs": [
-          "https://labtek.fr"
-        ]
-      })}
-    </script>
     <meta name="url" content="https://labtek.fr" />
     <meta name="identifier-URL" content="https://labtek.fr" />
     <meta name="directory" content="submission" />

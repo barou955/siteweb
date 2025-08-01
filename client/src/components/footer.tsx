@@ -25,7 +25,7 @@ export default function Footer() {
             <p className="text-gray-400 mb-6 max-w-md">
               Solutions informatiques professionnelles pour particuliers et PME
               en Essonne et Île-de-France. Expertise, simplicité et confiance
-              depuis près de 5 ans.
+              depuis plus de 10 ans.
             </p>
             <div className="text-sm text-gray-500">
               <p>SIRET : En cours d'immatriculation</p>
