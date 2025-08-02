@@ -92,10 +92,10 @@ export default function DepannageAssistance() {
                 <Button
                   onClick={scrollToContact}
                   size="lg"
-                  className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-600/90 hover:to-pink-600/90 text-black dark:text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+                  className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-600/90 hover:to-pink-600/90 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
                 >
-                  <Wrench className="w-5 h-5 mr-2" />
-                  <span className="text-black dark:text-white">
+                  <Wrench className="w-5 h-5 mr-2 text-white" />
+                  <span className="text-white">
                     Demander une intervention
                   </span>
                 </Button>
@@ -994,10 +994,10 @@ export default function DepannageAssistance() {
                     <Button
                       onClick={scrollToContact}
                       size="lg"
-                      className="bg-gradient-to-r from-labtek-blue to-purple-600 hover:from-labtek-blue/90 hover:to-purple-600/90 text-black dark:text-white shadow-xl"
+                      className="bg-gradient-to-r from-blue-700 to-blue-900 hover:from-blue-800 hover:to-blue-950 text-white shadow-xl"
                     >
-                      <Phone className="w-5 h-5 mr-2" />
-                      <span className="text-black dark:text-white">
+                      <Phone className="w-5 h-5 mr-2 text-white" />
+                      <span className="text-white">
                         Demander une intervention
                       </span>
                     </Button>
