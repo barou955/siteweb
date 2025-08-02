@@ -56,7 +56,7 @@ export default function DepannageAssistance() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button onClick={scrollToContact} size="lg" className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-600/90 hover:to-pink-600/90 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                <Button onClick={scrollToContact} size="lg" className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-600/90 hover:to-pink-600/90 text-black dark:text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                   <Wrench className="w-5 h-5 mr-2" />
                   <span className="text-black dark:text-white">Demander une intervention</span>
                 </Button>
@@ -706,7 +706,7 @@ export default function DepannageAssistance() {
                   </div>
 
                   <div className="mt-8 text-center">
-                    <Button onClick={scrollToContact} size="lg" className="bg-gradient-to-r from-labtek-blue to-purple-600 hover:from-labtek-blue/90 hover:to-purple-600/90 text-white dark:text-white shadow-xl">
+                    <Button onClick={scrollToContact} size="lg" className="bg-gradient-to-r from-labtek-blue to-purple-600 hover:from-labtek-blue/90 hover:to-purple-600/90 text-black dark:text-white shadow-xl">
                       <Phone className="w-5 h-5 mr-2" />
                       <span className="text-black dark:text-white">Demander une intervention</span>
                     </Button>
