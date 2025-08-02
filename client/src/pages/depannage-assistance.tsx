@@ -135,7 +135,7 @@ export default function DepannageAssistance() {
             <div className="relative">
               <div className="relative bg-white/10 dark:bg-white/5 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20">
                 <img
-                  src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=600&h=400&fit=crop&auto=format&q=80"
+                  src="https://i.ibb.co/XMksr4J/depannage-informatique.jpg"
                   alt="Technicien réparant un ordinateur"
                   className="w-full h-80 object-cover rounded-2xl shadow-lg"
                 />
@@ -286,7 +286,7 @@ export default function DepannageAssistance() {
                   </div>
                   <div className="relative">
                     <img
-                      src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=600&h=500&fit=crop&auto=format&q=80"
+                      src="https://i.ibb.co/q3QGj4Rd/intervention-domicile.jpg"
                       alt="Technicien réparant un ordinateur à domicile"
                       className="w-full h-full object-cover"
                     />
@@ -302,7 +302,7 @@ export default function DepannageAssistance() {
                 <div className="grid lg:grid-cols-2 gap-0">
                   <div className="relative order-2 lg:order-1">
                     <img
-                      src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=500&fit=crop&auto=format&q=80"
+                      src="https://i.ibb.co/bMZBv0ky/support-client-plat-organique-23-2148895051.jpg"
                       alt="Assistance informatique à distance"
                       className="w-full h-full object-cover"
                     />
