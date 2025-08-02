@@ -129,7 +129,7 @@ export default function EmailProfessionnel() {
             <div className="relative">
               <div className="relative bg-white/10 dark:bg-white/5 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20">
                 <img
-                  src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=600&h=400&fit=crop&auto=format&q=80"
+                  src="https://i.ibb.co/gLqYZKRL/adress-email-pro.png"
                   alt="Email professionnel sur ordinateur et smartphone"
                   className="w-full h-80 object-cover rounded-2xl shadow-lg"
                 />
@@ -279,7 +279,7 @@ export default function EmailProfessionnel() {
                   </div>
                   <div className="relative">
                     <img
-                      src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=600&h=500&fit=crop&auto=format&q=80"
+                      src="https://i.ibb.co/bg75M2dS/Windows-11s-new-Outlook-to-get-None-color-category-design-update-696x392-1.jpg"
                       alt="Configuration email simple"
                       className="w-full h-full object-cover"
                     />
@@ -295,9 +295,9 @@ export default function EmailProfessionnel() {
                 <div className="grid lg:grid-cols-2 gap-0">
                   <div className="relative order-2 lg:order-1">
                     <img
-                      src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=500&fit=crop&auto=format&q=80"
+                      src="https://i.ibb.co/W40Yy75K/Image-Intelligence-825x500-RE2-Vb8-F.jpg"
                       alt="Solution email entreprise"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent to-blue-500/10" />
                   </div>
