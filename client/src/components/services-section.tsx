@@ -92,7 +92,7 @@ const services = [
       "Votre ordinateur rame ? L'imprimante ne marche plus ? Internet est coupé ? Nous arrivons rapidement pour tout remettre en ordre. Disponibles même le weekend pour les urgences !",
     features: ["Nous réparons rapidement", "Aide par téléphone possible", "Disponibles weekend et soirs"],
     color: "bg-orange-500",
-    image: "/depannage-assistance.png",
+    image: "https://i.ibb.co/k62Mb2sf/Nouveau-projet-2025-04-19-T003114-991.webp",
     imageAlt: "Technicien en train de réparer un ordinateur - service de dépannage informatique",
     link: "/services/depannage-assistance"
   },
