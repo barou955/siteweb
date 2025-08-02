@@ -66,18 +66,18 @@ export default function InstallationEquipements() {
                 </Button>
               </div>
 
-              <div className="grid grid-cols-3 gap-4 pt-8">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600">Clé en main</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Tout configuré</div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-8">
+                <div className="text-center mobile-text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-blue-600">Clé en main</div>
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Tout configuré</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-indigo-600">Formation</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Vous apprenez</div>
+                <div className="text-center mobile-text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-indigo-600">Formation</div>
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Vous apprenez</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-purple-600">Garantie</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">6 mois</div>
+                <div className="text-center mobile-text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-purple-600">Garantie</div>
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">6 mois</div>
                 </div>
               </div>
             </div>
