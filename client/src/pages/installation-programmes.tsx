@@ -85,7 +85,7 @@ export default function InstallationProgrammes() {
             <div className="relative">
               <div className="relative bg-white/10 dark:bg-white/5 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20">
                 <img 
-                  src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop&auto=format&q=80"
+                  src="https://i.ibb.co/M5Q1xZ1C/microsoft-365.webp"
                   alt="Installation de logiciels et programmes"
                   className="w-full h-80 object-cover rounded-2xl shadow-lg"
                 />
