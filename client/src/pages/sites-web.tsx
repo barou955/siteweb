@@ -3,10 +3,10 @@ import Footer from "@/components/footer";
 import SeoMeta from "@/components/seo-meta";
 import ScrollToTopButton from "@/components/scroll-to-top-button";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Check, ArrowLeft, Phone, Mail, Globe, Search, Smartphone, Shield, Palette, Code, Settings, Zap, Users, BarChart } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Check, ArrowLeft, Phone, Globe, Search, Smartphone, Monitor, Code, Palette, Star, Award, Zap, Users, Target, FileText, Layout, CheckCircle, GraduationCap } from "lucide-react";
 import { scrollToContact } from "@/lib/utils";
 
 export default function SitesWeb() {
@@ -15,64 +15,116 @@ export default function SitesWeb() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50 to-cyan-50 dark:from-slate-950 dark:via-teal-950 dark:to-cyan-950">
       <SeoMeta 
-        title="Sites Web Simples - Labtek Services Informatiques"
-        description="Création de sites web responsives et modernes : sites vitrines, portfolios et présentation d'entreprise adaptés aux mobiles en Essonne."
-        canonical="https://labtek.fr/services/sites-web"
+        title="Sites Web Professionnels - Labtek"
+        description="Création de sites web modernes et responsive. Visibilité sur Google, design professionnel, facile à modifier. Votre présence en ligne clé en main."
       />
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-labtek-blue/10 to-labtek-violet/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Button onClick={goBack} variant="ghost" className="mb-6">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 via-cyan-500/10 to-blue-500/10" />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiM5QzkyQUMiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] opacity-30" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">
+          <Button onClick={goBack} variant="ghost" className="mb-8 hover:bg-white/20 backdrop-blur-sm">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Retour
           </Button>
 
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              Sites Web
-              <br />
-              <span className="text-labtek-blue">Professionnels</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Vous voulez être trouvé sur internet ? Nous créons votre site web pour présenter votre activité. 
-              Vos clients pourront voir vos services, vous contacter facilement et vous trouver sur Google.
-            </p>
-            <div className="bg-cyan-50 dark:bg-cyan-900/20 border border-cyan-200 dark:border-cyan-800 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
-              <div className="flex items-center justify-center">
-                <Globe className="w-6 h-6 text-cyan-500 mr-3" />
-                <p className="text-cyan-700 dark:text-cyan-300 text-center">
-                  <strong>Site moderne et responsive</strong> - Visible sur Google !
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <Badge className="bg-teal-500/20 text-teal-700 dark:text-teal-300 border-teal-200 hover:bg-teal-500/30">
+                  <Globe className="w-3 h-3 mr-1" />
+                  Présence Digitale
+                </Badge>
+                <h1 className="text-5xl lg:text-7xl font-bold">
+                  <span className="bg-gradient-to-r from-gray-900 via-blue-800 to-cyan-800 dark:from-gray-100 dark:via-blue-200 dark:to-cyan-200 bg-clip-text text-transparent">
+                    Sites Web
+                  </span>
+                  <br />
+                  <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                    Professionnels
+                  </span>
+                </h1>
+                <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+                  Vous voulez être trouvé sur Google ? Avoir l'air professionnel sur internet ? 
+                  Nous créons votre site web moderne et efficace, facile à modifier vous-même !
                 </p>
               </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button onClick={scrollToContact} size="lg" className="bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-600/90 hover:to-cyan-600/90 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                  <Globe className="w-5 h-5 mr-2" />
+                  Créer mon site web
+                </Button>
+                <Button variant="outline" size="lg" onClick={() => window.open('tel:0768852880', '_self')} className="border-2 hover:bg-white/50 backdrop-blur-sm">
+                  <Phone className="w-5 h-5 mr-2" />
+                  07 68 85 28 80
+                </Button>
+              </div>
+
+              <div className="grid grid-cols-3 gap-4 pt-8">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-600">Visible</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">sur Google</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-cyan-600">Responsive</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Mobile/PC</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-teal-600">Modifiable</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Par vous</div>
+                </div>
+              </div>
             </div>
-            <Button onClick={scrollToContact} size="lg" className="bg-labtek-blue hover:bg-labtek-blue/90">
-              <Code className="w-5 h-5 mr-2" />
-              Créer mon site web
-            </Button>
+
+            <div className="relative">
+              <div className="relative bg-white/10 dark:bg-white/5 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20">
+                <img 
+                  src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&h=400&fit=crop&auto=format&q=80"
+                  alt="Création de site web professionnel"
+                  className="w-full h-80 object-cover rounded-2xl shadow-lg"
+                />
+                <div className="absolute -bottom-4 -right-4 bg-teal-500 text-white p-4 rounded-2xl shadow-xl">
+                  <Code className="w-8 h-8" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Services inclus */}
-      <section className="py-16">
+      {/* Types de sites avec design moderne */}
+      <section className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Ce que nous faisons pour vous</h2>
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 bg-blue-500/20 text-blue-700 dark:text-blue-300">Nos Solutions</Badge>
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">
+              Types de sites que nous créons
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Du site vitrine au e-commerce, nous avons la solution
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Users, title: "Analyse de vos besoins", desc: "Étude de votre activité et objectifs" },
-              { icon: Palette, title: "Design personnalisé", desc: "Création graphique selon votre image" },
-              { icon: Code, title: "Développement professionnel", desc: "Programmation moderne et sécurisée" },
-              { icon: Zap, title: "Formation et suivi", desc: "Apprentissage et support continu" }
-            ].map((service, index) => (
-              <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
-                <CardContent className="p-0">
-                  <service.icon className="w-12 h-12 text-labtek-blue mx-auto mb-4" />
-                  <h3 className="font-bold mb-2">{service.title}</h3>
-                  <p className="text-sm text-muted-foreground">{service.desc}</p>
+              { icon: Globe, title: "Site vitrine", desc: "Présenter votre activité et services", color: "bg-blue-500" },
+              { icon: Search, title: "Référencement", desc: "Être trouvé sur Google facilement", color: "bg-green-500" },
+              { icon: Smartphone, title: "Mobile-friendly", desc: "Parfait sur téléphone et tablette", color: "bg-purple-500" },
+              { icon: Monitor, title: "Administration", desc: "Vous modifiez le contenu vous-même", color: "bg-orange-500" }
+            ].map((type, index) => (
+              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border-0 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-white/80 dark:hover:bg-gray-800/80">
+                <CardContent className="p-8 text-center">
+                  <div className={`w-16 h-16 ${type.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <type.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100">{type.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{type.desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -80,135 +132,108 @@ export default function SitesWeb() {
         </div>
       </section>
 
-      {/* Types de sites disponibles */}
-      <section className="py-16 bg-muted/50">
+      {/* Nos offres avec nouveau design */}
+      <section className="py-20 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Types de sites web disponibles</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">
+              Nos formules de sites web
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">Solutions adaptées à chaque budget</p>
+          </div>
 
-          <div className="space-y-8">
-            {/* Site Vitrine */}
-            <Card>
-              <CardContent className="p-6">
-                <div className="grid lg:grid-cols-2 gap-6 items-center">
-                  <div>
-                    <div className="flex items-center mb-4">
-                      <Globe className="w-8 h-8 text-labtek-blue mr-3" />
-                      <h3 className="text-2xl font-bold">🌐 Site Vitrine - Sur devis</h3>
+          <div className="space-y-12">
+            {/* Site Essentiel */}
+            <Card className="overflow-hidden bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950/50 dark:to-cyan-950/50 border-0 shadow-2xl">
+              <CardContent className="p-0">
+                <div className="grid lg:grid-cols-2 gap-0">
+                  <div className="p-12">
+                    <div className="flex items-center mb-6">
+                      <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mr-4">
+                        <Globe className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-3xl font-bold text-gray-900 dark:text-gray-100">🌐 Site Essentiel</h3>
+                        <Badge className="mt-2 bg-blue-500/20 text-blue-700 dark:text-blue-300">À partir de 490€</Badge>
+                      </div>
                     </div>
-                    <p className="text-muted-foreground mb-6">
-                      Parfait pour présenter votre activité, vos services et attirer de nouveaux clients. Design moderne et responsive pour tous les appareils.
+                    <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                      Site vitrine moderne et professionnel. Parfait pour présenter votre activité 
+                      et être trouvé sur Google par vos clients.
                     </p>
-                    <div className="space-y-4">
-                      <div className="border-l-4 border-labtek-blue pl-4">
-                        <h4 className="font-semibold">5 pages maximum optimisées</h4>
-                        <p className="text-muted-foreground">Accueil, Services, À propos, Contact, Galerie</p>
-                      </div>
-                      <div className="border-l-4 border-green-500 pl-4">
-                        <h4 className="font-semibold">Design responsive (mobile/tablette)</h4>
-                        <p className="text-muted-foreground">Adaptation automatique sur tous les écrans</p>
-                      </div>
-                      <div className="border-l-4 border-blue-500 pl-4">
-                        <h4 className="font-semibold">Référencement de base (SEO)</h4>
-                        <p className="text-muted-foreground">Optimisation pour être trouvé sur Google</p>
-                      </div>
-                      <div className="border-l-4 border-orange-500 pl-4">
-                        <h4 className="font-semibold">Formulaire de contact intégré</h4>
-                        <p className="text-muted-foreground">Hébergement 1 an inclus + formation</p>
-                      </div>
+                    <div className="space-y-6">
+                      {[
+                        { title: "Design professionnel", desc: "Template moderne adapté à votre secteur", icon: Palette },
+                        { title: "5 pages incluses", desc: "Accueil, Services, À propos, Contact, Mentions", icon: Globe },
+                        { title: "Optimisé Google", desc: "Référencement de base pour être trouvé", icon: Search }
+                      ].map((item, index) => (
+                        <div key={index} className="flex items-start space-x-4">
+                          <div className="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center shadow-md">
+                            <item.icon className="w-5 h-5 text-blue-500" />
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-gray-900 dark:text-gray-100">{item.title}</h4>
+                            <p className="text-gray-600 dark:text-gray-300 text-sm">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  <div className="relative h-64 rounded-lg overflow-hidden">
+                  <div className="relative">
                     <img 
-                      src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=500&h=300&fit=crop&auto=format&q=80"
-                      alt="Site vitrine moderne et responsive"
+                      src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=500&fit=crop&auto=format&q=80"
+                      alt="Site web essentiel sur ordinateur"
                       className="w-full h-full object-cover"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-l from-transparent to-blue-500/10" />
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Site Professionnel */}
-            <Card>
-              <CardContent className="p-6">
-                <div className="grid lg:grid-cols-2 gap-6 items-center">
-                  <div className="order-2 lg:order-1">
-                    <div className="relative h-64 rounded-lg overflow-hidden">
-                      <img 
-                        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop&auto=format&q=80"
-                        alt="Site professionnel avec blog et fonctionnalités avancées"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                  <div className="order-1 lg:order-2">
-                    <div className="flex items-center mb-4">
-                      <BarChart className="w-8 h-8 text-purple-500 mr-3" />
-                      <h3 className="text-2xl font-bold">📊 Site Professionnel - Sur devis</h3>
-                    </div>
-                    <p className="text-muted-foreground mb-6">
-                      Pour développer votre présence en ligne avec des fonctionnalités avancées. Blog, réservations, galeries et analytics inclus.
-                    </p>
-                    <div className="space-y-4">
-                      <div className="border-l-4 border-purple-500 pl-4">
-                        <h4 className="font-semibold">10 pages maximum + blog intégré</h4>
-                        <p className="text-muted-foreground">Gestion de contenu simplifiée</p>
-                      </div>
-                      <div className="border-l-4 border-pink-500 pl-4">
-                        <h4 className="font-semibold">Référencement avancé (SEO)</h4>
-                        <p className="text-muted-foreground">Optimisation poussée pour moteurs de recherche</p>
-                      </div>
-                      <div className="border-l-4 border-blue-600 pl-4">
-                        <h4 className="font-semibold">Galerie photos/vidéos</h4>
-                        <p className="text-muted-foreground">Présentation multimedia de vos réalisations</p>
-                      </div>
-                      <div className="border-l-4 border-green-600 pl-4">
-                        <h4 className="font-semibold">Réservation en ligne</h4>
-                        <p className="text-muted-foreground">Prise de RDV automatisée + statistiques de visite</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Site E-commerce */}
-            <Card>
-              <CardContent className="p-6">
-                <div className="grid lg:grid-cols-2 gap-6 items-center">
-                  <div>
-                    <div className="flex items-center mb-4">
-                      <Settings className="w-8 h-8 text-red-500 mr-3" />
-                      <h3 className="text-2xl font-bold">🛒 Site E-commerce - Sur devis</h3>
-                    </div>
-                    <p className="text-muted-foreground mb-6">
-                      Boutique en ligne complète pour vendre vos produits 24h/24. Paiement sécurisé, gestion des stocks et suivi des commandes.
-                    </p>
-                    <div className="space-y-4">
-                      <div className="border-l-4 border-red-500 pl-4">
-                        <h4 className="font-semibold">Boutique en ligne complète</h4>
-                        <p className="text-muted-foreground">Catalogue produits illimité</p>
-                      </div>
-                      <div className="border-l-4 border-yellow-500 pl-4">
-                        <h4 className="font-semibold">Paiement sécurisé</h4>
-                        <p className="text-muted-foreground">CB, PayPal, virements - Conformité RGPD</p>
-                      </div>
-                      <div className="border-l-4 border-green-600 pl-4">
-                        <h4 className="font-semibold">Gestion des stocks automatisée</h4>
-                        <p className="text-muted-foreground">Suivi en temps réel, alertes de rupture</p>
-                      </div>
-                      <div className="border-l-4 border-cyan-500 pl-4">
-                        <h4 className="font-semibold">Suivi des commandes et espace client</h4>
-                        <p className="text-muted-foreground">Dashboard admin + formation e-commerce complète</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative h-64 rounded-lg overflow-hidden">
+            {/* Site Premium */}
+            <Card className="overflow-hidden bg-gradient-to-r from-cyan-50 to-teal-50 dark:from-cyan-950/50 dark:to-teal-950/50 border-0 shadow-2xl">
+              <CardContent className="p-0">
+                <div className="grid lg:grid-cols-2 gap-0">
+                  <div className="relative order-2 lg:order-1">
                     <img 
-                      src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop&auto=format&q=80"
-                      alt="Site e-commerce avec interface de gestion"
+                      src="https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=600&h=500&fit=crop&auto=format&q=80"
+                      alt="Site web premium responsive"
                       className="w-full h-full object-cover"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-cyan-500/10" />
+                  </div>
+                  <div className="p-12 order-1 lg:order-2">
+                    <div className="flex items-center mb-6">
+                      <div className="w-12 h-12 bg-cyan-500 rounded-xl flex items-center justify-center mr-4">
+                        <Star className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-3xl font-bold text-gray-900 dark:text-gray-100">⭐ Site Premium</h3>
+                        <Badge className="mt-2 bg-cyan-500/20 text-cyan-700 dark:text-cyan-300">À partir de 890€</Badge>
+                      </div>
+                    </div>
+                    <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                      Site web complet avec interface d'administration. Vous pouvez modifier 
+                      textes, photos et ajouter des pages vous-même.
+                    </p>
+                    <div className="space-y-6">
+                      {[
+                        { title: "Interface admin", desc: "Modifiez votre site sans compétences techniques", icon: Monitor },
+                        { title: "Blog intégré", desc: "Publiez des actualités et améliorez votre SEO", icon: Code },
+                        { title: "Formation incluse", desc: "Nous vous apprenons à gérer votre site", icon: Star }
+                      ].map((item, index) => (
+                        <div key={index} className="flex items-start space-x-4">
+                          <div className="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center shadow-md">
+                            <item.icon className="w-5 h-5 text-cyan-500" />
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-gray-900 dark:text-gray-100">{item.title}</h4>
+                            <p className="text-gray-600 dark:text-gray-300 text-sm">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -217,397 +242,424 @@ export default function SitesWeb() {
         </div>
       </section>
 
-      {/* Processus de création détaillé avec accordéons */}
-      <section className="py-16">
+      {/* Notre processus avec accordéons modernisés */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Notre processus de création de site web</h2>
-          <p className="text-center text-muted-foreraine mb-8 max-w-3xl mx-auto">
-            Découvrez comment nous créons votre site web de A à Z. Un processus structuré 
-            pour garantir un résultat professionnel qui correspond exactement à vos attentes.
-          </p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">
+              Comment nous créons votre site
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Un processus simple et transparent du brief à la mise en ligne
+            </p>
+          </div>
 
+          {/* Enhanced Method Section */}
           <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-
-              <AccordionItem value="consultation" className="border rounded-lg px-6">
-                <AccordionTrigger className="hover:no-underline">
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-4">
-                      <Users className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="text-left">
-                      <h3 className="font-bold text-lg">1. Rendez-vous et analyse des besoins</h3>
-                      <p className="text-muted-foreground text-sm">Compréhension de votre projet et objectifs</p>
-                    </div>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-4 pb-6">
-                  <div className="ml-14 space-y-4">
-                    <div className="grid md:grid-cols-2 gap-6">
+            <Accordion type="single" collapsible className="space-y-6">
+              {[
+                {
+                  value: "premier-rendez-vous",
+                  icon: Users,
+                  title: "1. Premier rendez-vous et découverte",
+                  subtitle: "Comprendre votre activité et vos besoins",
+                  color: "bg-blue-500",
+                  content: (
+                    <div className="grid md:grid-cols-2 gap-8">
                       <div>
-                        <h4 className="font-semibold mb-3">Questions importantes :</h4>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Quel est votre secteur d'activité ?</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Qui sont vos clients cibles ?</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Quels sont vos objectifs avec ce site ?</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Avez-vous des sites de référence ?</li>
+                        <h4 className="font-semibold mb-4 text-lg">Questions importantes que nous posons :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Que faites-vous exactement comme métier ?",
+                            "Qui sont vos clients actuels ?",
+                            "Comment ils vous trouvent aujourd'hui ?",
+                            "Qu'est-ce qui vous différencie de la concurrence ?",
+                            "Que voulez-vous que les gens voient sur votre site ?",
+                            "Quel budget avez-vous pour ce projet ?"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold mb-3">Définition du projet :</h4>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Structure du site (pages nécessaires)</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Fonctionnalités souhaitées</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Budget et délais</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Charte graphique et préférences</li>
+                        <h4 className="font-semibold mb-4 text-lg">Ce que nous analysons :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Les sites de vos concurrents",
+                            "Ce que cherchent vos clients sur Google",
+                            "Les mots-clés de votre secteur",
+                            "Les tendances de votre domaine",
+                            "Les attentes de votre clientèle",
+                            "Les opportunités pour vous démarquer"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <Search className="w-5 h-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="design" className="border rounded-lg px-6">
-                <AccordionTrigger className="hover:no-underline">
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center mr-4">
-                      <Palette className="w-5 h-5 text-white" />
+                  )
+                },
+                {
+                  value: "strategie",
+                  icon: Target,
+                  title: "2. Stratégie et plan du site",
+                  subtitle: "Définir la structure et les objectifs",
+                  color: "bg-teal-500",
+                  content: (
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="font-semibold mb-4 text-lg">Nous définissons ensemble :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Les pages nécessaires (accueil, services, contact...)",
+                            "Les informations à mettre en avant",
+                            "Les photos et images à utiliser",
+                            "Le message principal de votre site",
+                            "Les actions que vos visiteurs doivent faire",
+                            "Les mots-clés pour être trouvé sur Google"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-4 text-lg">Notre plan d'action :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Schéma de la structure de votre site",
+                            "Liste des contenus à préparer",
+                            "Planning de création étape par étape",
+                            "Répartition des tâches entre nous et vous",
+                            "Délais réalistes pour chaque étape",
+                            "Budget détaillé et transparent"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <Target className="w-5 h-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                    <div className="text-left">
-                      <h3 className="font-bold text-lg">2. Conception et maquettage</h3>
-                      <p className="text-muted-foreground text-sm">Création du design et de l'interface</p>
+                  )
+                },
+                {
+                  value: "preparation-contenus",
+                  icon: FileText,
+                  title: "3. Préparation des contenus avec vous",
+                  subtitle: "Rassembler tous les éléments nécessaires",
+                  color: "bg-purple-500",
+                  content: (
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="font-semibold mb-4 text-lg">Ce que vous nous fournissez :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Vos textes ou infos sur votre activité",
+                            "Vos photos (produits, équipe, locaux)",
+                            "Votre logo si vous en avez un",
+                            "Vos coordonnées complètes",
+                            "Vos tarifs ou gammes de prix",
+                            "Témoignages de clients satisfaits"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-4 text-lg">Ce que nous créons :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Réécriture des textes pour internet",
+                            "Optimisation pour les moteurs de recherche",
+                            "Retouches et amélioration des photos",
+                            "Création d'un logo simple si besoin",
+                            "Rédaction des pages manquantes",
+                            "Mise en forme professionnelle"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <FileText className="w-5 h-5 text-purple-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-4 pb-6">
-                  <div className="ml-14 space-y-4">
-                    <div className="grid md:grid-cols-3 gap-4">
-                      <div className="space-y-3">
-                        <div className="flex items-center mb-2">
-                          <Palette className="w-5 h-5 text-purple-500 mr-2" />
-                          <h4 className="font-semibold">Design graphique</h4>
+                  )
+                },
+                {
+                  value: "conception-design",
+                  icon: Palette,
+                  title: "4. Conception et design",
+                  subtitle: "Création visuelle de votre site",
+                  color: "bg-green-500",
+                  content: (
+                    <div className="grid md:grid-cols-3 gap-6">
+                      {[
+                        {
+                          title: "Maquette visuelle",
+                          icon: Palette,
+                          items: ["Choix des couleurs de votre site", "Sélection des polices de caractère", "Disposition des éléments", "Style général qui vous correspond", "Création du design sur mesure", "Adaptation à votre secteur d'activité"]
+                        },
+                        {
+                          title: "Structure des pages",
+                          icon: Layout,
+                          items: ["Organisation logique des informations", "Menu de navigation simple", "Boutons d'action bien visibles", "Contact facile à trouver", "Parcours utilisateur optimisé", "Hiérarchie claire des contenus"]
+                        },
+                        {
+                          title: "Adaptabilité",
+                          icon: Smartphone,
+                          items: ["Version ordinateur optimisée", "Version mobile parfaite", "Version tablette adaptée", "Lisibilité sur tous les écrans", "Navigation tactile fluide", "Chargement rapide partout"]
+                        }
+                      ].map((category, index) => (
+                        <div key={index} className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+                          <div className="flex items-center mb-4">
+                            <category.icon className="w-6 h-6 text-green-500 mr-3" />
+                            <h4 className="font-semibold text-lg">{category.title}</h4>
+                          </div>
+                          <ul className="space-y-2">
+                            {category.items.map((item, itemIndex) => (
+                              <li key={itemIndex} className="text-sm text-gray-600 dark:text-gray-300 flex items-start">
+                                <span className="w-2 h-2 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>• Choix des couleurs et typographies</li>
-                          <li>• Création du logo si nécessaire</li>
-                          <li>• Définition de l'identité visuelle</li>
-                          <li>• Maquettes des pages principales</li>
-                        </ul>
-                      </div>
-                      <div className="space-y-3">
-                        <div className="flex items-center mb-2">
-                          <Smartphone className="w-5 h-5 text-blue-500 mr-2" />
-                          <h4 className="font-semibold">Interface utilisateur</h4>
-                        </div>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>• Navigation intuitive</li>
-                          <li>• Mise en page responsive</li>
-                          <li>• Expérience utilisateur optimisée</li>
-                          <li>• Tests sur différents appareils</li>
-                        </ul>
-                      </div>
-                      <div className="space-y-3">
-                        <div className="flex items-center mb-2">
-                          <Check className="w-5 h-5 text-green-500 mr-2" />
-                          <h4 className="font-semibold">Validation client</h4>
-                        </div>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>• Présentation des maquettes</li>
-                          <li>• Recueil des modifications</li>
-                          <li>• Ajustements et finalisation</li>
-                          <li>• Validation finale du design</li>
-                        </ul>
-                      </div>
+                      ))}
                     </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="development" className="border rounded-lg px-6">
-                <AccordionTrigger className="hover:no-underline">
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mr-4">
-                      <Code className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="text-left">
-                      <h3 className="font-bold text-lg">3. Développement et programmation</h3>
-                      <p className="text-muted-foreground text-sm">Création technique du site web</p>
-                    </div>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-4 pb-6">
-                  <div className="ml-14 space-y-4">
-                    <div className="grid md:grid-cols-2 gap-6">
+                  )
+                },
+                {
+                  value: "developpement",
+                  icon: Code,
+                  title: "5. Développement technique",
+                  subtitle: "Création du site fonctionnel",
+                  color: "bg-orange-500",
+                  content: (
+                    <div className="grid md:grid-cols-2 gap-8">
                       <div>
-                        <h4 className="font-semibold mb-3 flex items-center">
-                          <Code className="w-4 h-4 mr-2" />
-                          Technologies modernes :
-                        </h4>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />HTML5, CSS3, JavaScript moderne</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Framework responsive (Bootstrap, Tailwind)</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />CMS adapté (WordPress, autres)</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Optimisation des performances</li>
+                        <h4 className="font-semibold mb-4 text-lg">Développement du site :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Création de toutes les pages",
+                            "Intégration de vos contenus",
+                            "Configuration du formulaire de contact",
+                            "Optimisation de la vitesse de chargement",
+                            "Sécurisation contre les pirates",
+                            "Tests sur différents navigateurs"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold mb-3 flex items-center">
-                          <Shield className="w-4 h-4 mr-2" />
-                          Sécurité et qualité :
-                        </h4>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Code propre et documenté</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Sécurité SSL (HTTPS)</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Sauvegarde automatique</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Tests de compatibilité</li>
+                        <h4 className="font-semibold mb-4 text-lg">Optimisation pour Google :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Optimisation SEO de base",
+                            "Balises et méta-descriptions",
+                            "Structure technique optimale",
+                            "Plan du site pour les moteurs de recherche",
+                            "Temps de chargement rapide",
+                            "Configuration pour le référencement local"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <Search className="w-5 h-5 text-orange-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="seo" className="border rounded-lg px-6">
-                <AccordionTrigger className="hover:no-underline">
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center mr-4">
-                      <Search className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="text-left">
-                      <h3 className="font-bold text-lg">4. Référencement et optimisation SEO</h3>
-                      <p className="text-muted-foreground text-sm">Visibilité sur Google et moteurs de recherche</p>
-                    </div>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-4 pb-6">
-                  <div className="ml-14 space-y-4">
-                    <div className="grid md:grid-cols-3 gap-4">
+                  )
+                },
+                {
+                  value: "tests-validation",
+                  icon: CheckCircle,
+                  title: "6. Tests et validation avec vous",
+                  subtitle: "Vérification complète avant mise en ligne",
+                  color: "bg-indigo-500",
+                  content: (
+                    <div className="grid md:grid-cols-2 gap-8">
                       <div>
-                        <h4 className="font-semibold mb-3">SEO technique :</h4>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>• Optimisation des balises META</li>
-                          <li>• Structure URL optimisée</li>
-                          <li>• Vitesse de chargement</li>
-                          <li>• Sitemap XML</li>
-                          <li>• Schema.org (données structurées)</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-3">Contenu optimisé :</h4>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>• Recherche de mots-clés</li>
-                          <li>• Optimisation des textes</li>
-                          <li>• Images optimisées (Alt, poids)</li>
-                          <li>• Maillage interne</li>
-                          <li>• Call-to-action efficaces</li>
+                        <h4 className="font-semibold mb-4 text-lg">Nous testons ensemble :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Navigation sur toutes les pages",
+                            "Fonctionnement sur téléphone et tablette",
+                            "Envoi des formulaires de contact",
+                            "Affichage des photos et textes",
+                            "Vitesse de chargement",
+                            "Compatibilité avec tous les navigateurs"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold mb-3">Référencement local :</h4>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>• Google My Business</li>
-                          <li>• Fiche d'établissement</li>
-                          <li>• Coordonnées structurées</li>
-                          <li>• Avis clients intégrés</li>
-                          <li>• Géolocalisation</li>
+                        <h4 className="font-semibold mb-4 text-lg">Vous validez :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Le design vous plaît complètement",
+                            "Tous vos textes sont corrects",
+                            "Les photos sont bien placées",
+                            "Les informations de contact sont justes",
+                            "La navigation vous semble claire",
+                            "Vous êtes fier de montrer votre site"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <Star className="w-5 h-5 text-indigo-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="launch" className="border rounded-lg px-6">
-                <AccordionTrigger className="hover:no-underline">
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center mr-4">
-                      <Zap className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="text-left">
-                      <h3 className="font-bold text-lg">5. Mise en ligne et formation</h3>
-                      <p className="text-muted-foreground text-sm">Publication et accompagnement</p>
-                    </div>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-4 pb-6">
-                  <div className="ml-14 space-y-4">
-                    <div className="grid md:grid-cols-2 gap-6">
+                  )
+                },
+                {
+                  value: "mise-en-ligne",
+                  icon: Globe,
+                  title: "7. Mise en ligne et formation",
+                  subtitle: "Votre site accessible au monde entier",
+                  color: "bg-red-500",
+                  content: (
+                    <div className="grid md:grid-cols-2 gap-8">
                       <div>
-                        <h4 className="font-semibold mb-3">Mise en ligne :</h4>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Configuration de l'hébergement</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Installation du certificat SSL</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Configuration des emails</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Tests finaux de fonctionnement</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Sauvegarde initiale</li>
+                        <h4 className="font-semibold mb-4 text-lg">Mise en ligne :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Achat et configuration de votre nom de domaine",
+                            "Installation sur un hébergement rapide",
+                            "Configuration des emails professionnels",
+                            "Inscription dans Google My Business",
+                            "Soumission à Google pour indexation",
+                            "Test final de fonctionnement"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold mb-3">Formation et suivi :</h4>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Formation à la gestion du contenu</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Guide d'utilisation personnalisé</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Support technique 3 mois inclus</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Conseils en référencement</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Suivi des performances</li>
+                        <h4 className="font-semibold mb-4 text-lg">Formation pour l'autonomie :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Comment modifier vos textes vous-même",
+                            "Comment ajouter de nouvelles photos",
+                            "Comment créer une nouvelle page",
+                            "Comment voir les statistiques de visite",
+                            "Comment répondre aux messages de contact",
+                            "Conseils pour faire connaître votre site"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <GraduationCap className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
+                  )
+                }
+              ].map((step, index) => (
+                <AccordionItem key={step.value} value={step.value} className="border-0 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                  <AccordionTrigger className="hover:no-underline px-8 py-6">
+                    <div className="flex items-center w-full">
+                      <div className={`w-12 h-12 ${step.color} rounded-xl flex items-center justify-center mr-6`}>
+                        <step.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="text-left">
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">{step.title}</h3>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm">{step.subtitle}</p>
+                      </div>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-8 pb-8">
+                    {step.content}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
             </Accordion>
           </div>
         </div>
       </section>
 
-      {/* Avantages et garanties */}
-      <section className="py-16 bg-muted/50">
+      {/* Services inclus */}
+      <section className="py-20 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Nos garanties et services inclus</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">
+              Ce qui est inclus dans nos sites
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">Tout ce dont vous avez besoin pour réussir</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: Globe, title: "Site moderne et responsive", desc: "Adaptation automatique sur tous les appareils" },
-              { icon: Search, title: "Référencement Google inclus", desc: "Optimisation SEO pour être trouvé facilement" },
-              { icon: Shield, title: "Sécurité et HTTPS", desc: "Site sécurisé avec certificat SSL" },
-              { icon: Zap, title: "Formation personnalisée", desc: "Apprentissage de la gestion de votre site" },
-              { icon: Settings, title: "Support technique 3 mois", desc: "Assistance téléphonique et mise à jour" },
-              { icon: Smartphone, title: "Compatible tous navigateurs", desc: "Fonctionnement optimal partout" }
-            ].map((guarantee, index) => (
-              <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
-                <CardContent className="p-0">
-                  <guarantee.icon className="w-12 h-12 text-labtek-blue mx-auto mb-4" />
-                  <h3 className="font-bold mb-2">{guarantee.title}</h3>
-                  <p className="text-sm text-muted-foreground">{guarantee.desc}</p>
+              { 
+                title: "Hébergement 1 an offert", 
+                desc: "Hébergement français rapide et sécurisé. Nom de domaine en .fr ou .com inclus avec renouvellement simple.",
+                icon: Globe,
+                color: "bg-blue-500"
+              },
+              { 
+                title: "Référencement Google", 
+                desc: "Optimisation SEO de base pour être trouvé. Inscription dans Google My Business et premiers conseils.",
+                icon: Search,
+                color: "bg-green-500"
+              },
+              { 
+                title: "Formation complète", 
+                desc: "Nous vous apprenons à modifier votre site, ajouter des pages et mettre à jour le contenu facilement.",
+                icon: Star,
+                color: "bg-purple-500"
+              }
+            ].map((service, index) => (
+              <Card key={index} className="border-0 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm hover:shadow-xl transition-all duration-300">
+                <CardContent className="p-8 text-center">
+                  <div className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
+                    <service.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">{service.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{service.desc}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Contrats de maintenance spécifiques sites web */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 dark:from-orange-950/20 dark:via-red-950/20 dark:to-pink-950/20 rounded-xl p-8 border-2 border-orange-200 dark:border-orange-800 shadow-lg">
-            <div className="absolute -top-6 sm:-top-4 left-1/2 transform -translate-x-1/2">
-              <div className="maintenance-badge bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md hidden sm:block">
-                🔧 ASSOCIEZ UN CONTRAT DE MAINTENANCE !
-              </div>
-            </div>
-
-            <div className="text-center mb-8 mt-4">
-              <h3 className="text-2xl font-bold mb-4">💡 Pourquoi un contrat de maintenance pour votre site ?</h3>
-              <p className="text-muted-foreground">
-                Assurez la disponibilité et la sécurité de votre présence en ligne !
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
-                <div className="text-xl mb-2">🌐</div>
-                <h4 className="font-bold text-lg mb-2">Site Vitrine</h4>
-                <p className="text-orange-600 dark:text-orange-400 font-medium mb-3">Maintenance de base - 15€/mois</p>
-                <ul className="text-sm space-y-2">
-                  <li className="flex items-center justify-center">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Mises à jour sécurité</span>
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <span className="text-green-500 mr-2">✓</span>  
-                    <span>Sauvegarde hebdomadaire</span>
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <span className="text-green-500 mr-2">✓</span>  
-                    <span>Surveillance disponibilité</span>
-                  </li>
-                </ul>
-              </Card>
-
-              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center border-2 border-labtek-blue">
-                <div className="text-xl mb-2">📊</div>
-                <h4 className="font-bold text-lg mb-2">Site Pro + SEO</h4>
-                <p className="text-purple-600 dark:text-purple-400 font-medium mb-3">Optimisation complète - 35€/mois</p>
-                <ul className="text-sm space-y-2">
-                  <li className="flex items-center justify-center">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Optimisation SEO mensuelle</span>
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Rapport trafic et positions</span>
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Ajout contenu (1 article/mois)</span>
-                  </li>
-                </ul>
-              </Card>
-
-              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
-                <div className="text-xl mb-2">🛒</div>
-                <h4 className="font-bold text-lg mb-2">E-commerce</h4>
-                <p className="text-red-600 dark:text-red-400 font-medium mb-3">Solution premium - 75€/mois</p>
-                <ul className="text-sm space-y-2">
-                  <li className="flex items-center justify-center">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Surveillance 24/7 boutique</span>
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Optimisation vitesse CDN</span>
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Sauvegarde quotidienne BDD</span>
-                  </li>
-                </ul>
-              </Card>
-                        </div>
-
-            <div className="text-center">
-              <p className="text-sm text-muted-foreground mb-4">
-                Site performant + maintenance continue = présence en ligne sans souci
-              </p>
-              <Button onClick={scrollToContact} className="bg-orange-500 hover:bg-orange-600 text-white">
-                Découvrir les formules complètes
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-8">Prêt à créer votre site web ?</h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Contactez-moi pour discuter de votre projet et obtenir un devis gratuit
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-labtek-blue hover:bg-labtek-blue/90"
-              onClick={() => window.open('tel:0768852880', '_self')}
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              07 68 85 28 80
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              onClick={scrollToContact}
-            >
-              <Mail className="w-4 h-4 mr-2" />
-              Contactez-nous !
+          <div className="text-center mt-12">
+            <Button onClick={scrollToContact} size="lg" className="bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-600/90 hover:to-cyan-600/90 text-white shadow-xl">
+              <Globe className="w-5 h-5 mr-2" />
+              Créer mon site maintenant
             </Button>
           </div>
         </div>
       </section>
 
-      <ScrollToTopButton />
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }

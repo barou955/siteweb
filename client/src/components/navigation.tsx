@@ -13,7 +13,6 @@ export default function Navigation() {
 
   const toggleTheme = () => {
     if (theme === "system") {
-      // Détecter le thème système actuel et basculer vers l'opposé
       const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
       setTheme(systemTheme === "dark" ? "light" : "dark");
     } else if (theme === "dark") {
@@ -24,7 +23,6 @@ export default function Navigation() {
   };
 
   const scrollToSection = (sectionId: string) => {
-    // Si nous ne sommes pas sur la page d'accueil, rediriger d'abord
     if (location !== '/') {
       setLocation('/');
       setTimeout(() => {
@@ -36,8 +34,7 @@ export default function Navigation() {
       setIsMenuOpen(false);
       return;
     }
-    
-    // Si nous sommes sur la page d'accueil, faire défiler vers la section
+
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -49,7 +46,6 @@ export default function Navigation() {
     setLocation(servicePath);
     setIsServicesOpen(false);
     setIsMenuOpen(false);
-    // S'assurer que l'utilisateur arrive en haut de la nouvelle page
     setTimeout(() => {
       window.scrollTo(0, 0);
     }, 100);
@@ -81,28 +77,26 @@ export default function Navigation() {
             <div className="ml-10 flex items-baseline space-x-8">
               <button
                 onClick={() => window.location.href = '/'}
-                className="text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out hover:scale-105 hover:bg-labtek-blue/5 px-3 py-2 rounded-lg relative overflow-hidden group"
+                className="text-foreground/80 hover:text-labtek-blue transition-colors duration-200 px-3 py-2"
               >
-                <span className="relative z-10">Accueil</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
+                Accueil
               </button>
               <div 
                 className="relative group"
                 onMouseLeave={() => setIsServicesOpen(false)}
               >
                 <button
-                  className="text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out hover:scale-105 hover:bg-labtek-blue/5 px-3 py-2 rounded-lg relative overflow-hidden group flex items-center gap-1"
+                  className="text-foreground/80 hover:text-labtek-blue transition-colors duration-200 px-3 py-2 flex items-center gap-1"
                   onMouseEnter={() => setIsServicesOpen(true)}
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
                 >
-                  <span className="relative z-10">Services</span>
-                  <ChevronDown className="w-4 h-4 relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
+                  Services
+                  <ChevronDown className="w-4 h-4" />
                 </button>
-                
+
                 {isServicesOpen && (
                   <div 
-                    className="absolute top-full left-0 mt-0 w-64 bg-background border border-border rounded-lg shadow-lg py-2 z-50 animate-in fade-in-0 zoom-in-95 duration-200"
+                    className="absolute top-full left-0 mt-0 w-64 bg-background border border-border rounded-lg shadow-lg py-2 z-50"
                     onMouseEnter={() => setIsServicesOpen(true)}
                   >
                     <button
@@ -110,105 +104,85 @@ export default function Navigation() {
                         scrollToSection("services");
                         setIsServicesOpen(false);
                       }}
-                      className="w-full text-left px-4 py-2 hover:bg-labtek-blue/5 transition-all duration-200 hover:translate-x-1 hover:text-labtek-blue group relative overflow-hidden"
+                      className="w-full text-left px-4 py-2 hover:bg-accent hover:text-accent-foreground transition-colors duration-200"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-left"></div>
-                      <span className="relative z-10">Tous nos services</span>
+                      Tous nos services
                     </button>
                     <div className="border-t border-border my-2"></div>
                     <button
                       onClick={() => navigateToService("/services/installation-equipements")}
-                      className="w-full text-left px-4 py-2 hover:bg-labtek-blue/5 transition-all duration-200 hover:translate-x-1 hover:text-labtek-blue group relative overflow-hidden"
+                      className="w-full text-left px-4 py-2 hover:bg-accent hover:text-accent-foreground transition-colors duration-200"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-left"></div>
-                      <span className="relative z-10">Installation d'équipements</span>
+                      Installation d'équipements
                     </button>
                     <button
                       onClick={() => navigateToService("/services/montage-pc-sur-mesure")}
-                      className="w-full text-left px-4 py-2 hover:bg-labtek-blue/5 transition-all duration-200 hover:translate-x-1 hover:text-labtek-blue group relative overflow-hidden"
+                      className="w-full text-left px-4 py-2 hover:bg-accent hover:text-accent-foreground transition-colors duration-200"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-left"></div>
-                      <span className="relative z-10">Montage PC sur mesure</span>
+                      Montage PC sur mesure
                     </button>
                     <button
                       onClick={() => navigateToService("/services/sites-web")}
-                      className="w-full text-left px-4 py-2 hover:bg-labtek-blue/5 transition-all duration-200 hover:translate-x-1 hover:text-labtek-blue group relative overflow-hidden"
+                      className="w-full text-left px-4 py-2 hover:bg-accent hover:text-accent-foreground transition-colors duration-200"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-left"></div>
-                      <span className="relative z-10">Sites web professionnels</span>
+                      Sites web professionnels
                     </button>
                     <button
                       onClick={() => navigateToService("/services/installation-programmes")}
-                      className="w-full text-left px-4 py-2 hover:bg-labtek-blue/5 transition-all duration-200 hover:translate-x-1 hover:text-labtek-blue group relative overflow-hidden"
+                      className="w-full text-left px-4 py-2 hover:bg-accent hover:text-accent-foreground transition-colors duration-200"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-left"></div>
-                      <span className="relative z-10">Installation de programmes</span>
+                      Installation de programmes
                     </button>
                     <button
                       onClick={() => navigateToService("/services/email-professionnel")}
-                      className="w-full text-left px-4 py-2 hover:bg-labtek-blue/5 transition-all duration-200 hover:translate-x-1 hover:text-labtek-blue group relative overflow-hidden"
+                      className="w-full text-left px-4 py-2 hover:bg-accent hover:text-accent-foreground transition-colors duration-200"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-left"></div>
-                      <span className="relative z-10">Email professionnel</span>
+                      Email professionnel
                     </button>
                     <button
                       onClick={() => navigateToService("/services/securite-sauvegarde")}
-                      className="w-full text-left px-4 py-2 hover:bg-labtek-blue/5 transition-all duration-200 hover:translate-x-1 hover:text-labtek-blue group relative overflow-hidden"
+                      className="w-full text-left px-4 py-2 hover:bg-accent hover:text-accent-foreground transition-colors duration-200"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-left"></div>
-                      <span className="relative z-10">Sécurité & Sauvegarde</span>
+                      Sécurité & Sauvegarde
                     </button>
                     <button
                       onClick={() => navigateToService("/services/depannage-assistance")}
-                      className="w-full text-left px-4 py-2 hover:bg-labtek-blue/5 transition-all duration-200 hover:translate-x-1 hover:text-labtek-blue group relative overflow-hidden"
+                      className="w-full text-left px-4 py-2 hover:bg-accent hover:text-accent-foreground transition-colors duration-200"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-left"></div>
-                      <span className="relative z-10">Dépannage & Assistance</span>
+                      Dépannage & Assistance
                     </button>
                     <button
                       onClick={() => navigateToService("/services/infogerance-legere")}
-                      className="w-full text-left px-4 py-2 hover:bg-labtek-blue/5 transition-all duration-200 hover:translate-x-1 hover:text-labtek-blue group relative overflow-hidden"
+                      className="w-full text-left px-4 py-2 hover:bg-accent hover:text-accent-foreground transition-colors duration-200"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-left"></div>
-                      <span className="relative z-10">Infogérance légère</span>
+                      Infogérance légère
                     </button>
                     <button
                       onClick={() => navigateToService("/services/formation-accompagnement")}
-                      className="w-full text-left px-4 py-2 hover:bg-labtek-blue/5 transition-all duration-200 hover:translate-x-1 hover:text-labtek-blue group relative overflow-hidden"
+                      className="w-full text-left px-4 py-2 hover:bg-accent hover:text-accent-foreground transition-colors duration-200"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out origin-left"></div>
-                      <span className="relative z-10">Formation & accompagnement</span>
+                      Formation & accompagnement
                     </button>
                   </div>
                 )}
               </div>
               <button
                 onClick={() => scrollToSection("processus")}
-                className="text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out hover:scale-105 hover:bg-labtek-blue/5 px-3 py-2 rounded-lg relative overflow-hidden group"
+                className="text-foreground/80 hover:text-labtek-blue transition-colors duration-200 px-3 py-2"
               >
-                <span className="relative z-10">Processus</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
+                Processus
               </button>
               <button
                 onClick={() => scrollToSection("maintenance")}
-                className="text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out hover:scale-105 hover:bg-labtek-blue/5 px-3 py-2 rounded-lg relative overflow-hidden group"
+                className="text-foreground/80 hover:text-labtek-blue transition-colors duration-200 px-3 py-2"
               >
-                <span className="relative z-10">Maintenance</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
-              </button>
-              <button
-                onClick={() => scrollToSection("temoignages")}
-                className="text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out hover:scale-105 hover:bg-labtek-blue/5 px-3 py-2 rounded-lg relative overflow-hidden group hidden"
-              >
-                <span className="relative z-10">Témoignages</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
+                Maintenance
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out hover:scale-105 hover:bg-labtek-blue/5 px-3 py-2 rounded-lg relative overflow-hidden group"
+                className="text-foreground/80 hover:text-labtek-blue transition-colors duration-200 px-3 py-2"
               >
-                <span className="relative z-10">Contact</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
+                Contact
               </button>
             </div>
           </div>
@@ -251,101 +225,89 @@ export default function Navigation() {
           <div className="px-2 pt-2 pb-3 space-y-1">
             <button
               onClick={() => window.location.href = '/'}
-              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2 relative overflow-hidden group"
+              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
             >
-              <span className="relative z-10">Accueil</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
+              Accueil
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2 relative overflow-hidden group"
+              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
             >
-              <span className="relative z-10">Tous nos services</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
+              Tous nos services
             </button>
             <div className="ml-4 space-y-1">
               <button
                 onClick={() => navigateToService("/services/installation-equipements")}
-                className="block px-3 py-2 text-sm text-foreground/70 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2"
+                className="block px-3 py-2 text-sm text-foreground/70 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
               >
                 Installation d'équipements
               </button>
               <button
                 onClick={() => navigateToService("/services/montage-pc-sur-mesure")}
-                className="block px-3 py-2 text-sm text-foreground/70 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2"
+                className="block px-3 py-2 text-sm text-foreground/70 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
               >
                 Montage PC sur mesure
               </button>
               <button
                 onClick={() => navigateToService("/services/sites-web")}
-                className="block px-3 py-2 text-sm text-foreground/70 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2"
+                className="block px-3 py-2 text-sm text-foreground/70 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
               >
                 Sites web professionnels
               </button>
               <button
                 onClick={() => navigateToService("/services/installation-programmes")}
-                className="block px-3 py-2 text-sm text-foreground/70 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2"
+                className="block px-3 py-2 text-sm text-foreground/70 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
               >
                 Installation de programmes
               </button>
               <button
                 onClick={() => navigateToService("/services/email-professionnel")}
-                className="block px-3 py-2 text-sm text-foreground/70 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2"
+                className="block px-3 py-2 text-sm text-foreground/70 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
               >
                 Email professionnel
               </button>
               <button
                 onClick={() => navigateToService("/services/securite-sauvegarde")}
-                className="block px-3 py-2 text-sm text-foreground/70 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2"
+                className="block px-3 py-2 text-sm text-foreground/70 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
               >
                 Sécurité & Sauvegarde
               </button>
               <button
                 onClick={() => navigateToService("/services/depannage-assistance")}
-                className="block px-3 py-2 text-sm text-foreground/70 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2"
+                className="block px-3 py-2 text-sm text-foreground/70 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
               >
                 Dépannage & Assistance
               </button>
               <button
                 onClick={() => navigateToService("/services/infogerance-legere")}
-                className="block px-3 py-2 text-sm text-foreground/70 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2"
+                className="block px-3 py-2 text-sm text-foreground/70 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
               >
                 Infogérance légère
               </button>
               <button
                 onClick={() => navigateToService("/services/formation-accompagnement")}
-                className="block px-3 py-2 text-sm text-foreground/70 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2"
+                className="block px-3 py-2 text-sm text-foreground/70 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
               >
                 Formation & accompagnement
               </button>
             </div>
             <button
               onClick={() => scrollToSection("processus")}
-              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2 relative overflow-hidden group"
+              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
             >
-              <span className="relative z-10">Processus</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
+              Processus
             </button>
             <button
               onClick={() => scrollToSection("maintenance")}
-              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2 relative overflow-hidden group"
+              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
             >
-              <span className="relative z-10">Maintenance</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
+              Maintenance
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2 relative overflow-hidden group"
+              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
             >
-              <span className="relative z-10">Contact</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
-            </button>
-            <button
-              onClick={() => scrollToSection("temoignages")}
-              className="block px-3 py-2 text-foreground/80 hover:text-labtek-blue transition-all duration-300 ease-in-out w-full text-left rounded-lg hover:bg-labtek-blue/5 hover:translate-x-2 relative overflow-hidden group hidden"
-            >
-              <span className="relative z-10">Témoignages</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-labtek-blue/10 to-labtek-violet/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
+              Contact
             </button>
           </div>
         </div>

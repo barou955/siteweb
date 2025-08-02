@@ -1,5 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { AlertTriangle, X, Lock, HelpCircle, CheckCircle, Wifi } from "lucide-react";
+import { motion } from "framer-motion";
 
 const problems = [
   {
@@ -65,30 +67,34 @@ export default function ProblemsSection() {
           {problems.map((problem, index) => {
             const Icon = problem.icon;
             return (
-              <Card
+              <motion.div
                 key={index}
-                className="bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-red-500/10 rounded-lg flex items-center justify-center mb-6">
-                    <Icon className="w-8 h-8 text-red-500" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-red-800 dark:text-red-300 mb-4">
-                    "{problem.problem}"
-                  </h3>
-                  <p className="text-red-700 dark:text-red-400 mb-4">
-                    {problem.description}
-                  </p>
-                  <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 border border-green-200 dark:border-green-800">
-                    <h4 className="font-semibold text-green-800 dark:text-green-300 mb-2">
-                      ✓ Notre solution
-                    </h4>
-                    <p className="text-green-700 dark:text-green-400 text-sm">
-                      {problem.solution}
+                <Card className="group hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border-0 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-white/80 dark:hover:bg-gray-800/80">
+                  <CardContent className="p-8">
+                    <div className="w-16 h-16 bg-red-500/10 rounded-lg flex items-center justify-center mb-6">
+                      <Icon className="w-8 h-8 text-red-500" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-red-800 dark:text-red-300 mb-4">
+                      "{problem.problem}"
+                    </h3>
+                    <p className="text-red-700 dark:text-red-400 mb-4">
+                      {problem.description}
                     </p>
-                  </div>
-                </CardContent>
-              </Card>
+                    <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 border border-green-200 dark:border-green-800">
+                      <h4 className="font-semibold text-green-800 dark:text-green-300 mb-2">
+                        ✓ Notre solution
+                      </h4>
+                      <p className="text-green-700 dark:text-green-400 text-sm">
+                        {problem.solution}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             );
           })}
         </div>

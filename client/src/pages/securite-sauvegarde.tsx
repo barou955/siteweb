@@ -3,472 +3,388 @@ import Footer from "@/components/footer";
 import SeoMeta from "@/components/seo-meta";
 import ScrollToTopButton from "@/components/scroll-to-top-button";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Check, ArrowLeft, Phone, Mail, Shield, HardDrive, Cloud, AlertTriangle, Lock, Zap, Eye, Settings, Database, RefreshCw } from "lucide-react";
-import { scrollToContact as scrollToContactUtil } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
+import { Check, ArrowLeft, Phone, Shield, HardDrive, Cloud, Lock, AlertTriangle, Smartphone, Monitor, Wifi, Star, Award, Zap, Eye, Settings } from "lucide-react";
+import { scrollToContact } from "@/lib/utils";
 
 export default function SecuriteSauvegarde() {
-  const scrollToContact = () => {
-    scrollToContactUtil();
-  };
-
   const goBack = () => {
     window.location.href = '/';
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-green-50 to-emerald-50 dark:from-slate-950 dark:via-green-950 dark:to-emerald-950">
       <SeoMeta 
-        title="Sécurité & Sauvegarde - Labtek Services Informatiques"
-        description="Solutions de sécurité informatique et sauvegarde de données : antivirus, pare-feu, chiffrement et sauvegarde automatique en Essonne."
-        canonical="https://labtek.fr/services/securite-sauvegarde"
+        title="Sécurité & Sauvegarde Informatique - Labtek"
+        description="Protection complète de vos données : sauvegarde automatique, antivirus professionnel, sécurisation de votre réseau. Vos photos et documents en sécurité."
       />
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-labtek-blue/10 to-labtek-violet/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Button onClick={goBack} variant="ghost" className="mb-6">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 via-emerald-500/10 to-teal-500/10" />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiM5QzkyQUMiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] opacity-30" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">
+          <Button onClick={goBack} variant="ghost" className="mb-8 hover:bg-white/20 backdrop-blur-sm">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Retour
           </Button>
 
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              Sécurité &
-              <br />
-              <span className="text-labtek-blue">Sauvegarde</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Protégez vos données importantes ! Nous sécurisons votre ordinateur contre les virus 
-              et nous sauvegardons automatiquement vos fichiers précieux.
-            </p>
-            <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
-              <div className="flex items-center justify-center">
-                <AlertTriangle className="w-6 h-6 text-red-500 mr-3" />
-                <p className="text-red-700 dark:text-red-300 text-center">
-                  <strong>80% des pannes sont dues à une perte de données.</strong> Ne prenez pas ce risque !
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <Badge className="bg-green-500/20 text-green-700 dark:text-green-300 border-green-200 hover:bg-green-500/30">
+                  <Shield className="w-3 h-3 mr-1" />
+                  Protection Totale
+                </Badge>
+                <h1 className="text-5xl lg:text-7xl font-bold">
+                  <span className="bg-gradient-to-r from-gray-900 via-purple-800 to-pink-800 dark:from-gray-100 dark:via-purple-200 dark:to-pink-200 bg-clip-text text-transparent">
+                    Sécurité &
+                  </span>
+                  <br />
+                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    Sauvegarde
+                  </span>
+                </h1>
+                <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+                  Peur de perdre vos photos de famille ? Que des virus abîment votre ordinateur ? 
+                  Nous protégeons tout : vos données, votre navigation et votre tranquillité d'esprit.
                 </p>
               </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button onClick={scrollToContact} size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-600/90 hover:to-emerald-600/90 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                  <Shield className="w-5 h-5 mr-2" />
+                  Protéger mes données
+                </Button>
+                <Button variant="outline" size="lg" onClick={() => window.open('tel:0768852880', '_self')} className="border-2 hover:bg-white/50 backdrop-blur-sm">
+                  <Phone className="w-5 h-5 mr-2" />
+                  07 68 85 28 80
+                </Button>
+              </div>
+
+              <div className="grid grid-cols-3 gap-4 pt-8">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-purple-600">Automatique</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Sauvegarde</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-pink-600">Zéro virus</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Protection</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-red-600">Tranquillité</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Assurée</div>
+                </div>
+              </div>
             </div>
-            <Button onClick={scrollToContact} size="lg" className="bg-labtek-blue hover:bg-labtek-blue/90">
-              <Shield className="w-5 h-5 mr-2" />
-              Sécuriser mes données
-            </Button>
+
+            <div className="relative">
+              <div className="relative bg-white/10 dark:bg-white/5 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20">
+                <img 
+                  src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop&auto=format&q=80"
+                  alt="Sécurité informatique et protection des données"
+                  className="w-full h-80 object-cover rounded-2xl shadow-lg"
+                />
+                <div className="absolute -bottom-4 -right-4 bg-green-500 text-white p-4 rounded-2xl shadow-xl">
+                  <Lock className="w-8 h-8" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Services inclus */}
-      <section className="py-16">
+      {/* Notre processus de sécurisation */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Ce que nous faisons pour vous</h2>
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              { icon: Eye, title: "Audit sécurité complet", desc: "Analyse de vos vulnérabilités actuelles" },
-              { icon: Shield, title: "Protection antivirus", desc: "Installation et configuration d'antivirus" },
-              { icon: Database, title: "Sauvegarde automatique", desc: "Mise en place de sauvegardes régulières" },
-              { icon: Settings, title: "Formation sécurité", desc: "Apprentissage des bonnes pratiques" }
-            ].map((service, index) => (
-              <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
-                <CardContent className="p-0">
-                  <service.icon className="w-12 h-12 text-labtek-blue mx-auto mb-4" />
-                  <h3 className="font-bold mb-2">{service.title}</h3>
-                  <p className="text-sm text-muted-foreground">{service.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">
+              Notre processus de sécurisation
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              De l'audit initial à la protection continue, nous sécurisons totalement votre environnement numérique
+            </p>
           </div>
-        </div>
-      </section>
-
-      {/* Solutions de sécurité */}
-      <section className="py-16 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Nos solutions de protection</h2>
-
-          <div className="space-y-8">
-            {/* Protection Antivirus */}
-            <Card>
-              <CardContent className="p-6">
-                <div className="grid lg:grid-cols-2 gap-6 items-center">
-                  <div>
-                    <div className="flex items-center mb-4">
-                      <Shield className="w-8 h-8 text-green-500 mr-3" />
-                      <h3 className="text-2xl font-bold">🛡️ Protection Antivirus - À partir de 30€/an</h3>
-                    </div>
-                    <p className="text-muted-foreground mb-6">
-                      Protection complète contre virus, malwares, ransomwares et menaces en ligne. 
-                      Surveillance en temps réel de votre ordinateur.
-                    </p>
-                    <div className="space-y-4">
-                      <div className="border-l-4 border-green-500 pl-4">
-                        <h4 className="font-semibold">Bitdefender Total Security (45€/an)</h4>
-                        <p className="text-muted-foreground">Protection premium avec VPN intégré et contrôle parental</p>
-                      </div>
-                      <div className="border-l-4 border-blue-500 pl-4">
-                        <h4 className="font-semibold">Norton 360 (50€/an)</h4>
-                        <p className="text-muted-foreground">Avec sauvegarde cloud 50Go et protection identité</p>
-                      </div>
-                      <div className="border-l-4 border-purple-500 pl-4">
-                        <h4 className="font-semibold">Windows Defender optimisé (gratuit)</h4>
-                        <p className="text-muted-foreground">Configuration avancée pour usage basique</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative h-64 rounded-lg overflow-hidden">
-                    <img 
-                      src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop&auto=format&q=80"
-                      alt="Interface antivirus avec shield de protection"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Sauvegarde locale */}
-            <Card>
-              <CardContent className="p-6">
-                <div className="grid lg:grid-cols-2 gap-6 items-center">
-                  <div className="order-2 lg:order-1">
-                    <div className="relative h-64 rounded-lg overflow-hidden">
-                      <img 
-                        src="https://images.unsplash.com/photo-1597852074816-d933c7d2b988?w=500&h=300&fit=crop&auto=format&q=80"
-                        alt="Disque dur externe pour sauvegarde de données"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                  <div className="order-1 lg:order-2">
-                    <div className="flex items-center mb-4">
-                      <HardDrive className="w-8 h-8 text-blue-500 mr-3" />
-                      <h3 className="text-2xl font-bold">💾 Sauvegarde Locale - À partir de 60€</h3>
-                    </div>
-                    <p className="text-muted-foreground mb-6">
-                      Vos données sauvegardées physiquement chez vous. Accès rapide et contrôle total 
-                      sur vos sauvegardes.
-                    </p>
-                    <div className="space-y-4">
-                      <div className="border-l-4 border-cyan-500 pl-4">
-                        <h4 className="font-semibold">Disque externe 1To (80€)</h4>
-                        <p className="text-muted-foreground">Sauvegarde manuelle simple avec formation</p>
-                      </div>
-                      <div className="border-l-4 border-indigo-500 pl-4">
-                        <h4 className="font-semibold">NAS Synology 2 baies (350€)</h4>
-                        <p className="text-muted-foreground">Sauvegarde automatique réseau avec redondance</p>
-                      </div>
-                      <div className="border-l-4 border-gray-500 pl-4">
-                        <h4 className="font-semibold">Configuration et formation incluses</h4>
-                        <p className="text-muted-foreground">Planification automatique et tests de récupération</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Sauvegarde cloud */}
-            <Card>
-              <CardContent className="p-6">
-                <div className="grid lg:grid-cols-2 gap-6 items-center">
-                  <div>
-                    <div className="flex items-center mb-4">
-                      <Cloud className="w-8 h-8 text-purple-500 mr-3" />
-                      <h3 className="text-2xl font-bold">☁️ Sauvegarde Cloud - À partir de 2€/mois</h3>
-                    </div>
-                    <p className="text-muted-foreground mb-6">
-                      Vos données sauvegardées en ligne, accessibles partout. Protection contre vol, 
-                      incendie et catastrophes naturelles.
-                    </p>
-                    <div className="space-y-4">
-                      <div className="border-l-4 border-orange-500 pl-4">
-                        <h4 className="font-semibold">Google Drive (2€/mois - 100Go)</h4>
-                        <p className="text-muted-foreground">Accessible partout, intégration avec Gmail</p>
-                      </div>
-                      <div className="border-l-4 border-blue-500 pl-4">
-                        <h4 className="font-semibold">OneDrive (7€/mois - 1To)</h4>
-                        <p className="text-muted-foreground">Intégré à Microsoft Office 365</p>
-                      </div>
-                      <div className="border-l-4 border-green-500 pl-4">
-                        <h4 className="font-semibold">Solutions françaises RGPD</h4>
-                        <p className="text-muted-foreground">pCloud, IceDrive pour la confidentialité maximale</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative h-64 rounded-lg overflow-hidden">
-                    <img 
-                      src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=300&fit=crop&auto=format&q=80"
-                      alt="Stockage cloud avec synchronisation sur multiple appareils"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Processus de sécurisation détaillé avec accordéons */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Notre processus de sécurisation complète</h2>
-          <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Découvrez en détail chaque étape de la sécurisation de votre environnement informatique. 
-            Un processus rigoureux pour une protection maximale.
-          </p>
 
           <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-
-              <AccordionItem value="audit" className="border rounded-lg px-6">
-                <AccordionTrigger className="hover:no-underline">
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-4">
-                      <Eye className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="text-left">
-                      <h3 className="font-bold text-lg">1. Audit de sécurité complet</h3>
-                      <p className="text-muted-foreground text-sm">Analyse des vulnérabilités existantes</p>
-                    </div>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-4 pb-6">
-                  <div className="ml-14 space-y-4">
-                    <div className="grid md:grid-cols-2 gap-6">
+            <Accordion type="single" collapsible className="space-y-6">
+              {[
+                {
+                  value: "audit-securite",
+                  icon: Eye,
+                  title: "1. Audit de sécurité complet",
+                  subtitle: "Évaluation de toutes les vulnérabilités de votre système",
+                  color: "bg-red-500",
+                  content: (
+                    <div className="grid md:grid-cols-2 gap-8">
                       <div>
-                        <h4 className="font-semibold mb-3">Analyse système :</h4>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />État actuel des protections</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Logiciels installés et mises à jour</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Configuration pare-feu et réseau</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Mots de passe et comptes utilisateurs</li>
+                        <h4 className="font-semibold mb-4 text-lg">Analyse des vulnérabilités :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Scan complet des logiciels obsolètes",
+                            "Vérification des mots de passe faibles",
+                            "Test de la sécurité de votre réseau Wi-Fi",
+                            "Évaluation des sauvegardes existantes"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold mb-3">Données sensibles :</h4>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Localisation des fichiers importants</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />État des sauvegardes existantes</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Évaluation des risques de perte</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Recommandations personnalisées</li>
+                        <h4 className="font-semibold mb-4 text-lg">Identification des risques :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Détection des logiciels malveillants cachés",
+                            "Analyse des accès non autorisés",
+                            "Évaluation du risque de perte de données",
+                            "Test de résistance aux cyberattaques"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <AlertTriangle className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="protection" className="border rounded-lg px-6">
-                <AccordionTrigger className="hover:no-underline">
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mr-4">
-                      <Shield className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="text-left">
-                      <h3 className="font-bold text-lg">2. Installation des protections</h3>
-                      <p className="text-muted-foreground text-sm">Mise en place de la sécurité</p>
-                    </div>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-4 pb-6">
-                  <div className="ml-14 space-y-4">
-                    <div className="grid md:grid-cols-3 gap-4">
-                      <div className="space-y-3">
-                        <div className="flex items-center mb-2">
-                          <Shield className="w-5 h-5 text-green-500 mr-2" />
-                          <h4 className="font-semibold">Antivirus</h4>
-                        </div>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>• Installation solution adaptée</li>
-                          <li>• Configuration personnalisée</li>
-                          <li>• Mise à jour automatique</li>
-                          <li>• Scan complet initial</li>
-                        </ul>
-                      </div>
-                      <div className="space-y-3">
-                        <div className="flex items-center mb-2">
-                          <Lock className="w-5 h-5 text-blue-500 mr-2" />
-                          <h4 className="font-semibold">Pare-feu</h4>
-                        </div>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>• Configuration avancée</li>
-                          <li>• Règles personnalisées</li>
-                          <li>• Protection réseau</li>
-                          <li>• Blocage menaces</li>
-                        </ul>
-                      </div>
-                      <div className="space-y-3">
-                        <div className="flex items-center mb-2">
-                          <Settings className="w-5 h-5 text-purple-500 mr-2" />
-                          <h4 className="font-semibold">Système</h4>
-                        </div>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>• Mises à jour automatiques</li>
-                          <li>• Comptes utilisateurs sécurisés</li>
-                          <li>• Contrôle d'accès</li>
-                          <li>• Chiffrement données</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="backup" className="border rounded-lg px-6">
-                <AccordionTrigger className="hover:no-underline">
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center mr-4">
-                      <Database className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="text-left">
-                      <h3 className="font-bold text-lg">3. Configuration des sauvegardes</h3>
-                      <p className="text-muted-foreground text-sm">Automatisation et planification</p>
-                    </div>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-4 pb-6">
-                  <div className="ml-14 space-y-4">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <h4 className="font-semibold mb-3 flex items-center">
-                          <HardDrive className="w-4 h-4 mr-2" />
-                          Sauvegarde locale :
+                  )
+                },
+                {
+                  value: "plan-securisation",
+                  icon: Shield,
+                  title: "2. Plan de sécurisation personnalisé",
+                  subtitle: "Stratégie adaptée à vos besoins et niveau de risque",
+                  color: "bg-blue-500",
+                  content: (
+                    <div className="grid md:grid-cols-3 gap-6">
+                      <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+                        <h4 className="font-semibold mb-4 text-lg flex items-center">
+                          <Lock className="w-6 h-6 text-blue-500 mr-3" />
+                          Protection active
                         </h4>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Installation matériel de sauvegarde</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Configuration logiciel automatisé</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Planification des sauvegardes</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Test de récupération</li>
+                        <ul className="space-y-2">
+                          {["Antivirus professionnel", "Pare-feu configuré", "Anti-malware en temps réel", "Protection email avancée"].map((item, index) => (
+                            <li key={index} className="text-sm text-gray-600 dark:text-gray-300 flex items-start">
+                              <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0" />
+                              {item}
+                            </li>
+                          ))}
                         </ul>
                       </div>
-                      <div>
-                        <h4 className="font-semibold mb-3 flex items-center">
-                          <Cloud className="w-4 h-4 mr-2" />
-                          Sauvegarde cloud :
+                      <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+                        <h4 className="font-semibold mb-4 text-lg flex items-center">
+                          <HardDrive className="w-6 h-6 text-blue-500 mr-3" />
+                          Sauvegarde intelligente
                         </h4>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Choix solution adaptée</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Synchronisation automatique</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Chiffrement des données</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Accès multi-appareils</li>
+                        <ul className="space-y-2">
+                          {["Sauvegarde automatique quotidienne", "Stockage cloud sécurisé", "Versions multiples des fichiers", "Test de restauration mensuel"].map((item, index) => (
+                            <li key={index} className="text-sm text-gray-600 dark:text-gray-300 flex items-start">
+                              <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+                        <h4 className="font-semibold mb-4 text-lg flex items-center">
+                          <Wifi className="w-6 h-6 text-blue-500 mr-3" />
+                          Sécurité réseau
+                        </h4>
+                        <ul className="space-y-2">
+                          {["Wi-Fi crypté WPA3", "Réseau invité séparé", "Contrôle d'accès par appareil", "Surveillance des intrusions"].map((item, index) => (
+                            <li key={index} className="text-sm text-gray-600 dark:text-gray-300 flex items-start">
+                              <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0" />
+                              {item}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="tests" className="border rounded-lg px-6">
-                <AccordionTrigger className="hover:no-underline">
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center mr-4">
-                      <Zap className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="text-left">
-                      <h3 className="font-bold text-lg">4. Tests et validation</h3>
-                      <p className="text-muted-foreground text-sm">Vérification du bon fonctionnement</p>
-                    </div>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-4 pb-6">
-                  <div className="ml-14 space-y-4">
-                    <div className="grid md:grid-cols-3 gap-4">
+                  )
+                },
+                {
+                  value: "mise-en-place",
+                  icon: Settings,
+                  title: "3. Mise en place des protections",
+                  subtitle: "Installation et configuration de tous les systèmes de sécurité",
+                  color: "bg-green-500",
+                  content: (
+                    <div className="grid md:grid-cols-2 gap-8">
                       <div>
-                        <h4 className="font-semibold mb-3">Tests de sécurité :</h4>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>• Scan antivirus complet</li>
-                          <li>• Test pare-feu</li>
-                          <li>• Vérification mises à jour</li>
-                          <li>• Simulation d'attaque</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-3">Tests de sauvegarde :</h4>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>• Récupération fichier test</li>
-                          <li>• Vitesse de sauvegarde</li>
-                          <li>• Intégrité des données</li>
-                          <li>• Automatisation planifiée</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-3">Documentation :</h4>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>• Guide utilisateur</li>
-                          <li>• Procédures d'urgence</li>
-                          <li>• Contacts support</li>
-                          <li>• Planning maintenance</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="formation" className="border rounded-lg px-6">
-                <AccordionTrigger className="hover:no-underline">
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center mr-4">
-                      <RefreshCw className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="text-left">
-                      <h3 className="font-bold text-lg">5. Formation et suivi</h3>
-                      <p className="text-muted-foreground text-sm">Accompagnement et maintenance</p>
-                    </div>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-4 pb-6">
-                  <div className="ml-14 space-y-4">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <h4 className="font-semibold mb-3">Formation personnalisée :</h4>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Utilisation des outils installés</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Bonnes pratiques sécurité</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Reconnaissance des menaces</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Procédures de récupération</li>
+                        <h4 className="font-semibold mb-4 text-lg">Configuration logicielle :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Installation d'antivirus professionnel Bitdefender",
+                            "Configuration du pare-feu Windows avancé",
+                            "Mise en place du gestionnaire de mots de passe",
+                            "Activation de la sauvegarde automatique cloud"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold mb-3">Suivi et maintenance :</h4>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Support technique 6 mois inclus</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Vérifications mensuelles</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Mises à jour sécurité</li>
-                          <li className="flex items-start"><Check className="w-4 h-4 text-green-500 mr-2 mt-0.5" />Assistance téléphonique</li>
+                        <h4 className="font-semibold mb-4 text-lg">Sécurisation matérielle :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Configuration sécurisée du routeur Wi-Fi",
+                            "Mise à jour de tous les pilotes et firmwares",
+                            "Activation du chiffrement du disque dur",
+                            "Configuration de la sauvegarde sur disque externe"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <Shield className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
+                  )
+                },
+                {
+                  value: "formation-prevention",
+                  icon: Star,
+                  title: "4. Formation et prévention",
+                  subtitle: "Apprentissage des bonnes pratiques pour éviter les risques",
+                  color: "bg-purple-500",
+                  content: (
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="font-semibold mb-4 text-lg">Formation sécurité :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Reconnaissance des emails de phishing",
+                            "Création de mots de passe sécurisés",
+                            "Navigation sécurisée sur internet",
+                            "Utilisation du gestionnaire de mots de passe"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-4 text-lg">Bonnes pratiques :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Mise à jour régulière des logiciels",
+                            "Vérification des sauvegardes",
+                            "Surveillance des alertes de sécurité",
+                            "Procédures en cas d'incident"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <Star className="w-5 h-5 text-purple-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  )
+                },
+                {
+                  value: "surveillance-continue",
+                  icon: Monitor,
+                  title: "5. Surveillance et maintenance continue",
+                  subtitle: "Monitoring 24/7 et mises à jour de sécurité régulières",
+                  color: "bg-orange-500",
+                  content: (
+                    <div className="grid md:grid-cols-3 gap-6">
+                      {[
+                        {
+                          title: "Monitoring quotidien",
+                          icon: Eye,
+                          items: ["Surveillance des tentatives d'intrusion", "Vérification des sauvegardes", "Contrôle des mises à jour", "Scan antivirus automatique"]
+                        },
+                        {
+                          title: "Maintenance mensuelle",
+                          icon: Settings,
+                          items: ["Optimisation des performances", "Nettoyage des fichiers temporaires", "Test de restauration", "Mise à jour des définitions"]
+                        },
+                        {
+                          title: "Support réactif",
+                          icon: Phone,
+                          items: ["Intervention d'urgence 24/7", "Assistance en cas d'infection", "Récupération de données", "Support téléphonique illimité"]
+                        }
+                      ].map((category, index) => (
+                        <div key={index} className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+                          <div className="flex items-center mb-4">
+                            <category.icon className="w-6 h-6 text-orange-500 mr-3" />
+                            <h4 className="font-semibold text-lg">{category.title}</h4>
+                          </div>
+                          <ul className="space-y-2">
+                            {category.items.map((item, itemIndex) => (
+                              <li key={itemIndex} className="text-sm text-gray-600 dark:text-gray-300 flex items-start">
+                                <span className="w-2 h-2 bg-orange-500 rounded-full mr-3 mt-2 flex-shrink-0" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  )
+                }
+              ].map((step, index) => (
+                <AccordionItem key={step.value} value={step.value} className="border-0 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                  <AccordionTrigger className="hover:no-underline px-8 py-6">
+                    <div className="flex items-center w-full">
+                      <div className={`w-12 h-12 ${step.color} rounded-xl flex items-center justify-center mr-6`}>
+                        <step.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="text-left">
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">{step.title}</h3>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm">{step.subtitle}</p>
+                      </div>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-8 pb-8">
+                    {step.content}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
             </Accordion>
           </div>
         </div>
       </section>
 
-      {/* Garanties et services */}
-      <section className="py-16 bg-muted/50">
+      {/* Services de sécurité avec nouveau design */}
+      <section className="py-20 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Nos garanties et services inclus</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">
+              Nos solutions de sécurité
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">Protection sur mesure selon vos besoins</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Eye, title: "Audit sécurité gratuit", desc: "Analyse complète de vos vulnérabilités" },
-              { icon: Shield, title: "Protection garantie 2 ans", desc: "Intervention gratuite en cas de problème" },
-              { icon: Database, title: "Sauvegarde testée et validée", desc: "Récupération garantie de vos données" },
-              { icon: Zap, title: "Installation et configuration", desc: "Mise en service complète incluse" },
-              { icon: RefreshCw, title: "Formation personnalisée", desc: "Apprentissage des outils installés" },
-              { icon: Settings, title: "Support technique 6 mois", desc: "Assistance téléphonique illimitée" }
-            ].map((guarantee, index) => (
-              <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
-                <CardContent className="p-0">
-                  <guarantee.icon className="w-12 h-12 text-labtek-blue mx-auto mb-4" />
-                  <h3 className="font-bold mb-2">{guarantee.title}</h3>
-                  <p className="text-sm text-muted-foreground">{guarantee.desc}</p>
+              { icon: HardDrive, title: "Sauvegarde", desc: "Vos photos et documents en sécurité", color: "bg-blue-500" },
+              { icon: Shield, title: "Antivirus", desc: "Protection contre virus et malwares", color: "bg-green-500" },
+              { icon: Wifi, title: "Navigation", desc: "Internet sécurisé, sites dangereux bloqués", color: "bg-purple-500" },
+              { icon: Lock, title: "Mots de passe", desc: "Gestionnaire sécurisé inclus", color: "bg-orange-500" }
+            ].map((service, index) => (
+              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border-0 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-white/80 dark:hover:bg-gray-800/80">
+                <CardContent className="p-8 text-center">
+                  <div className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <service.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100">{service.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{service.desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -476,127 +392,294 @@ export default function SecuriteSauvegarde() {
         </div>
       </section>
 
-      {/* Contrats de maintenance spécifiques sécurité */}
-      <section className="py-16">
+      {/* Solutions détaillées avec nouveau design */}
+      <section className="py-20 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 dark:from-orange-950/20 dark:via-red-950/20 dark:to-pink-950/20 rounded-xl p-8 border-2 border-orange-200 dark:border-orange-800 shadow-lg">
-            <div className="absolute -top-6 sm:-top-4 left-1/2 transform -translate-x-1/2">
-              <div className="maintenance-badge bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-bold text-sm shadow-md hidden sm:block">
-                🔧 ASSOCIEZ UN CONTRAT DE MAINTENANCE !
-              </div>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">
+              Nos solutions de sécurité
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">Protection sur mesure selon vos besoins</p>
+          </div>
 
-            <div className="text-center mb-8 mt-4">
-              <h3 className="text-2xl font-bold mb-4">💡 Pourquoi un contrat de maintenance sécurité ?</h3>
-              <p className="text-muted-foreground">
-                Maintenez votre protection au plus haut niveau en permanence !
-              </p>
-            </div>
+          <div className="space-y-12">
+            {/* Pack Famille */}
+            <Card className="overflow-hidden bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/50 dark:to-purple-950/50 border-0 shadow-2xl">
+              <CardContent className="p-0">
+                <div className="grid lg:grid-cols-2 gap-0">
+                  <div className="p-12">
+                    <div className="flex items-center mb-6">
+                      <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mr-4">
+                        <Smartphone className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-3xl font-bold text-gray-900 dark:text-gray-100">👨‍👩‍👧‍👦 Pack Famille</h3>
+                        <Badge className="mt-2 bg-blue-500/20 text-blue-700 dark:text-blue-300">À partir de 89€</Badge>
+                      </div>
+                    </div>
+                    <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                      Protection idéale pour les familles. Vos photos de vacances, 
+                      documents importants et navigation internet en toute sécurité.
+                    </p>
+                    <div className="space-y-6">
+                      {[
+                        { title: "Sauvegarde automatique", desc: "Photos, vidéos et documents sauvés chaque jour", icon: HardDrive },
+                        { title: "Antivirus familial", desc: "Protection pour tous les ordinateurs de la maison", icon: Shield },
+                        { title: "Contrôle parental", desc: "Internet sécurisé pour les enfants", icon: Lock }
+                      ].map((item, index) => (
+                        <div key={index} className="flex items-start space-x-4">
+                          <div className="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center shadow-md">
+                            <item.icon className="w-5 h-5 text-blue-500" />
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-gray-900 dark:text-gray-100">{item.title}</h4>
+                            <p className="text-gray-600 dark:text-gray-300 text-sm">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <img 
+                      src="https://images.unsplash.com/photo-1609081219090-a6d81d3085bf?w=600&h=500&fit=crop&auto=format&q=80"
+                      alt="Protection informatique pour famille"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-l from-transparent to-blue-500/10" />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
-                <div className="text-xl mb-2">🛡️</div>
-                <h4 className="font-bold text-lg mb-2">Protection Base</h4>
-                <p className="text-orange-600 dark:text-orange-400 font-medium mb-3">Sécurité essentielle - 25€/mois</p>
-                <ul className="text-sm space-y-2">
-                  <li className="flex items-center justify-center">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Surveillance antivirus 24/7</span>
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <span className="text-green-500 mr-2">✓</span>  
-                    <span>Tests sauvegarde mensuels</span>
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <span className="text-green-500 mr-2">✓</span>  
-                    <span>Rapport sécurité trimestriel</span>
-                  </li>
-                </ul>
-              </Card>
-
-              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center border-2 border-labtek-blue">
-                <div className="text-xl mb-2">🔒</div>
-                <h4 className="font-bold text-lg mb-2">Sécurité Pro</h4>
-                <p className="text-purple-600 dark:text-purple-400 font-medium mb-3">Protection renforcée - 55€/mois</p>
-                <ul className="text-sm space-y-2">
-                  <li className="flex items-center justify-center">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Audit vulnérabilités mensuel</span>
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Sauvegarde multi-sites testée</span>
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Formation cyber-sécurité équipe</span>
-                  </li>
-                </ul>
-              </Card>
-
-              <Card className="bg-white/80 dark:bg-gray-800/80 p-4 text-center">
-                <div className="text-xl mb-2">🏢</div>
-                <h4 className="font-bold text-lg mb-2">Cyber Défense</h4>
-                <p className="text-red-600 dark:text-red-400 font-medium mb-3">Protection maximale - Sur devis</p>
-                <ul className="text-sm space-y-2">
-                  <li className="flex items-center justify-center">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>SOC (Centre opérationnel 24/7)</span>
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Plan reprise activité (PRA)</span>
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span>Expert cyber-sécurité dédié</span>
-                  </li>
-                </ul>
-              </Card>
-            </div>
-
-            <div className="text-center">
-              <p className="text-sm text-muted-foreground mb-4">
-                Sécurité renforcée + surveillance continue = protection maximale
-              </p>
-              <Button onClick={scrollToContact} className="bg-orange-500 hover:bg-orange-600 text-white">
-                Découvrir les formules complètes
-              </Button>
-            </div>
+            {/* Pack Professionnel */}
+            <Card className="overflow-hidden bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/50 dark:to-pink-950/50 border-0 shadow-2xl">
+              <CardContent className="p-0">
+                <div className="grid lg:grid-cols-2 gap-0">
+                  <div className="relative order-2 lg:order-1">
+                    <img 
+                      src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=500&fit=crop&auto=format&q=80"
+                      alt="Sécurité informatique professionnelle"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-purple-500/10" />
+                  </div>
+                  <div className="p-12 order-1 lg:order-2">
+                    <div className="flex items-center mb-6">
+                      <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mr-4">
+                        <Monitor className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-3xl font-bold text-gray-900 dark:text-gray-100">💼 Pack Professionnel</h3>
+                        <Badge className="mt-2 bg-purple-500/20 text-purple-700 dark:text-purple-300">À partir de 149€</Badge>
+                      </div>
+                    </div>
+                    <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                      Sécurité renforcée pour les professionnels. Protection des données clients, 
+                      sauvegarde automatique et conformité RGPD.
+                    </p>
+                    <div className="space-y-6">
+                      {[
+                        { title: "Sauvegarde pro", desc: "Données critiques sauvées en temps réel", icon: Cloud },
+                        { title: "Sécurité avancée", desc: "Pare-feu, chiffrement, surveillance", icon: Shield },
+                        { title: "Conformité RGPD", desc: "Respect des réglementations", icon: Star }
+                      ].map((item, index) => (
+                        <div key={index} className="flex items-start space-x-4">
+                          <div className="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center shadow-md">
+                            <item.icon className="w-5 h-5 text-purple-500" />
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-gray-900 dark:text-gray-100">{item.title}</h4>
+                            <p className="text-gray-600 dark:text-gray-300 text-sm">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-8">Prêt à protéger vos données ?</h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Contactez-nous pour une consultation gratuite et sécuriser votre environnement
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-labtek-blue hover:bg-labtek-blue/90"
-              onClick={() => window.open('tel:0768852880', '_self')}
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              07 68 85 2880
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              onClick={scrollToContact}
-            >
-              <Mail className="w-4 h-4 mr-2" />
-              Contactez-nous !
+      {/* Pourquoi c'est important avec accordéons modernisés */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">
+              Pourquoi protéger vos données ?
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Les risques sont réels, mais les solutions existent
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-6">
+              {[
+                {
+                  value: "risques",
+                  icon: AlertTriangle,
+                  title: "Les risques que vous courrez sans protection",
+                  subtitle: "Virus, pannes, vol... les dangers sont nombreux",
+                  color: "bg-red-500",
+                  content: (
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="font-semibold mb-4 text-lg text-red-600">Pertes de données :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Photos de famille irremplaçables",
+                            "Documents importants (factures, contrats)",
+                            "Années de travail perdues",
+                            "Contacts et historiques"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <AlertTriangle className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-4 text-lg text-red-600">Menaces courantes :</h4>
+                        <ul className="space-y-3">
+                          {[
+                            "Virus qui détruisent vos fichiers",
+                            "Ransomware qui bloque tout",
+                            "Vol d'identité en ligne",
+                            "Espionnage de vos données"
+                          ].map((item, index) => (
+                            <li key={index} className="flex items-start">
+                              <AlertTriangle className="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-600 dark:text-gray-300">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  )
+                },
+                {
+                  value: "solutions",
+                  icon: Shield,
+                  title: "Nos solutions pour votre tranquillité",
+                  subtitle: "Protection automatique et transparente",
+                  color: "bg-green-500",
+                  content: (
+                    <div className="grid md:grid-cols-3 gap-6">
+                      {[
+                        {
+                          title: "Prévention",
+                          icon: Shield,
+                          items: ["Antivirus en temps réel", "Pare-feu configuré", "Mises à jour automatiques", "Navigation sécurisée"]
+                        },
+                        {
+                          title: "Sauvegarde",
+                          icon: HardDrive,
+                          items: ["Copie automatique quotidienne", "Stockage sécurisé", "Récupération facile", "Tests de restauration"]
+                        },
+                        {
+                          title: "Formation",
+                          icon: Star,
+                          items: ["Reconnaître les dangers", "Bonnes pratiques", "Gestion des mots de passe", "Support en cas de doute"]
+                        }
+                      ].map((category, index) => (
+                        <div key={index} className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+                          <div className="flex items-center mb-4">
+                            <category.icon className="w-6 h-6 text-green-500 mr-3" />
+                            <h4 className="font-semibold text-lg">{category.title}</h4>
+                          </div>
+                          <ul className="space-y-2">
+                            {category.items.map((item, itemIndex) => (
+                              <li key={itemIndex} className="text-sm text-gray-600 dark:text-gray-300 flex items-start">
+                                <span className="w-2 h-2 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  )
+                }
+              ].map((step, index) => (
+                <AccordionItem key={step.value} value={step.value} className="border-0 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                  <AccordionTrigger className="hover:no-underline px-8 py-6">
+                    <div className="flex items-center w-full">
+                      <div className={`w-12 h-12 ${step.color} rounded-xl flex items-center justify-center mr-6`}>
+                        <step.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="text-left">
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">{step.title}</h3>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm">{step.subtitle}</p>
+                      </div>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-8 pb-8">
+                    {step.content}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Garanties et services inclus */}
+      <section className="py-20 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">
+              Pourquoi choisir notre protection ?
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">Sérénité totale garantie</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { 
+                title: "Installation clé en main", 
+                desc: "Nous installons et configurons tout. Vous n'avez rien à faire, ça marche tout seul après !",
+                icon: Zap,
+                color: "bg-blue-500"
+              },
+              { 
+                title: "Formation incluse", 
+                desc: "Nous vous expliquons tout simplement pour que vous compreniez et utilisiez vos protections.",
+                icon: Star,
+                color: "bg-green-500"
+              },
+              { 
+                title: "Support à vie", 
+                desc: "Un doute ? Une alerte ? Appelez-nous, nous sommes là pour vous rassurer et vous aider.",
+                icon: Award,
+                color: "bg-purple-500"
+              }
+            ].map((garantie, index) => (
+              <Card key={index} className="border-0 bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm hover:shadow-xl transition-all duration-300">
+                <CardContent className="p-8 text-center">
+                  <div className={`w-16 h-16 ${garantie.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
+                    <garantie.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">{garantie.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{garantie.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button onClick={scrollToContact} size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-600/90 hover:to-emerald-600/90 text-white shadow-xl">
+              <Shield className="w-5 h-5 mr-2" />
+              Protéger mes données maintenant
             </Button>
           </div>
         </div>
       </section>
 
-      <ScrollToTopButton />
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }

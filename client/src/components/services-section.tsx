@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import ServiceDetailModal from "./service-detail-modal";
 import {
   Laptop,
@@ -58,7 +59,7 @@ const services = [
       "Vous avez besoin de Word, Excel, un logiciel de comptabilité ? Nous trouvons et installons les programmes qu'il vous faut. Vos anciens fichiers sont récupérés et tout fonctionne parfaitement.",
     features: ["Les bons logiciels pour votre travail", "Vos anciens fichiers sauvegardés", "Nous vous montrons comment les utiliser"],
     color: "bg-blue-500",
-    image: "https://i.imghippo.com/files/XjC1118wQ.png",
+    image: "/microsoft-office-suite.png",
     imageAlt: "Suite Microsoft Office - Word, Excel, PowerPoint, Teams et autres logiciels professionnels",
     link: "/services/installation-programmes"
   },
@@ -91,7 +92,7 @@ const services = [
       "Votre ordinateur rame ? L'imprimante ne marche plus ? Internet est coupé ? Nous arrivons rapidement pour tout remettre en ordre. Disponibles même le weekend pour les urgences !",
     features: ["Nous réparons rapidement", "Aide par téléphone possible", "Disponibles weekend et soirs"],
     color: "bg-orange-500",
-    image: "https://i.imghippo.com/files/sEJ1111MHM.png",
+    image: "/depannage-assistance.png",
     imageAlt: "Technicien en train de réparer un ordinateur - service de dépannage informatique",
     link: "/services/depannage-assistance"
   },
@@ -145,6 +146,14 @@ export default function ServicesSection() {
                     src={service.image} 
                     alt={service.imageAlt}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      if (service.title === "Installation de Programmes" && target.src.includes('microsoft-office-suite.png')) {
+                        target.src = "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop&auto=format&q=80";
+                      } else if (service.title === "Dépannage & Assistance" && target.src.includes('depannage-assistance.png')) {
+                        target.src = "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop&auto=format&q=80";
+                      }
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                   <div className="absolute top-4 left-4 w-12 h-12 rounded-lg flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300" 
