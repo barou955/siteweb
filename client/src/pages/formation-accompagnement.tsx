@@ -40,7 +40,7 @@ export default function FormationAccompagnement() {
                   <GraduationCap className="w-3 h-3 mr-1" />
                   Formation Personnalisée
                 </Badge>
-                <h1 className="text-5xl lg:text-7xl font-bold">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold">
                   <span className="bg-gradient-to-r from-gray-900 via-indigo-800 to-purple-800 dark:from-gray-100 dark:via-indigo-200 dark:to-purple-200 bg-clip-text text-transparent">
                     Formation &
                   </span>
@@ -49,9 +49,9 @@ export default function FormationAccompagnement() {
                     Accompagnement
                   </span>
                 </h1>
-                <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
-                  Vous voulez apprendre à mieux utiliser votre ordinateur, smartphone ou internet ? 
-                  Nous vous formons à votre rythme, chez vous, sans stress !
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+                  Développez vos compétences numériques ! Formations personnalisées 
+                  pour maîtriser ordinateur, internet, et outils collaboratifs !
                 </p>
               </div>
 

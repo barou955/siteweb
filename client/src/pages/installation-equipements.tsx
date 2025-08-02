@@ -40,7 +40,7 @@ export default function InstallationEquipements() {
                   <Settings className="w-3 h-3 mr-1" />
                   Installation Professionnelle
                 </Badge>
-                <h1 className="text-5xl lg:text-7xl font-bold">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold">
                   <span className="bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 dark:from-gray-100 dark:via-blue-200 dark:to-indigo-200 bg-clip-text text-transparent">
                     Installation
                   </span>
@@ -49,7 +49,7 @@ export default function InstallationEquipements() {
                     d'Équipements
                   </span>
                 </h1>
-                <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
                   Nouveaux ordinateurs, imprimantes, routeurs Wi-Fi, caméras de surveillance ? Nous installons et configurons 
                   tout pour que ça marche parfaitement dès le premier jour !
                 </p>
@@ -449,7 +449,7 @@ export default function InstallationEquipements() {
                       {[
                         { title: "Optimisation PC gaming", desc: "Overclocking sécurisé, profils GPU, température", icon: Zap },
                         { title: "Périphériques gaming pro", desc: "Clavier mécanique, souris DPI, casque surround", icon: Headphones },
-                        { title: "Écran gaming haute fréquence", desc: "144Hz+, G-Sync/FreeSync, temps réponse 1ms", icon: Monitor },
+                        { title: "Écran gaming haute fréquence", desc: "144Hz+, G-Sync/FreeSync, temps réponse 1ms",icon: Monitor },
                         { title: "Optimisation réseau gaming", desc: "QoS, ports dédiés, réduction latence", icon: Wifi },
                         { title: "Streaming et capture", desc: "OBS, Streamlabs, éclairage, webcam 4K", icon: Camera },
                         { title: "Bibliothèques de jeux", desc: "Steam, Epic, configuration multi-plateformes", icon: Package }

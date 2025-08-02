@@ -40,7 +40,7 @@ export default function SitesWeb() {
                   <Globe className="w-3 h-3 mr-1" />
                   Présence Digitale
                 </Badge>
-                <h1 className="text-5xl lg:text-7xl font-bold">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold">
                   <span className="bg-gradient-to-r from-gray-900 via-blue-800 to-cyan-800 dark:from-gray-100 dark:via-blue-200 dark:to-cyan-200 bg-clip-text text-transparent">
                     Sites Web
                   </span>
@@ -49,7 +49,7 @@ export default function SitesWeb() {
                     Professionnels
                   </span>
                 </h1>
-                <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
                   Vous voulez être trouvé sur Google ? Avoir l'air professionnel sur internet ? 
                   Nous créons votre site web moderne et efficace, facile à modifier vous-même !
                 </p>

@@ -40,18 +40,18 @@ export default function EmailProfessionnel() {
                   <Mail className="w-3 h-3 mr-1" />
                   Email Professionnel
                 </Badge>
-                <h1 className="text-5xl lg:text-7xl font-bold">
-                  <span className="bg-gradient-to-r from-gray-900 via-green-800 to-emerald-800 dark:from-gray-100 dark:via-green-200 dark:to-emerald-200 bg-clip-text text-transparent">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold">
+                  <span className="bg-gradient-to-r from-gray-900 via-green-800 to-teal-800 dark:from-gray-100 dark:via-green-200 dark:to-teal-200 bg-clip-text text-transparent">
                     Email
                   </span>
                   <br />
-                  <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
                     Professionnel
                   </span>
                 </h1>
-                <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
-                  Fini les adresses @gmail.com ! Avec votre email @votre-nom.fr, vous paraissez plus professionnel. 
-                  Ça marche sur votre téléphone, tablette et ordinateur automatiquement.
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+                  Fini les adresses @gmail ! Avec votre email @votre-entreprise.fr, 
+                  vous paraissez plus crédible. Ça marche sur tous vos appareils !
                 </p>
               </div>
 
