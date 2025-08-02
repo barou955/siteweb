@@ -66,18 +66,18 @@ export default function FormationAccompagnement() {
                 </Button>
               </div>
 
-              <div className="grid grid-cols-3 gap-4 pt-8">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-indigo-600">À domicile</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Chez vous</div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-8">
+                <div className="text-center mobile-text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-indigo-600">À domicile</div>
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Chez vous</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-purple-600">Votre rythme</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Pas de stress</div>
+                <div className="text-center mobile-text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-purple-600">Votre rythme</div>
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Pas de stress</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-pink-600">Pratique</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Directement utile</div>
+                <div className="text-center mobile-text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-pink-600">Pratique</div>
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Directement utile</div>
                 </div>
               </div>
             </div>
