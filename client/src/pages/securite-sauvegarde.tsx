@@ -41,11 +41,11 @@ export default function SecuriteSauvegarde() {
                   Protection Totale
                 </Badge>
                 <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-responsive">
-                  <span className="bg-gradient-to-r from-gray-900 via-purple-800 to-pink-800 dark:from-gray-100 dark:via-purple-200 dark:to-pink-200 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-gray-900 via-green-800 to-emerald-800 dark:from-gray-100 dark:via-green-200 dark:to-emerald-200 bg-clip-text text-transparent">
                     Sécurité &
                   </span>
                   <br />
-                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
                     Sauvegarde
                   </span>
                 </h1>
@@ -68,15 +68,15 @@ export default function SecuriteSauvegarde() {
 
               <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-8">
                 <div className="text-center mobile-text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-purple-600">Automatique</div>
+                  <div className="text-xl sm:text-2xl font-bold text-green-600">Automatique</div>
                   <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Sauvegarde</div>
                 </div>
                 <div className="text-center mobile-text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-pink-600">Zéro virus</div>
+                  <div className="text-xl sm:text-2xl font-bold text-emerald-600">Zéro virus</div>
                   <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Protection</div>
                 </div>
                 <div className="text-center mobile-text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-red-600">Tranquillité</div>
+                  <div className="text-xl sm:text-2xl font-bold text-teal-600">Tranquillité</div>
                   <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Assurée</div>
                 </div>
               </div>

@@ -81,7 +81,7 @@ export default function MontagePcSurMesure() {
                   <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Complets</div>
                 </div>
                 <div className="text-center mobile-text-center">
-                  <div className="text-lg sm:text-2xl font-bold text-purple-600">Garantie</div>
+                  <div className="text-lg sm:text-2xl font-bold text-orange-600">Garantie</div>
                   <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">2 ans</div>
                 </div>
               </div>

@@ -15,7 +15,7 @@ export default function FormationAccompagnement() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-rose-50 to-pink-50 dark:from-slate-950 dark:via-rose-950 dark:to-pink-950">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-orange-50 to-amber-50 dark:from-slate-950 dark:via-orange-950 dark:to-amber-950">
       <SeoMeta 
         title="Formation & Accompagnement Informatique - Labtek"
         description="Formations informatiques personnalisées : bureautique, internet, smartphones. Accompagnement adapté à votre rythme pour tous niveaux."
@@ -24,7 +24,7 @@ export default function FormationAccompagnement() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-rose-500/20 via-pink-500/10 to-red-500/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-amber-500/10 to-yellow-500/10" />
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiM5QzkyQUMiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] opacity-30" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32 container-mobile service-hero-container">
@@ -36,16 +36,16 @@ export default function FormationAccompagnement() {
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
             <div className="space-y-6 lg:space-y-8">
               <div className="space-y-4">
-                <Badge className="bg-rose-500/20 text-rose-700 dark:text-rose-300 border-rose-200 hover:bg-rose-500/30">
+                <Badge className="bg-orange-500/20 text-orange-700 dark:text-orange-300 border-orange-200 hover:bg-orange-500/30">
                   <GraduationCap className="w-3 h-3 mr-1" />
                   Formation Personnalisée
                 </Badge>
                 <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-responsive">
-                  <span className="bg-gradient-to-r from-gray-900 via-indigo-800 to-purple-800 dark:from-gray-100 dark:via-indigo-200 dark:to-purple-200 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-gray-900 via-orange-800 to-amber-800 dark:from-gray-100 dark:via-orange-200 dark:to-amber-200 bg-clip-text text-transparent">
                     Formation &
                   </span>
                   <br />
-                  <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
                     Accompagnement
                   </span>
                 </h1>
@@ -56,7 +56,7 @@ export default function FormationAccompagnement() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button onClick={scrollToContact} size="lg" className="bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-600/90 hover:to-pink-600/90 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                <Button onClick={scrollToContact} size="lg" className="bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-600/90 hover:to-amber-600/90 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                   <GraduationCap className="w-5 h-5 mr-2" />
                   Commencer ma formation
                 </Button>
@@ -68,15 +68,15 @@ export default function FormationAccompagnement() {
 
               <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-8">
                 <div className="text-center mobile-text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-indigo-600">À domicile</div>
+                  <div className="text-xl sm:text-2xl font-bold text-orange-600">À domicile</div>
                   <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Chez vous</div>
                 </div>
                 <div className="text-center mobile-text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-purple-600">Votre rythme</div>
+                  <div className="text-xl sm:text-2xl font-bold text-amber-600">Votre rythme</div>
                   <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Pas de stress</div>
                 </div>
                 <div className="text-center mobile-text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-pink-600">Pratique</div>
+                  <div className="text-xl sm:text-2xl font-bold text-yellow-600">Pratique</div>
                   <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Directement utile</div>
                 </div>
               </div>
@@ -89,7 +89,7 @@ export default function FormationAccompagnement() {
                   alt="Formation informatique avec formateur"
                   className="w-full h-80 object-cover rounded-2xl shadow-lg"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-rose-500 text-white p-4 rounded-2xl shadow-xl">
+                <div className="absolute -bottom-4 -right-4 bg-orange-500 text-white p-4 rounded-2xl shadow-xl">
                   <BookOpen className="w-8 h-8" />
                 </div>
               </div>
@@ -732,7 +732,7 @@ export default function FormationAccompagnement() {
           </div>
 
           <div className="text-center mt-12">
-            <Button onClick={scrollToContact} size="lg" className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-600/90 hover:to-purple-600/90 text-white shadow-xl">
+            <Button onClick={scrollToContact} size="lg" className="bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-600/90 hover:to-amber-600/90 text-white shadow-xl">
               <Award className="w-5 h-5 mr-2" />
               Je veux apprendre aussi
             </Button>

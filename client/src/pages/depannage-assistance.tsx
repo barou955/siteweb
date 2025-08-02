@@ -73,11 +73,11 @@ export default function DepannageAssistance() {
                   Intervention Express
                 </Badge>
                 <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-responsive">
-                  <span className="bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-gray-100 dark:via-blue-200 dark:to-purple-200 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-gray-900 via-red-800 to-pink-800 dark:from-gray-100 dark:via-red-200 dark:to-pink-200 bg-clip-text text-transparent">
                     Dépannage &
                   </span>
                   <br />
-                  <span className="text-gray-900 dark:text-gray-100">
+                  <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
                     Assistance
                   </span>
                 </h1>
@@ -112,19 +112,19 @@ export default function DepannageAssistance() {
 
               <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-8">
                 <div className="text-center mobile-text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-labtek-blue">24h</div>
+                  <div className="text-xl sm:text-2xl font-bold text-red-600">24h</div>
                   <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                     Intervention possible
                   </div>
                 </div>
                 <div className="text-center mobile-text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-green-600">100%</div>
+                  <div className="text-xl sm:text-2xl font-bold text-rose-600">100%</div>
                   <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                     Problèmes résolus
                   </div>
                 </div>
                 <div className="text-center mobile-text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-purple-600">30km</div>
+                  <div className="text-xl sm:text-2xl font-bold text-pink-600">30km</div>
                   <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                     Zone d'intervention
                   </div>

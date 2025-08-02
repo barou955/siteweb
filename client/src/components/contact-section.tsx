@@ -233,7 +233,7 @@ export default function ContactSection() {
                         Sites web professionnels
                       </SelectItem>
                       <SelectItem value="installation-programmes">
-                        Installation de programmes
+                        Installation de logiciels
                       </SelectItem>
                       <SelectItem value="email-professionnel">
                         Email professionnel
@@ -253,11 +253,6 @@ export default function ContactSection() {
                       <SelectItem value="autre">
                         Autre demande
                       </SelectItem>
-                      <SelectItem value="maintenance">
-                        Maintenance et support
-                      </SelectItem>
-                      <SelectItem value="siteweb">Création de site web</SelectItem>
-                      <SelectItem value="audit">Audit complet</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

@@ -46,7 +46,7 @@ export default function InstallationProgrammes() {
                   </span>
                   <br />
                   <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                    de Programmes
+                    de Logiciels
                   </span>
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed text-responsive">
@@ -154,7 +154,7 @@ export default function InstallationProgrammes() {
                       </div>
                       <div>
                         <h3 className="text-3xl font-bold text-gray-900 dark:text-gray-100">💻 Pack Essentiel</h3>
-                        <Badge className="mt-2 bg-blue-500/20 text-blue-700 dark:text-blue-300">À partir de 120€/an</Badge>
+                        <Badge className="mt-2 bg-blue-500/20 text-blue-700 dark:text-blue-300">À partir de 79€</Badge>
                       </div>
                     </div>
                     <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
@@ -210,7 +210,7 @@ export default function InstallationProgrammes() {
                       </div>
                       <div>
                         <h3 className="text-3xl font-bold text-gray-900 dark:text-gray-100">💼 Pack Professionnel</h3>
-                        <Badge className="mt-2 bg-green-500/20 text-green-700 dark:text-green-300">À partir de 300/an€</Badge>
+                        <Badge className="mt-2 bg-green-500/20 text-green-700 dark:text-green-300">À partir de 159€</Badge>
                       </div>
                     </div>
                     <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">

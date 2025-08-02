@@ -15,7 +15,7 @@ export default function InfogeranceLegere() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-violet-50 dark:from-slate-950 dark:via-purple-950 dark:to-violet-950">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-teal-50 to-cyan-50 dark:from-slate-950 dark:via-teal-950 dark:to-cyan-950">
       <SeoMeta 
         title="Infogérance Légère - Labtek"
         description="Surveillance et maintenance informatique 24h/24. Votre infrastructure surveillée en permanence avec interventions rapides en cas de problème."
@@ -24,7 +24,7 @@ export default function InfogeranceLegere() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-violet-500/10 to-indigo-500/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 via-cyan-500/10 to-blue-500/10" />
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiM5QzkyQUMiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] opacity-30" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32 container-mobile service-hero-container">
@@ -36,7 +36,7 @@ export default function InfogeranceLegere() {
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
             <div className="space-y-6 lg:space-y-8">
               <div className="space-y-4">
-                <Badge className="bg-purple-500/20 text-purple-700 dark:text-purple-300 border-purple-200 hover:bg-purple-500/30">
+                <Badge className="bg-teal-500/20 text-teal-700 dark:text-teal-300 border-teal-200 hover:bg-teal-500/30">
                   <Monitor className="w-3 h-3 mr-1" />
                   Surveillance Continue
                 </Badge>
@@ -56,7 +56,7 @@ export default function InfogeranceLegere() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button onClick={scrollToContact} size="lg" className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-600/90 hover:to-violet-600/90 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                <Button onClick={scrollToContact} size="lg" className="bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-600/90 hover:to-cyan-600/90 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                   <Monitor className="w-5 h-5 mr-2" />
                   Surveiller mes équipements
                 </Button>
@@ -89,7 +89,7 @@ export default function InfogeranceLegere() {
                   alt="Centre de surveillance informatique"
                   className="w-full h-80 object-cover rounded-2xl shadow-lg"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-purple-500 text-white p-4 rounded-2xl shadow-xl">
+                <div className="absolute -bottom-4 -right-4 bg-teal-500 text-white p-4 rounded-2xl shadow-xl">
                   <Eye className="w-8 h-8" />
                 </div>
               </div>
@@ -673,7 +673,7 @@ export default function InfogeranceLegere() {
           </div>
 
           <div className="text-center mt-12">
-            <Button onClick={scrollToContact} size="lg" className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-600/90 hover:to-violet-600/90 text-white shadow-xl">
+            <Button onClick={scrollToContact} size="lg" className="bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-600/90 hover:to-cyan-600/90 text-white shadow-xl">
               <Award className="w-5 h-5 mr-2" />
               Protéger mon informatique
             </Button>

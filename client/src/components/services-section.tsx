@@ -54,13 +54,13 @@ const services = [
   },
   {
     icon: Download,
-    title: "Installation de Programmes",
+    title: "Installation de Logiciels",
     description:
       "Vous avez besoin de Word, Excel, un logiciel de comptabilité ? Nous trouvons et installons les programmes qu'il vous faut. Vos anciens fichiers sont récupérés et tout fonctionne parfaitement.",
     features: ["Les bons logiciels pour votre travail", "Vos anciens fichiers sauvegardés", "Nous vous montrons comment les utiliser"],
     color: "bg-blue-500",
-    image: "/microsoft-office-suite.png",
-    imageAlt: "Suite Microsoft Office - Word, Excel, PowerPoint, Teams et autres logiciels professionnels",
+    image: "https://i.ibb.co/PBPhNhB/outil-collaboratif.png",
+    imageAlt: "Outils collaboratifs et logiciels professionnels",
     link: "/services/installation-programmes"
   },
   {

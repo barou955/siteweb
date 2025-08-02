@@ -131,7 +131,7 @@ export default function Navigation() {
                       onClick={() => navigateToService("/services/installation-programmes")}
                       className="w-full text-left px-4 py-2 hover:bg-accent hover:text-accent-foreground transition-colors duration-200"
                     >
-                      Installation de programmes
+                      Installation de logiciels
                     </button>
                     <button
                       onClick={() => navigateToService("/services/email-professionnel")}
@@ -258,7 +258,7 @@ export default function Navigation() {
                 onClick={() => navigateToService("/services/installation-programmes")}
                 className="block px-3 py-2 text-sm text-foreground/70 hover:text-labtek-blue transition-colors duration-200 w-full text-left"
               >
-                Installation de programmes
+                Installation de logiciels
               </button>
               <button
                 onClick={() => navigateToService("/services/email-professionnel")}
