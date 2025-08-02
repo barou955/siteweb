@@ -17,7 +17,7 @@ export default function InstallationProgrammes() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-amber-50 to-yellow-50 dark:from-slate-950 dark:via-amber-950 dark:to-yellow-950">
       <SeoMeta 
-        title="Installation de Logiciels - Labtek"
+        title="Installation de Programmes et Logiciels - Labtek"
         description="Installation et configuration de logiciels : Office, navigateurs, antivirus, programmes spécialisés. Configuration optimale et formation incluse."
       />
       <Navigation />
