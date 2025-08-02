@@ -66,18 +66,18 @@ export default function SitesWeb() {
                 </Button>
               </div>
 
-              <div className="grid grid-cols-3 gap-4 pt-8">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600">Visible</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">sur Google</div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-8">
+                <div className="text-center mobile-text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-blue-600">Visible</div>
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">sur Google</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-cyan-600">Responsive</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Mobile/PC</div>
+                <div className="text-center mobile-text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-cyan-600">Responsive</div>
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Mobile/PC</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-teal-600">Modifiable</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Par vous</div>
+                <div className="text-center mobile-text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-teal-600">Modifiable</div>
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Par vous</div>
                 </div>
               </div>
             </div>
