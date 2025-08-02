@@ -66,18 +66,18 @@ export default function InstallationProgrammes() {
                 </Button>
               </div>
 
-              <div className="grid grid-cols-3 gap-4 pt-8">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-600">Compatible</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">100%</div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-8">
+                <div className="text-center mobile-text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-orange-600">Compatible</div>
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">100%</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-red-600">Formation</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Incluse</div>
+                <div className="text-center mobile-text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-red-600">Formation</div>
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Incluse</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-pink-600">Support</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">6 mois</div>
+                <div className="text-center mobile-text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-pink-600">Support</div>
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">6 mois</div>
                 </div>
               </div>
             </div>
