@@ -27,20 +27,20 @@ export default function FormationAccompagnement() {
         <div className="absolute inset-0 bg-gradient-to-br from-rose-500/20 via-pink-500/10 to-red-500/10" />
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiM5QzkyQUMiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] opacity-30" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32 container-mobile">
           <Button onClick={goBack} variant="ghost" className="mb-8 hover:bg-white/20 backdrop-blur-sm">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Retour
           </Button>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+            <div className="space-y-6 lg:space-y-8">
               <div className="space-y-4">
                 <Badge className="bg-rose-500/20 text-rose-700 dark:text-rose-300 border-rose-200 hover:bg-rose-500/30">
                   <GraduationCap className="w-3 h-3 mr-1" />
                   Formation Personnalisée
                 </Badge>
-                <h1 className="text-5xl lg:text-7xl font-bold">
+                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-responsive">
                   <span className="bg-gradient-to-r from-gray-900 via-indigo-800 to-purple-800 dark:from-gray-100 dark:via-indigo-200 dark:to-purple-200 bg-clip-text text-transparent">
                     Formation &
                   </span>
@@ -49,7 +49,7 @@ export default function FormationAccompagnement() {
                     Accompagnement
                   </span>
                 </h1>
-                <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+                <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed text-responsive">
                   Vous voulez apprendre à mieux utiliser votre ordinateur, smartphone ou internet ? 
                   Nous vous formons à votre rythme, chez vous, sans stress !
                 </p>

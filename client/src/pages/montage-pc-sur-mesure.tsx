@@ -28,20 +28,20 @@ export default function MontagePcSurMesure() {
         <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-red-500/10 to-pink-500/10" />
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiM5QzkyQUMiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] opacity-30" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32 container-mobile">
           <Button onClick={goBack} variant="ghost" className="mb-8 hover:bg-white/20 backdrop-blur-sm">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Retour
           </Button>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+            <div className="space-y-6 lg:space-y-8">
               <div className="space-y-4">
                 <Badge className="bg-orange-500/20 text-orange-700 dark:text-orange-300 border-orange-200 hover:bg-orange-500/30">
                   <Cpu className="w-3 h-3 mr-1" />
                   Configuration Optimale
                 </Badge>
-                <h1 className="text-5xl lg:text-7xl font-bold">
+                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-responsive">
                   <span className="bg-gradient-to-r from-gray-900 via-orange-800 to-red-800 dark:from-gray-100 dark:via-orange-200 dark:to-red-200 bg-clip-text text-transparent">
                     Montage PC
                   </span>
@@ -50,7 +50,7 @@ export default function MontagePcSurMesure() {
                     Sur Mesure
                   </span>
                 </h1>
-                <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+                <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed text-responsive">
                   PC trop lent ? Vous voulez jouer aux derniers jeux ? Besoin d'une machine pour travailler ? 
                   Nous montons le PC parfait selon vos besoins et votre budget avec une expertise technique approfondie !
                 </p>
