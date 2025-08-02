@@ -181,7 +181,7 @@ export default function SitesWeb() {
                   </div>
                   <div className="relative">
                     <img 
-                      src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=500&fit=crop&auto=format&q=80"
+                      src="https://i.ibb.co/bgnYw0Mp/carte-visite-logo-site-vitrine-04-16-258.jpg"
                       alt="Site web essentiel sur ordinateur"
                       className="w-full h-full object-cover"
                     />
@@ -197,7 +197,7 @@ export default function SitesWeb() {
                 <div className="grid lg:grid-cols-2 gap-0">
                   <div className="relative order-2 lg:order-1">
                     <img 
-                      src="https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=600&h=500&fit=crop&auto=format&q=80"
+                      src="https://i.ibb.co/ZzXzyLm0/d2ebe389ae77bed7952d0ad5c1037409.jpg"
                       alt="Site web premium responsive"
                       className="w-full h-full object-cover"
                     />
