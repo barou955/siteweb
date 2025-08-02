@@ -40,7 +40,7 @@ export default function InfogeranceLegere() {
                   <Monitor className="w-3 h-3 mr-1" />
                   Surveillance Continue
                 </Badge>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold">
+                <h1 className="text-5xl lg:text-7xl font-bold">
                   <span className="bg-gradient-to-r from-gray-900 via-teal-800 to-cyan-800 dark:from-gray-100 dark:via-teal-200 dark:to-cyan-200 bg-clip-text text-transparent">
                     Infogérance
                   </span>
@@ -49,7 +49,7 @@ export default function InfogeranceLegere() {
                     Légère
                   </span>
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+                <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
                   Dormez tranquille ! Nous surveillons vos équipements informatiques 24h/24. 
                   En cas de problème, vous êtes alerté immédiatement et nous intervenons rapidement.
                 </p>

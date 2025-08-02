@@ -40,7 +40,7 @@ export default function DepannageAssistance() {
                   <Zap className="w-3 h-3 mr-1" />
                   Intervention Express
                 </Badge>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold">
+                <h1 className="text-5xl lg:text-7xl font-bold">
                   <span className="bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-gray-100 dark:via-blue-200 dark:to-purple-200 bg-clip-text text-transparent">
                     Dépannage &
                   </span>
@@ -49,35 +49,35 @@ export default function DepannageAssistance() {
                     Assistance
                   </span>
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+                <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
                   Votre ordinateur ne marche plus ? Internet ne fonctionne pas ? 
                   Nous arrivons rapidement pour tout remettre en ordre. Disponibles même le weekend pour les urgences !
                 </p>
               </div>
 
-              <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-                <Button onClick={scrollToContact} size="lg" className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-600/90 hover:to-pink-600/90 text-black dark:text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-sm sm:text-base">
-                  <Wrench className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button onClick={scrollToContact} size="lg" className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-600/90 hover:to-pink-600/90 text-black dark:text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                  <Wrench className="w-5 h-5 mr-2" />
                   <span className="text-black dark:text-white">Demander une intervention</span>
                 </Button>
-                <Button variant="outline" size="lg" onClick={() => window.open('tel:0768852880', '_self')} className="border-2 hover:bg-white/50 backdrop-blur-sm text-sm sm:text-base">
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                <Button variant="outline" size="lg" onClick={() => window.open('tel:0768852880', '_self')} className="border-2 hover:bg-white/50 backdrop-blur-sm">
+                  <Phone className="w-5 h-5 mr-2" />
                   07 68 85 28 80
                 </Button>
               </div>
 
-              <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-8">
+              <div className="grid grid-cols-3 gap-4 pt-8">
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-labtek-blue">24h</div>
-                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Intervention possible</div>
+                  <div className="text-2xl font-bold text-labtek-blue">24h</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Intervention possible</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-green-600">99%</div>
-                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Problèmes résolus</div>
+                  <div className="text-2xl font-bold text-green-600">99%</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Problèmes résolus</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-purple-600">30km</div>
-                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Zone d'intervention</div>
+                  <div className="text-2xl font-bold text-purple-600">30km</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Zone d'intervention</div>
                 </div>
               </div>
             </div>
@@ -103,15 +103,15 @@ export default function DepannageAssistance() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-blue-500/20 text-blue-700 dark:text-blue-300">Nos Services</Badge>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">
               Ce que nous faisons pour vous
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Un service complet de dépannage informatique adapté à tous vos besoins
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: Eye, title: "Diagnostic rapide", desc: "Identification précise du problème", color: "bg-blue-500" },
               { icon: Wrench, title: "Réparation sur place", desc: "Intervention directe chez vous", color: "bg-green-500" },
@@ -119,12 +119,12 @@ export default function DepannageAssistance() {
               { icon: Clock, title: "Formation incluse", desc: "Nous vous expliquons pour éviter la récidive", color: "bg-orange-500" }
             ].map((service, index) => (
               <Card key={index} className="group hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border-0 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-white/80 dark:hover:bg-gray-800/80">
-                <CardContent className="p-4 sm:p-6 md:p-8 text-center">
-                  <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <service.icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
+                <CardContent className="p-8 text-center">
+                  <div className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <service.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gray-900 dark:text-gray-100">{service.title}</h3>
-                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">{service.desc}</p>
+                  <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100">{service.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{service.desc}</p>
                 </CardContent>
               </Card>
             ))}

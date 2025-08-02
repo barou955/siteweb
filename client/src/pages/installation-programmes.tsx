@@ -40,18 +40,18 @@ export default function InstallationProgrammes() {
                   <Download className="w-3 h-3 mr-1" />
                   Installation Experte
                 </Badge>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold">
-                  <span className="bg-gradient-to-r from-gray-900 via-purple-800 to-blue-800 dark:from-gray-100 dark:via-purple-200 dark:to-blue-200 bg-clip-text text-transparent">
-                    Installation de
+                <h1 className="text-5xl lg:text-7xl font-bold">
+                  <span className="bg-gradient-to-r from-gray-900 via-orange-800 to-red-800 dark:from-gray-100 dark:via-orange-200 dark:to-red-200 bg-clip-text text-transparent">
+                    Installation
                   </span>
                   <br />
-                  <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                    Programmes
+                  <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+                    de Programmes
                   </span>
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
-                  Word, Excel, logiciel de comptabilité ? Nous trouvons et installons 
-                  tous les programmes qu'il vous faut. Vos fichiers sauvegardés, tout fonctionne !
+                <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+                  Office, navigateurs, antivirus, logiciels métier... Nous installons et configurons 
+                  tous vos programmes pour qu'ils marchent parfaitement ensemble !
                 </p>
               </div>
 
