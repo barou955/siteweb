@@ -66,18 +66,18 @@ export default function SecuriteSauvegarde() {
                 </Button>
               </div>
 
-              <div className="grid grid-cols-3 gap-4 pt-8">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-purple-600">Automatique</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Sauvegarde</div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-8">
+                <div className="text-center mobile-text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-purple-600">Automatique</div>
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Sauvegarde</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-pink-600">Zéro virus</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Protection</div>
+                <div className="text-center mobile-text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-pink-600">Zéro virus</div>
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Protection</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-red-600">Tranquillité</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Assurée</div>
+                <div className="text-center mobile-text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-red-600">Tranquillité</div>
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Assurée</div>
                 </div>
               </div>
             </div>
