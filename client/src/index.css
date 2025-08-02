@@ -139,6 +139,14 @@
     max-width: 100%;
     overflow-x: hidden;
   }
+
+  /* Desktop-only: Reduce stretch for service pages hero sections */
+  @media (min-width: 1024px) {
+    .service-hero-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+  }
   
   @media (max-width: 640px) {
     .text-5xl {
